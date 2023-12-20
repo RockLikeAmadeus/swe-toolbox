@@ -9,7 +9,6 @@ describeReactComponent("Appointment", () => {
       firstName: "Ashley",
     };
     render(<Appointment customer={customer} />);
-    //expect(document.body.textContent).toContain("Ashley");
     expect(document.body).toContainText("Ashley");
   });
 
@@ -18,7 +17,7 @@ describeReactComponent("Appointment", () => {
       firstName: "Jordan",
     };
     render(<Appointment customer={customer} />);
-    expect(document.body.textContent).toContain("Jordan");
+    expect(document.body).toContainText("Jordan");
   });
 });
 
@@ -53,18 +52,18 @@ describeReactComponent("AppointmentsDayView", () => {
   it("renders the time of each appointment", () => {
     render(<AppointmentsDayView appointments={twoAppointments} />);
     const listOfChildren = document.querySelectorAll("li");
-    expect(listOfChildren[0].textContent).toEqual("12:00");
-    expect(listOfChildren[1].textContent).toEqual("13:00");
+    expect(listOfChildren[0]).toContainText("12:00");
+    expect(listOfChildren[1]).toContainText("13:00");
   });
   it("initially shows a message saying there are no appointments today", () => {
     render(<AppointmentsDayView appointments={[]} />);
-    expect(document.body.textContent).toContain(
+    expect(document.body).toContainText(
       "There are no appointments scheduled for today"
     );
   });
   it("selects the first appointment by default", () => {
     render(<AppointmentsDayView appointments={twoAppointments} />);
-    expect(document.body.textContent).toContain("Ashley");
+    expect(document.body).toContainText("Ashley");
   });
   it("has a button element in each li", () => {
     render(<AppointmentsDayView appointments={twoAppointments} />);
@@ -76,6 +75,6 @@ describeReactComponent("AppointmentsDayView", () => {
     render(<AppointmentsDayView appointments={twoAppointments} />);
     const button = document.querySelectorAll("button")[1];
     click(button);
-    expect(document.body.textContent).toContain("Jordan");
+    expect(document.body).toContainText("Jordan");
   });
 });

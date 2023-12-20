@@ -138,3 +138,15 @@ Then in `package.json`
     "setupFilesAfterEnv": ["./test/matchers/domMatchers.js"]
   }
 ```
+
+If your tests are set to automatically detect changes and re-run, you need to Ctrl+C and then re-run the test manually to pick up these changes.
+
+## Using your new matcher
+
+```js
+expect(document.body).toContainText("Ashley");
+```
+
+## Other concerns
+
+The above works just fine when we are only using our custom matchers internally, but if you intend on exporting them for use in other projects, they should be more robust. For instance, they should check to be sure that the received value is, in fact, an HTML element.
