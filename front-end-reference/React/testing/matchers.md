@@ -59,9 +59,7 @@ As usual, write these tests one at a time, writing the code to make each pass on
 ```js
 import { toContainText } from "./toContainText";
 
-const stripTerminalColor = (text) => {
-  text.replace("/\x1B[d+m/g", "");
-};
+const stripTerminalColor = (text) => text.replace(/\x1B\[\d+m/g, "");
 
 describe("toContainText matcher", () => {
   it("returns pass is true when text is found in the given DOM element", () => {
@@ -78,7 +76,7 @@ describe("toContainText matcher", () => {
     const domElement = { textContent: "text to find" };
     const result = toContainText(domElement, "text to find");
     expect(stripTerminalColor(result.message())).toContain(
-      expect(element).toContainText(textToFind)
+      `expect(element).toContainText("text to find")`
     );
   });
 });
