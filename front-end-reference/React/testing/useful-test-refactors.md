@@ -17,14 +17,26 @@ export const initializeReactContainer = () => {
   document.body.replaceChildren(container);
 };
 
-// import this to simplify rendering your component in your test
+// Import this to simplify rendering your component in your test
 export const render = (component) =>
   act(() => {
     ReactDOM.createRoot(container).render(component);
   });
 
-// import this to simplify click behavior and avoid using `act` in your test code
+// Import this to simplify click behavior and avoid using `act` in your test code
+// Use like this:
+//
+// const button = document.querySelectorAll("button")[1];
+// click(button);
 export const click = (element) => act(() => element.click());
-```
 
-You could also building a wrapper function for `describe()` called `describeReactComponent`. It could automatically includes a `beforeEach` block and builds a `container` variable that's accessible within the scope of the `describe` block.
+// Import this to replace calls to `describe` for react components.
+// Simplifies test code by performing initialization within.
+export const describeReactComponent = (componentName, fn) => {
+  beforeEach(() => {
+    initializeReactContainer();
+  });
+
+  fn();
+};
+```

@@ -1,13 +1,9 @@
 import React from "react";
 // `Appointment` is not the default export, which is intentional
 import { Appointment, AppointmentsDayView } from "../src/AppointmentsDayView";
-import { initializeReactContainer, render, click } from "./reactTestExtensions";
+import { render, click, describeReactComponent } from "./reactTestExtensions";
 
-describe("Appointment", () => {
-  beforeEach(() => {
-    initializeReactContainer();
-  });
-
+describeReactComponent("Appointment", () => {
   it("renders the customer first name", () => {
     const customer = {
       firstName: "Ashley",
@@ -25,7 +21,7 @@ describe("Appointment", () => {
   });
 });
 
-describe("AppointmentsDayView", () => {
+describeReactComponent("AppointmentsDayView", () => {
   //#region setup
   const today = new Date();
   const twoAppointments = [
@@ -38,9 +34,6 @@ describe("AppointmentsDayView", () => {
       customer: { firstName: "Jordan" },
     },
   ];
-  beforeEach(() => {
-    initializeReactContainer();
-  });
   //#endregion
   it("renders a div with the right id", () => {
     render(<AppointmentsDayView appointments={[]} />);
