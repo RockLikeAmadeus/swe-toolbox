@@ -1,8 +1,7 @@
 import React from "react";
-import { act } from "react-dom/test-utils";
 // `Appointment` is not the default export, which is intentional
 import { Appointment, AppointmentsDayView } from "../src/AppointmentsDayView";
-import { initializeReactContainer, render } from "./reactTestExtensions";
+import { initializeReactContainer, render, click } from "./reactTestExtensions";
 
 describe("Appointment", () => {
   beforeEach(() => {
@@ -82,7 +81,7 @@ describe("AppointmentsDayView", () => {
   it("renders another appointment when selected", () => {
     render(<AppointmentsDayView appointments={twoAppointments} />);
     const button = document.querySelectorAll("button")[1];
-    act(() => button.click());
+    click(button);
     expect(document.body.textContent).toContain("Jordan");
   });
 });
