@@ -59,6 +59,10 @@ As usual, write these tests one at a time, writing the code to make each pass on
 ```js
 import { toContainText } from "./toContainText";
 
+const stripTerminalColor = (text) => {
+  text.replace("/\x1B[d+m/g", "");
+};
+
 describe("toContainText matcher", () => {
   it("returns pass is true when text is found in the given DOM element", () => {
     const domElement = { textContent: "text to find" };
@@ -70,5 +74,16 @@ describe("toContainText matcher", () => {
     const result = toContainText(domElement, "text to find");
     expect(result.pass).toBe(false);
   });
+  it("returns a message that contains the source line if no match", () => {
+    const domElement = { textContent: "text to find" };
+    const result = toContainText(domElement, "text to find");
+    expect(stripTerminalColor(result.message())).toContain(
+      expect(element).toContainText(textToFind)
+    );
+  });
 });
 ```
+
+Note about the `message`: it should provide a helpful string to display when the expectation fails, but is itself a _function that returns a string_ for performance reasons. `message` won't be used if `pass` is `true`, _unless_ it gets used alongside a `.not` qualifier.
+
+Note about `stripTerminalColor`: a quick helper function to remove the ASCII escape codes that Jest uses to print results in different colors.
