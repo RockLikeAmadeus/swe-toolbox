@@ -2,9 +2,9 @@
 
 todo
 
-# Useful General Purpose React Testing Helper File
+# General-Purpose React Testing Helper File
 
-Name this file something like `reactTestExtensions.js`
+Copy this exact code into a new file in the `test` directory of your project. Name this file something like `reactTestExtensions.js`
 
 ```js
 // Import these to simplify your beforeEach() block

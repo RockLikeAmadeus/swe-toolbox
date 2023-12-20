@@ -3,16 +3,12 @@ import ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
 // `Appointment` is not the default export, which is intentional
 import { Appointment, AppointmentsDayView } from "../src/AppointmentsDayView";
-import { initializeReactContainer, container } from "./reactTestExtensions";
+import { initializeReactContainer, render } from "./reactTestExtensions";
 
 describe("Appointment", () => {
   beforeEach(() => {
     initializeReactContainer();
   });
-
-  const render = (component) => {
-    act(() => ReactDOM.createRoot(container).render(component));
-  };
 
   it("renders the customer first name", () => {
     const customer = {
@@ -48,10 +44,6 @@ describe("AppointmentsDayView", () => {
     initializeReactContainer();
   });
   //#endregion
-  const render = (component) =>
-    act(() => {
-      ReactDOM.createRoot(container).render(component);
-    });
   it("renders a div with the right id", () => {
     render(<AppointmentsDayView appointments={[]} />);
     expect(document.querySelector("div#appointmentsDayView")).not.toBeNull();
