@@ -33,6 +33,7 @@ describe("Appointment", () => {
 });
 
 describe("AppointmentsDayView", () => {
+  //#region setup
   let container;
   const today = new Date();
   const twoAppointments = [
@@ -49,6 +50,7 @@ describe("AppointmentsDayView", () => {
     container = document.createElement("div");
     document.body.replaceChildren(container);
   });
+  //#endregion
   const render = (component) =>
     act(() => {
       ReactDOM.createRoot(container).render(component);

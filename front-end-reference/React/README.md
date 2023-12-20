@@ -53,7 +53,7 @@ function AboutPage() {
 
 ## Styling
 
-Classes are specified withe `className` (rather than just `class` as in HTML):
+CSS classes are specified withe `className` (rather than just `class` as in HTML):
 
 ```js
 <img className="avatar" />
@@ -107,7 +107,7 @@ const listItems = products.map((product) => (
 return <ul>{listItems}</ul>;
 ```
 
-Notice how <li> has a key attribute. For each item in a list, you should pass a string or a number that uniquely identifies that item among its siblings. Usually, a key should be coming from your data, such as a database ID. React uses your keys to know what happened if you later insert, delete, or reorder the items.
+Notice how `<li>` has a key attribute. For each item in a list, you should pass a string or a number that uniquely identifies that item among its siblings. Usually, a key should be coming from your data, such as a database ID. React uses your keys to know what happened if you later insert, delete, or reorder the items.
 
 ## Event Handling
 
@@ -131,7 +131,7 @@ First:
 import { useState } from "react";
 ```
 
-Then call `useState() to initialize one or more _state variables_ in your component. The `useState()` function accepts the initial state as its argument, and returns the current state along with the function that you use to update the state.
+Then call `useState()` to initialize one or more _state variables_ in your component. The `useState()` function accepts the initial state as its argument, and returns the current state along with the function that you use to update the state.
 
 ```js
 function MyButton() {

@@ -1,3 +1,11 @@
+# Get Specific:
+
+- [Matchers](matchers.md)
+
+<br>
+
+---
+
 # Test Basics
 
 Test-driven react development using Jest looks something like this:
@@ -118,11 +126,3 @@ describe("Appointment", () => {
 ```
 
 Be careful with using `let` in the `describe` scope--use the following rule: any variable declared in the `describe` scope should be assigned a new value in the `beforeEach` block (or in the first part of each test). See https://reacttdd.com/use-of-let.
-
-# Get Specific:
-
-- [Matchers](matchers.md)
-
-<br>
-
----
