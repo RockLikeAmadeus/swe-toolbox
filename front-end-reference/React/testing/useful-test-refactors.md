@@ -33,10 +33,14 @@ export const click = (element) => act(() => element.click());
 // Import this to replace calls to `describe` for react components.
 // Simplifies test code by performing initialization within.
 export const describeReactComponent = (componentName, fn) => {
-  beforeEach(() => {
-    initializeReactContainer();
-  });
+  fnWrapper = () => {
+    beforeEach(() => {
+      initializeReactContainer();
+    });
 
-  fn();
+    fn();
+  };
+
+  describe(componentName, fnWrapper);
 };
 ```
