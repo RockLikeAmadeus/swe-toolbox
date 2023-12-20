@@ -100,10 +100,10 @@ describe("Appointment", () => {
   let container;
   beforeEach(() => {
     container = container = document.createElement("div");
+    document.body.replaceChildren(container);
   });
 
   const render = (component) => {
-    document.body.replaceChildren(container);
     act(() => ReactDOM.createRoot(container).render(component));
   };
 

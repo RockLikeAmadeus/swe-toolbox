@@ -3,15 +3,14 @@ import ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
 // `Appointment` is not the default export, which is intentional
 import { Appointment, AppointmentsDayView } from "../src/AppointmentsDayView";
+import { initializeReactContainer, container } from "./reactTestExtensions";
 
 describe("Appointment", () => {
-  let container;
   beforeEach(() => {
-    container = document.createElement("div");
+    initializeReactContainer();
   });
 
   const render = (component) => {
-    document.body.replaceChildren(container);
     act(() => ReactDOM.createRoot(container).render(component));
   };
 
@@ -34,7 +33,6 @@ describe("Appointment", () => {
 
 describe("AppointmentsDayView", () => {
   //#region setup
-  let container;
   const today = new Date();
   const twoAppointments = [
     {
@@ -47,8 +45,7 @@ describe("AppointmentsDayView", () => {
     },
   ];
   beforeEach(() => {
-    container = document.createElement("div");
-    document.body.replaceChildren(container);
+    initializeReactContainer();
   });
   //#endregion
   const render = (component) =>
