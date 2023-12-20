@@ -9,7 +9,8 @@ describeReactComponent("Appointment", () => {
       firstName: "Ashley",
     };
     render(<Appointment customer={customer} />);
-    expect(document.body.textContent).toContain("Ashley");
+    //expect(document.body.textContent).toContain("Ashley");
+    expect(document.body).toContainText("Ashley");
   });
 
   it("renders another customer first name", () => {

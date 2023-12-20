@@ -51,10 +51,11 @@ expect(listOfChildren[0].textContent).toEqual("12:00");
 1. Create new directory `matchers` under the `test` directory.
 2. Create a new file for the matcher (i.e. `toContainText.js`) and leave it empty
 3. Create a new test file for the matcher, i.e. `toContainText.test.js`
+4. Create a file (if it doesn't yet exist) to plug the test into jest, called something like `domMatchers.js`
 
 ## Writing the test
 
-As usual, write these tests one at a time, writing the code to make each pass only after you've seen it fail.
+As usual, write these tests one at a time, writing the code to make each pass only after you've seen it fail (the following tests could use some refactoring to remove duplication).
 
 ```js
 import { toContainText } from "./toContainText";
@@ -73,10 +74,24 @@ describe("toContainText matcher", () => {
     expect(result.pass).toBe(false);
   });
   it("returns a message that contains the source line if no match", () => {
-    const domElement = { textContent: "text to find" };
+    const domElement = { textContent: "" };
     const result = toContainText(domElement, "text to find");
     expect(stripTerminalColor(result.message())).toContain(
       `expect(element).toContainText("text to find")`
+    );
+  });
+  it("returns a message that contains the source line if negated match", () => {
+    const domElement = { textContent: "text to find" };
+    const result = toContainText(domElement, "text to find");
+    expect(stripTerminalColor(result.message())).toContain(
+      `expect(element).not.toContainText("text to find")`
+    );
+  });
+  it("returns a message that contains the actual text", () => {
+    const domElement = { textContent: "text to find" };
+    const result = toContainText(domElement, "text to find");
+    expect(stripTerminalColor(result.message())).toContain(
+      `Actual text: "text to find"`
     );
   });
 });
@@ -85,3 +100,41 @@ describe("toContainText matcher", () => {
 Note about the `message`: it should provide a helpful string to display when the expectation fails, but is itself a _function that returns a string_ for performance reasons. `message` won't be used if `pass` is `true`, _unless_ it gets used alongside a `.not` qualifier.
 
 Note about `stripTerminalColor`: a quick helper function to remove the ASCII escape codes that Jest uses to print results in different colors.
+
+## Writing the matcher
+
+```js
+import { matcherHint, printExpected, printReceived } from "jest-matcher-utils";
+
+export const toContainText = (received, expectedText) => {
+  const pass = received.textContent.includes(expectedText);
+  const sourceHint = () =>
+    matcherHint("toContainText", "element", printExpected(expectedText), {
+      isNot: pass,
+    });
+  const actualTextHint = () =>
+    "Actual text: " + printReceived(received.textContent);
+  const message = () => [sourceHint(), actualTextHint()].join("\n\n");
+  return { pass, message };
+};
+```
+
+## Plugging it in
+
+In `domMatchers.js`
+
+```js
+import { toContainText } from "./toContainText";
+
+expect.extend({ toContainText });
+```
+
+Then in `package.json`
+
+```json
+  ...
+  "jest": {
+    ...
+    "setupFilesAfterEnv": ["./test/matchers/domMatchers.js"]
+  }
+```
