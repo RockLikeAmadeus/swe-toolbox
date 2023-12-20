@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
 // `Appointment` is not the default export, which is intentional
 import { Appointment, AppointmentsDayView } from "../src/AppointmentsDayView";
