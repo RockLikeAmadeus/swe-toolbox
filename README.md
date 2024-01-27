@@ -1,0 +1,133 @@
+Always be learning. Why? Because everything is constantly changing? That's one reason (and a good one). But if the state of software engineering were frozen in time from this day forward, there would still be more to learn than could be learned in a lifetime. Being a software engineer means understanding the inner workings of, and being able to build, fix, modify, and extend the most complex machines humans have ever conceived. Doing so _well_ without dedicating yourself to improving your understanding of the bodies of knowledge upon which the discipline is built is a fantasy.
+
+Understanding what those relevant bodies of knowledge _are_ is step one.
+
+# Aspects of Software Engineering
+
+Note: even where I have not explicitly listed it, all concepts are broken into two parts: the first is the ideas and the abstractions that comprise a concept; the second are the specific implementations of those abstractions that we have to deal with as engineers. For example, it is important to understand _cloud computing_ in general, but that knowledge is usually not much use without an understanding of the specific _cloud computing platform_ you'll need to use, such as AWS or GCP. Furthermore, you'll want to understand the ideas behind processor architecture, but you might also want to study, for instance, the x86 instruction set specificially.
+
+
+
+- Non-Technical Bodies of Knowledge
+    - Leadership
+    - Communication
+        - Technical Writing
+        - Diagramming
+            - UML
+    - Process Methodologies
+        - Agile
+        - SCRUM
+        - Kanban
+        - SAFe
+        - Waterfall
+    - Domain Specifics (depends on your industry)
+    - Career
+    - Software Licensing
+- Technical Bodies of Knowledge
+    - Conceptual
+        - How computer systems _could_ work, and how our computer systems _do_ work (these are tightly linked)
+            - Machine Architecture
+                - Processor Architecture
+                - Memory
+                - I/O
+            - Operating Systems
+                - File Systems
+                - Process Scheduling
+            - Machine Language
+            - High-Level Language Implementations 
+                - Compilers
+                - Linkers
+                - Interpreters
+                - Garbage Collectors
+                - Stack-Based Virtual Machines
+                - etc.
+            - Computer Networking
+            - The Web
+                - Internet Concepts
+                - Web Protocols
+            - Data
+                - Data Science
+                - Persistence Mechanisms
+                    - Databases
+                        - Relational Databases
+                        - Document Databases
+                        - Data Warehouses
+                        - Replication
+                        - Sharding
+                        - Partitioning
+                        - Specific Implementations
+                            - Database Management Software
+                            - Query Languages
+            - Specific Solutions (common architectures, operating systems, network standards)
+        - Applications of Software
+            - Artificial Intelligence/Machine Learning
+            - The Blockchain
+            - Embedded Systems
+            - Games
+            - Graphics
+            - Search
+            - etc.
+        - Math
+    - Actionable
+        - Building and Maintaining Systems
+            - Development/Programming
+                - Algorithms
+                - Data Structures
+                - Time and Memory Complexity (as it relates to Algorithms and Data Structures)
+                - Parallel and Concurrent Programming
+                - Programming Paradigms
+                    - Structure Programming
+                    - OOP
+                    - Functional Programming
+                - Specific Programming Languages
+                - Programming Style and Formatting
+                - Program Structure and Design (readability, maintainability, and the art of "clean code")
+                - Web Programming
+                    - Web Development Frameworks
+            - Testing
+                - Automated Unit Testing and Test-Driven Development
+                - Acceptance and Integration Testing
+            - Architecture and Design
+                - Design Patterns
+                - Design Principles
+                - Monoliths, SOAs, and Microservices (what is the name for this?)
+                - Domain-Driven Design
+                - API Design
+                - Meeting Functional and Non-Functional Requirements
+                - "ilities"
+                - Cloud Computing
+                    - Cloud Computing Concepts
+                        - Infrastructure
+                        - Infrastructure as Code
+                        - Cloud Design Patterns
+                        - Serverless Architectures
+                    - Specific Cloud Computing Solutions (AWS, GCP, Azure)
+                - Messaging Schemes
+                    - Inter-Process Communication (IPC)
+                    - Message Queues
+                    - Event-Driven Architecture
+                    - Remote Procedure Calls
+                    - APIs (REST, SOAP, GraphQL)
+            - Tools
+                - OS Terminal
+                - IDEs/Text Editors
+                - Source/Version Control
+                - Issue Tracking
+                - Visual Diagramming
+                - Package Managers
+                - Debuggers
+            - Computer and Network Security and Privacy
+                - Hacking and Penetration Testing
+                - Cryptography
+                - Authentication and Authorization
+            - User Interfaces
+                - Interface Design/UX Design
+                - Accessibility
+                - Specific Implementations
+                    - Web-Based GUIs
+                    - Native GUIs
+        - Deployment and Operation
+            - Containerization
+            - Container Orchestration
+            - Implementations (Docker, Kubernetes)
+            - CI/CD
