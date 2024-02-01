@@ -72,6 +72,9 @@ fn main() {
     `fn first_word(s: &str) -> &str {` instead of `fn first_word(s: &String) -> &str {`
 - From _From JavaScript to Rust_, the suggestion is, when you want to turn a string literal into a String object, use the `.to_owned()` function, rather than `String::from()`, `to_string()`, `.into()`, or `format!()`. The explanation of why is not something I want to list here, but I'm sure there are resources on it.
 - Rust variables use `snake_case`. That sucks, but you should probably jsut get used to it. See https://doc.rust-lang.org/1.0.0/style/style/naming/README.html for more.
+- Whenever you see an error complaining about `()`, it's frequently a matter of adding or removing a semi-colon somewhere, or a return type on a function declaration.
+- When to use which type of collection, handy reference: https://doc.rust-lang.org/std/collections/index.html#use-a-btreemap-when
+- When an error mentions `&'static str`, it's probably referring to a string literal. Remember string literals are not type `str`, they're type `&str`
 
 # Visual Studio
 
