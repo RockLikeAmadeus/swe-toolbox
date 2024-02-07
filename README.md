@@ -131,3 +131,5 @@ Note: even where I have not explicitly listed it, all concepts are broken into t
             - Container Orchestration
             - Implementations (Docker, Kubernetes)
             - CI/CD
+            - Build Servers and Build Pipelines
+            - Cloud Services
