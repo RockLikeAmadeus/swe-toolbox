@@ -4,15 +4,6 @@ Come back to VS Code setup section! TODO
 
 for all languages, create a (short as possible) example code file that's just hello world with as many language features on display as possible, with comments, in a way that is easy to just grab syntax all from one place. For Rust, start with this for examples etc.: https://learnxinyminutes.com/docs/rust/
 
-```rust
-fn main() {
-    let name = "world;
-    println!("Hello, {}!", name);
-}
-```
-
-- `$ cargo new` creates an executable project by default, but you can use `$ cargo new --lib` to start a library project.
-- Note: `cargo new` (and I'm assuming init) **DOES** create a git repo for you
 - Note, everything it creates for you is pretty much what's already in the code crafter's basic solution, with the exception of the stuff only code crafters uses, and the commented out code in main, so that's good.
 - Strings
     - Two types of strings, `str` and `String`
@@ -22,13 +13,6 @@ fn main() {
         - Each value in rust has an owner, and can only have one at a time
         - When the owner goes out of scope, the value will be dropped
     - Ownership allows us to treat heap values like stack values--the memory taken up by stack variables is automatically freed when the variable goes out of scope. This is harder with heap variables in most languages because multiple references can exist, so when a variable goes out of scope is not sufficient to say that value isn't used anymore. Rust solves this by only allowing one variable to "own" that value, and then treats it like a stack variable.
-    - When you pass a value, or re-assign a value to a new variable, you give up ownership. The code can no longer access the first variable. This is called a _move_.
-    - Remember, `move`s happen for _variable assignment_ and _passing values to a method/function_, as well as _returning values from a function_ (all for heap allocated types, of course).
-        ```rust
-        let s1 = String::from("hello");
-        let s2 = s1; // <-- Move!!
-        println!("{}, world!", s1); // <-- Compile error! s1 is invalid here!
-        ```
     - Use `clone()` to deep copy:
         ```rust
         let s1 = String::from("hello");
@@ -72,6 +56,9 @@ fn main() {
     `fn first_word(s: &str) -> &str {` instead of `fn first_word(s: &String) -> &str {`
 - From _From JavaScript to Rust_, the suggestion is, when you want to turn a string literal into a String object, use the `.to_owned()` function, rather than `String::from()`, `to_string()`, `.into()`, or `format!()`. The explanation of why is not something I want to list here, but I'm sure there are resources on it.
 - Rust variables use `snake_case`. That sucks, but you should probably jsut get used to it. See https://doc.rust-lang.org/1.0.0/style/style/naming/README.html for more.
+- Whenever you see an error complaining about `()`, it's frequently a matter of adding or removing a semi-colon somewhere, or a return type on a function declaration.
+- When to use which type of collection, handy reference: https://doc.rust-lang.org/std/collections/index.html#use-a-btreemap-when
+- When an error mentions `&'static str`, it's probably referring to a string literal. Remember string literals are not type `str`, they're type `&str`
 
 # Visual Studio
 
