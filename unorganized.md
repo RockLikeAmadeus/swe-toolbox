@@ -81,6 +81,10 @@ Some things Josh taught me I might want to be aware of in visual studio., relate
     - Right click the project in the solution explorer, assuming it's an executable of some sort, and select Debug >> Start New Instance
     - Or, you can separately start up an instance of the process you're trying to debug (assuming it's a debug build with debug symbols, not a release build), and at the top of Visual Studio go to Debug >> Attach to Process and select a running process.
 
+# Python
+
+
+
 ---
 
 ? to ask WF, what format will it come in, is it changeable and updatable by me? not just a PDF right?
