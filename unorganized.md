@@ -71,3 +71,15 @@ Some things Josh taught me I might want to be aware of in visual studio., relate
 ---
 
 ? to ask WF, what format will it come in, is it changeable and updatable by me? not just a PDF right?
+
+---
+
+# Resource:
+
+https://www.programming-books.io/
+
+---
+
+Think about _plugins_ vs _extensions_. In a nutshell, _plugins_ are a mechanism for polymorphic behavior, and _extensions_ (I think) are an incarnation of the open-closed principal (my words, and I could be wrong).
+    How do these relate to "mods" in video games?
+    It seems like there truly is a lot of conflation of these two terms, but maybe it's worth writing a post talking about a meaningful difference between the two and being precise in language.
