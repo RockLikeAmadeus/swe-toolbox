@@ -1,1 +1,4 @@
 - Build tool: Rust apparently needs something like the "make" tool. You can use make, or there are alternatives like `cargo-make`, or `cargo-cmd`, or as the author of "From JavaScript to Rust" recommends, `just`
+- Workspaces: you can manage workspaces for managing multiple small modules in a larger project with the `[workspace]` entry in your `cargo.toml` file
+    - Also check out `cargo-workspaces`
+- You might want to install `cargo-expand` for demystifying some uses of macros
