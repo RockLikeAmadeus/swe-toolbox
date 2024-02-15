@@ -1,0 +1,1 @@
+When converting a variable of one type into another type, there is no need (unless there is) to use a separate variable name. Just use the same variable name for the new variable by taking advantage of Rust's _shadowing_ feature.

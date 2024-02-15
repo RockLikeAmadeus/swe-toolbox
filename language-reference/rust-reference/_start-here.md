@@ -1,5 +1,7 @@
 # Code Organization
 
+Use Cargo. Cargo will expect your code to be in the `src` directory.
+
 `cargo.toml` for dependencies, test and build instructions, etc (equiv to `package.json` for node)
 
 Crates.
@@ -8,21 +10,55 @@ Crates can be published on `crates.io`
 
 # Documentation
 
-`$ rustup doc --book`
+`$ rustup doc` and `$ rustup doc --book` work offline.
 
-# Essential Tools
+Run `$ cargo doc --open` to build and display documentation for your specific project locally.
 
-**rustc**: Rust compiler (I think cargo is enough, though)
-**cargo**: package manager
-**clippy**: linting?
-**rustfmt**: auto-format
+# Running
+
+You can use the Rust compiler `rustc` manually, but there isn't a good reason not to just use Cargo for everything instead.
+
+From your project's root, use the appropriate command from the list:
+
+```
+$ cargo run
+```
+
+Or, to build without running (defaults to debug configuration):
+
+```
+$ cargo build
+```
+
+or
+
+```
+$ cargo build --release
+```
+
+Or, to check for problems without having to wait for a long build:
+
+```
+$ cargo check
+```
 
 # Basic Syntax and Style
+
+Bring in external code like:
+
+```rs
+use std::io;
+...
+io::stdin().read_line(&mut my_input)
+```
+
+You can also reference external code without a `use` by utilizing the fully-qualified name, i.e. `std::io::stdin`
 
 ```rust
 fn main() {
     let name = "world;
     println!("Hello, {}!", name);
+    println!("Hello, {name}!"); // also valid
 }
 ```
 
@@ -41,6 +77,13 @@ Moves of heap allocated values occur when:
     println!("{}, world!", s1); // <-- Compile error! s1 is invalid here!
 ```
 
+# Essential Tools
+
+**rustc**: Rust compiler (I think cargo is enough, though)
+**cargo**: package manager
+**clippy**: linting?
+**rustfmt**: auto-format
+
 # Tool and Language Management
 
 Manage tools and versions with **rustup**, equiv. to NVM for Node.
@@ -50,3 +93,5 @@ Use `$ rustup` with no args for an overview of usage.
 Use `$ rustup show` for Rust version info.
 
 Use `$ rustup update` to get latest Rust toolset.
+
+Use `$ rustup doc` to read the Rust docs offline

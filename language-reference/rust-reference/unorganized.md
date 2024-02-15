@@ -2,3 +2,8 @@
 - Workspaces: you can manage workspaces for managing multiple small modules in a larger project with the `[workspace]` entry in your `cargo.toml` file
     - Also check out `cargo-workspaces`
 - You might want to install `cargo-expand` for demystifying some uses of macros
+
+- Creating a new project
+projects can be created by just creating a directory for your project and adding a `main.rs` file and manually doing a `git init`. Cargo is not necessary for running code either - it can be done with `rustc main.rs` and then just run the resulting executable
+
+come back to: https://rust-book.cs.brown.edu/ch03-02-data-types.html
