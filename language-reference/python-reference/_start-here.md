@@ -1,3 +1,9 @@
+# Essential Resources
+
+[Quick Syntax Examples](https://learnxinyminutes.com/docs/python/)
+
+[PEP 8 Style Guide](https://peps.python.org/pep-0008/)
+
 # Which Version Should I Use?
 
 Just use Python 3 unless you're working on old code.
