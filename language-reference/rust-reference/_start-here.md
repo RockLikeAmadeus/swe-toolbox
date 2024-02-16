@@ -62,16 +62,19 @@ fn main() {
     println!("Hello, {name}!"); // also valid
 }
 
-fn tuples_and_arrays() {
+fn data_structures() {
+    // tuple
     let tup = (500, 6.4, 1);
     let (x, y, z) = tup;
     let one = z.2
-
     // stack-allocated fixed-size array
     // type specifier optional
     let half_dozen: [i32; 5] = [1, 2, 3, 4, 5, 6];
     // write `[3, 3, 3, 3, 3]` as:
     let a = [3; 5];
+    // vector
+    let mut v: Vec<i32> = vec![1, 2, 3];
+    v.push(4);
 }
 
 fn funcs_and_expressions(a: i32) -> i32 {
