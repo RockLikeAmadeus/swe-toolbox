@@ -1,6 +1,6 @@
 # Rust
 
-Come back to VS Code setup section! TODO
+Come back to VS Code setup section of TypeScript to Rust book! TODO
 
 for all languages, create a (short as possible) example code file that's just hello world with as many language features on display as possible, with comments, in a way that is easy to just grab syntax all from one place. For Rust, start with this for examples etc.: https://learnxinyminutes.com/docs/rust/
 
@@ -67,6 +67,8 @@ Some things Josh taught me I might want to be aware of in visual studio., relate
 - In the past I've either tried to have two instances of the same solution open (definitely causes problems) or have multiple startup projects selected. This is not optimal. Instead, to get a second process running with the debugger attached, you can:
     - Right click the project in the solution explorer, assuming it's an executable of some sort, and select Debug >> Start New Instance
     - Or, you can separately start up an instance of the process you're trying to debug (assuming it's a debug build with debug symbols, not a release build), and at the top of Visual Studio go to Debug >> Attach to Process and select a running process.
+- Also, you can change the maximum number of build threads in the IDE settings
+- Also, you can view the project Build Order by right clicking on the solution in the Solution Explorer
 
 # Python
 

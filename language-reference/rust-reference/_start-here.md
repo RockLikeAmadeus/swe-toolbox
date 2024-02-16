@@ -54,11 +54,35 @@ io::stdin().read_line(&mut my_input)
 
 You can also reference external code without a `use` by utilizing the fully-qualified name, i.e. `std::io::stdin`
 
+More syntax:
 ```rust
 fn main() {
-    let name = "world;
+    let name = "world;"
     println!("Hello, {}!", name);
     println!("Hello, {name}!"); // also valid
+}
+
+fn tuples_and_arrays(i: i32) {
+    let tup = (500, 6.4, 1);
+    let (x, y, z) = tup;
+    let one = z.2
+
+    // stack-allocated fixed-size array
+    // type specifier optional
+    let half_dozen: [i32; 5] = [i, 2, 3, 4, 5, 6];
+    // write `[3, 3, 3, 3, 3]` as:
+    let a = [3; 5];
+}
+
+fn funcs_and_expressions(a: i32) -> i32 {
+    if (a == 1) {
+        return 0; // early return
+    }
+    let y = {
+        let x = 3;
+        x + 1 // no semicolon
+    };
+    5 // no semicolon, no return
 }
 ```
 
