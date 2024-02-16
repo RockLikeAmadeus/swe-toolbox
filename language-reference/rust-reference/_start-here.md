@@ -62,20 +62,20 @@ fn main() {
     println!("Hello, {name}!"); // also valid
 }
 
-fn tuples_and_arrays(i: i32) {
+fn tuples_and_arrays() {
     let tup = (500, 6.4, 1);
     let (x, y, z) = tup;
     let one = z.2
 
     // stack-allocated fixed-size array
     // type specifier optional
-    let half_dozen: [i32; 5] = [i, 2, 3, 4, 5, 6];
+    let half_dozen: [i32; 5] = [1, 2, 3, 4, 5, 6];
     // write `[3, 3, 3, 3, 3]` as:
     let a = [3; 5];
 }
 
 fn funcs_and_expressions(a: i32) -> i32 {
-    if (a == 1) {
+    if a == 1 {
         return 0; // early return
     }
     let y = {
@@ -83,6 +83,31 @@ fn funcs_and_expressions(a: i32) -> i32 {
         x + 1 // no semicolon
     };
     5 // no semicolon, no return
+}
+
+fn control_flow(condition: bool) {
+    let number = if condition { 5 } else { 6 };
+    // types of loops:
+    // loop; labels allowed for disambiguation
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+    // while
+    while condition {
+        println!("again!");
+    }
+    // for
+    let a = [10, 20, 30, 40, 50];
+    for element in a {
+        println!("the value is: {element}");
+    }
+    for number in (1..4).rev() { // reverse!
+        println!("{number}!");
+    }
 }
 ```
 
@@ -103,10 +128,10 @@ Moves of heap allocated values occur when:
 
 # Essential Tools
 
-**rustc**: Rust compiler (I think cargo is enough, though)
-**cargo**: package manager
-**clippy**: linting?
-**rustfmt**: auto-format
+- **rustc**: Rust compiler (but just use cargo)
+- **cargo**: package manager
+- **clippy**: linting
+- **rustfmt**: auto-format
 
 # Tool and Language Management
 
