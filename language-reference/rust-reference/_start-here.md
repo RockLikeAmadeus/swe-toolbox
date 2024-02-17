@@ -55,6 +55,7 @@ io::stdin().read_line(&mut my_input)
 You can also reference external code without a `use` by utilizing the fully-qualified name, i.e. `std::io::stdin`
 
 More syntax:
+
 ```rust
 fn main() {
     let name = "world;"
@@ -75,6 +76,13 @@ fn data_structures() {
     // vector
     let mut v: Vec<i32> = vec![1, 2, 3];
     v.push(4);
+    // slice
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..3];
+    // string literals are slices (type &str)!
+    let s = String::from("hello world");
+    let hello: &str = &s[..5];
+    let world: &str = &s[6..11];
 }
 
 fn funcs_and_expressions(a: i32) -> i32 {
@@ -86,6 +94,10 @@ fn funcs_and_expressions(a: i32) -> i32 {
         x + 1 // no semicolon
     };
     5 // no semicolon, no return
+
+    // define functions as f(s: &str)
+    // not as f(s: &String
+    // the former works for all cases
 }
 
 fn control_flow(condition: bool) {
@@ -119,6 +131,7 @@ fn control_flow(condition: bool) {
 Every value has an owner and can have just one owner at a time. Once a value has been moved, the previous owner is invalidated.
 
 Moves of heap allocated values occur when:
+
 - You assign an existing value to another variable
 - You pass a value to a method or function
 - You return a value from a function
