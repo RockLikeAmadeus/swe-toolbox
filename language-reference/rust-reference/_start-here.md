@@ -22,6 +22,14 @@ Packages are bundles of one or more crates. Packages contain the `cargo.toml` fi
 
 [Modules Cheat Sheet](code-organization.md#modules-cheat-sheet)
 
+Include modules in your crates with
+
+```rs
+pub mod my_module;
+```
+
+Then define the module in a separate source file.
+
 ### Paths
 
 ### Workspaces

@@ -1,6 +1,6 @@
 # Modules Cheat Sheet
 
-Pulled directly from the Rust book:
+Pulled directly from the [Rust book](https://rust-book.cs.brown.edu/ch07-02-defining-modules-to-control-scope-and-privacy.html):
 
 - Start from the crate root: When compiling a crate, the compiler first looks in the crate root file (usually `src/lib.rs` for a library crate or `src/main.rs` for a binary crate) for code to compile.
 - Declaring modules: In the crate root file, you can declare new modules; say, you declare a “garden” module with `mod garden;`. The compiler will look for the module’s code in these places:
