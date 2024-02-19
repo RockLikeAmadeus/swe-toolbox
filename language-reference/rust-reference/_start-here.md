@@ -30,9 +30,13 @@ pub mod my_module;
 
 Then define the module in a separate source file.
 
-### Paths
+
 
 ### Workspaces
+
+### Access Modifiers
+
+Modules as well as the definitions contained within them are private by default. Expose them by prefixing with the `pub` keyword.
 
 # Documentation
 
