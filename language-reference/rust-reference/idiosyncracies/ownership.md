@@ -13,7 +13,7 @@ https://rust-book.cs.brown.edu/ch06-04-inventory.html
 - Once a value has been moved, the previous owner is invalidated.
 - Moves of heap allocated values occur when:
   - You assign an existing value to another variable
-  - You pass a value to a method or function
+  - You pass a value to a method or function (this includes calling methods with the first parameter of type `Self`)
   - You return a value from a function
 
 Ownership allows us to treat heap values like stack values--the memory taken up by stack variables is automatically freed when the variable goes out of scope. This is harder with heap variables in most languages because multiple references can exist, so the moment when a variable goes out of scope is not sufficient to say that value isn't used anymore. Rust solves this by only allowing one variable to "own" that value, and then treats it like a stack variable.
