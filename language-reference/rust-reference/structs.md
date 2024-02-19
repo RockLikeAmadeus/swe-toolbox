@@ -1,14 +1,15 @@
 ```rs
-fn structs() {
-    #[derive(Debug)] // derived trait
-    #[derive(Display)] // for end-user
-    struct User {
-        active: bool,
-        username: String, // using owned String rather than
-        email: String, // &str, to avoid need for lifetimes
-        sign_in_count: u64,
-    }
+#[derive(Debug)] // derived trait
+#[derive(Display)] // for end-user
+struct User {
+    active: bool,
+    username: String, // using owned String rather than
+    email: String, // &str, to avoid need for lifetimes
+    sign_in_count: u64,
+}
 
+fn structs() {
+    // Instantiate
     let mut user1 = User {
         email: String::from("someone@example.com"),
         username: String::from("someusername123"),
@@ -16,6 +17,7 @@ fn structs() {
         sign_in_count: 1,
     };
 
+    // Set properties
     user1.email = String::from("anotheremail@example.com");
 
     let user2 = User { // <-- move here, user1 invalid
@@ -50,12 +52,28 @@ fn main() {
 }
 ```
 
-# Methods
+# Methods and Associated Functions
 
 ```rs
 impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+
+    fn set_width(&mut self, width: u32) {
+        self.width = width;
+    }
+
+    // Associated function (like static, I think)
+    fn make_square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    } // call with Rectangle::make_square()
 }
 ```

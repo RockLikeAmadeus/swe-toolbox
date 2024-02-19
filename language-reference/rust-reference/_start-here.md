@@ -123,6 +123,22 @@ fn control_flow(condition: bool) {
     for number in (1..4).rev() { // reverse!
         println!("{number}!");
     }
+    // match
+   match coin { // match on a ref `&coin` to avoid moves
+        Coin::Penny => {
+            println!("Lucky penny!");
+            1
+        }
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter(state) => {
+            println!("State quarter from {:?}!", state);
+            25
+        }
+        _ => 0 // catch-all can be named and used, too
+        // can also do nothing with `()`
+    }
+}
 }
 ```
 
@@ -140,6 +156,14 @@ Moves of heap allocated values occur when:
     let s1 = String::from("hello");
     let s2 = s1; // <-- Move!!
     println!("{}, world!", s1); // <-- Compile error! s1 is invalid here!
+```
+
+# Option Type
+
+```rs
+let some_number = Some(5);
+let some_char = Some('e');
+let absent_number: Option<i32> = None;
 ```
 
 # Essential Tools

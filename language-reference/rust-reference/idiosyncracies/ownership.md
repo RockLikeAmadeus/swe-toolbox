@@ -2,6 +2,10 @@
 
 https://rust-book.cs.brown.edu/ch04-03-fixing-ownership-errors.html#safe-subset
 
+# Real-World Problems
+
+https://rust-book.cs.brown.edu/ch06-04-inventory.html
+
 # My own rules of ownership:
 
 - Each value in rust has an owner, and can only have one at a time
