@@ -1,12 +1,30 @@
 # Code Organization
 
+Packages contain crates, which contain modules.
+
 Use Cargo. Cargo will expect your code to be in the `src` directory.
 
-`cargo.toml` for dependencies, test and build instructions, etc (equiv to `package.json` for node)
+`cargo.toml` is for dependencies, test and build instructions, etc (equiv to `package.json` for node)
 
-Crates.
+### Crates
+
+Crates are the smallest unit of code that compilers considers at once. Crates can either be _library_ crates or _binary_ crates. Binary crates must have a `main()` function.
+
+All crates have a crate _root_ file. By convention, Cargo considers `src/main.rs` the crate root of a binary crate with the same name as the package. The same applies for library crates, with the crate root considered to be `src/lib.rs`.
 
 Crates can be published on `crates.io`
+
+### Packages
+
+Packages are bundles of one or more crates. Packages contain the `cargo.toml` file, and are what get created by `$ cargo new`. A package can contain any number of binary crates, but only one library crate. If a package contains multiple binary crates, they should each be a separate file in `src/bin/`
+
+### Modules
+
+[Modules Cheat Sheet](code-organization.md#modules-cheat-sheet)
+
+### Paths
+
+### Workspaces
 
 # Documentation
 
