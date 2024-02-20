@@ -30,8 +30,6 @@ pub mod my_module;
 
 Then define the module in a separate source file.
 
-
-
 ### Workspaces
 
 ### Access Modifiers
@@ -78,11 +76,17 @@ Bring in external code like:
 
 ```rs
 use std::io;
+use std::fmt::Result;
+use std::io::Result as IoResult;
+use std::{cmp::Ordering, io}; // nested path
+use std::io::{self, Write}; // nested path
+use std::collections::*; // glob
+pub use crate::front_of_house::hosting; // re-export
 ...
 io::stdin().read_line(&mut my_input)
 ```
 
-You can also reference external code without a `use` by utilizing the fully-qualified name, i.e. `std::io::stdin`
+You can also reference external code without a `use` by utilizing the fully-qualified name, i.e. `std::io::stdin`. When using the `use` keyword, it is idiomatic to bring in a function's parent module but _not_ the function itself, so a namespaced path with `::` is necessary to call the function, making it clear that the function is defined externally. The same is _not_ true for structs and enums, however.
 
 More syntax:
 
