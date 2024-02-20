@@ -102,19 +102,48 @@ fn data_structures() {
     let tup = (500, 6.4, 1);
     let (x, y, z) = tup;
     let one = z.2
-    // stack-allocated fixed-size array
+
+    // array (stack-allocated fixed-size)
     // type specifier optional
     let half_dozen: [i32; 5] = [1, 2, 3, 4, 5, 6];
     // write `[3, 3, 3, 3, 3]` as:
     let a = [3; 5];
-    // vector
-    let mut v: Vec<i32> = vec![1, 2, 3];
-    v.push(4);
+
     // slice
     let a = [1, 2, 3, 4, 5];
     let slice = &a[1..3];
-    // string literals are slices (type &str)!
+
+    // vector
+    let mut v: Vec<i32> = Vec::new();
+    let mut w = vec![1, 2, 3];
+    w.push(4);
+    let does_not_exist = &v[100]; // panics
+    let does_not_exist = v.get(100); // returns option
+    for n_ref in &v {
+        // n_ref has type &i32
+        let n_plus_one: i32 = *n_ref + 1;
+        println!("{n_plus_one}");
+    }
+    for n_ref in &mut v {
+        // n_ref has type &mut i32
+        *n_ref += 50;
+    }
+
+    // string and string literals
+    let mut s = String::new() // strings are special vectors
+    let s = "initial contents".to_string();
     let s = String::from("hello world");
+    s.push_str("bar");
+    s.push('l');
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("world!");
+    let s3 = s1 + &s2; // actually standard, s1 moved here
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+    // this doesn't take ownership:
+    let s = format!("{s1}-{s2}-{s3}");
+    // string literals are slices (type &str)!
     let hello: &str = &s[..5];
     let world: &str = &s[6..11];
 }

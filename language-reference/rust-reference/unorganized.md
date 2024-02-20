@@ -6,4 +6,4 @@
 - Creating a new project
   projects can be created by just creating a directory for your project and adding a `main.rs` file and manually doing a `git init`. Cargo is not necessary for running code either - it can be done with `rustc main.rs` and then just run the resulting executable
 
-come back to: https://rust-book.cs.brown.edu/ch08-00-common-collections.html
+come back to: https://rust-book.cs.brown.edu/ch08-03-hash-maps.html
