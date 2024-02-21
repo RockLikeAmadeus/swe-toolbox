@@ -26,3 +26,11 @@ fn main() {
 }
 
 ```
+
+### Propagating the Value of Option to Calling Code
+
+```rs
+fn last_char_of_first_line(text: &str) -> Option<char> {
+    text.lines().next()?.chars().last()
+}
+```

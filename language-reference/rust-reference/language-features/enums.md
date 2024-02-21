@@ -12,6 +12,8 @@ fn main() {
 
 # Embedding Values and Adding Methods
 
+When designing Rust code, I think it's important to think of enums more broadly than you would in other languages. There are lots of cases that would call for a struct or class in another language that would be best handled by an enum in Rust, given these additional capabilities (as real-world examples of such cases come up, note them here and potentially blog about this point):
+
 ```rs
 enum IpAddr {
     // Any type can be embedded, even structs and enums

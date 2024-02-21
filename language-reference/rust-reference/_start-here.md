@@ -97,6 +97,12 @@ fn main() {
     println!("Hello, {name}!"); // also valid
 }
 
+// main can return a Result as well:
+fn main() -> Result<(), Box<dyn Error>> {
+    let greeting_file = File::open("hello.txt")?;
+    Ok(())
+}
+
 fn data_structures() {
     // tuple
     let tup = (500, 6.4, 1);

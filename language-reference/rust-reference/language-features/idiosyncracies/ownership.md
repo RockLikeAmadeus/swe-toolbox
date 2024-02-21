@@ -4,6 +4,10 @@ https://rust-book.cs.brown.edu/ch04-03-fixing-ownership-errors.html#safe-subset
 
 # Real-World Problems
 
+# Tips
+
+- Whenever you create a variable in Rust, think about whether that value will change in the future, and whether it will be allocated on the stack or on the heap. This way, you can think ahead about the way that variable will be used while keeping ownership rules in mind.
+
 https://rust-book.cs.brown.edu/ch06-04-inventory.html
 
 # My own rules of ownership:
