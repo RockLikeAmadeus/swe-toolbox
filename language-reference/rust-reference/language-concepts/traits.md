@@ -61,8 +61,7 @@ impl Summary for Tweet {
 ```
 
 from the Rust book
-
->>> it isn’t possible to call the default implementation from an overriding implementation of that same method
+> it isn’t possible to call the default implementation from an overriding implementation of that same method
 
 # Accepting Polymorphic Arguments
 

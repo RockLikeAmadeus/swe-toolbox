@@ -62,7 +62,20 @@ We can't modify something we're borrowing without a _mutable reference_. The maj
 
 **A reference's scope is different than the scope of other types**, and this is really important, although confusing. A reference's scope starts from where it is introduced and continues through _the last time that reference is used._ For example:
 
-```rust
+```rs
+fn main() {
+    let x = 5;            // ----------+-- 'b
+                          //           |
+    let r = &x;           // --+-- 'a  |
+                          //   |       |
+    println!("r: {}", r); //   |       |
+                          // --+       |
+}
+```
+
+and
+
+```rs
 let mut s = String::from("hello");
 
 let r1 = &s; // no problem
@@ -74,7 +87,7 @@ let r3 = &mut s; // no problem
 println!("{}", r3);
 ```
 
-Understanding this behavior is critical; not understanding it is guaranteed to lead to confusion!
+Understanding this behavior is critical; not understanding it is **guaranteed** to lead to confusion!
 
 # Pointers and De-referencing Syntax
 
