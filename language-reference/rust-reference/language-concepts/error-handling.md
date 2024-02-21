@@ -72,7 +72,11 @@ fn read_username_from_file_v3() -> Result<String, io::Error> {
 
 # Unrecoverable Errors
 
-Unrecoverable errors are always a symptom of a bug. Panics occur either by performing an action that causes Rust to panic, or explicitly calling the `panic!` macro. Panic is sometimes used in production code, but is most appropriate in tests, prototypes, or example code.
+Unrecoverable errors are always a symptom of a bug. Panics occur either by performing an action that causes Rust to panic, or explicitly calling the `panic!` macro. Panicking is sometimes the correct approach in production code, but is most appropriate in tests, prototypes, or example code (this applies to `unwrap()` and `expect()` as well).
+
+When converting prototype code into production code, do a global search for `unwrap()`, `expect()`, and `panic!`, and add in more robust error handling in those sections.
+
+See [To Panic or Not to Panic?](https://rust-book.cs.brown.edu/ch09-03-to-panic-or-not-to-panic.html)
 
 ```rs
 fn main() {
@@ -112,4 +116,27 @@ stack backtrace:
    7: core::ops::function::FnOnce::call_once
              at /rustc/e092d0b6b43f2de967af0887873151bb1c0b18d3/library/core/src/ops/function.rs:248:5
 note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+```
+
+###  Custom Types for Validation
+
+```rs
+pub struct Guess {
+    value: i32,
+}
+
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("Guess value must be between 1 and 100, got {}.", value);
+        }
+
+        Guess { value }
+    }
+
+    pub fn value(&self) -> i32 {
+        self.value
+    }
+}
+
 ```
