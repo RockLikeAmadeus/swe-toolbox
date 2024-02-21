@@ -89,3 +89,13 @@ fn main() {
 # Performance Considerations
 
 There is no runtime cost for using generics.
+
+# Applying Trait Bounds
+
+```rs
+pub fn notify<T: Summary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
+}
+```
+
+See also [traits](./traits.md).
