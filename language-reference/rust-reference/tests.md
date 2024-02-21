@@ -4,6 +4,8 @@ Library projects created using Cargo have default scaffolding provided for autom
 
 Tests fail when something in the test function panics.
 
+### Syntax
+
 ```rs
 #[cfg(test)]
 mod tests {
@@ -19,7 +21,7 @@ mod tests {
 }
 ```
 
-#### Assertions
+##### Assertions
 
 ```rs
 assert!
@@ -29,7 +31,7 @@ assert_eq! // equal
 assert_ne! // not equal
 ```
 
-### Custom Failure Messages
+##### Custom Failure Messages
 
 ```rs
 #[test]
@@ -43,7 +45,7 @@ fn greeting_contains_name() {
 }
 ```
 
-### Testing Handling of Error Conditions
+##### Testing Handling of Error Conditions
 
 ```rs
 pub struct Guess {
@@ -82,7 +84,7 @@ mod tests {
 }
 ```
 
-### Using Result in Tests
+##### Using Result in Tests
 
 ```rs
 #[cfg(test)]
@@ -97,5 +99,7 @@ mod tests {
     }
 }
 ```
+
+### Test Organization
 
 # Running Tests
