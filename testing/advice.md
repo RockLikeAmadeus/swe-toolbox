@@ -11,3 +11,17 @@
 > Also, some teams have opted not to use term 'tests' but switch to 'spec'. 
 
 - [Source](https://www.reddit.com/r/rust/comments/zzqc9a/test_features_not_code_in_rust/)
+
+# The Two-Axis Mental Model for Thinking About Tests
+
+> - Don’t think about tests in terms of opposition between unit and integration, whatever that means. Instead,
+> - Think in terms of test’s purity and extent.
+> - Purity corresponds to the amount of generalized IO the test is doing and is correlated with desirable metrics, namely performance and resilience.
+> - Extent corresponds to the amount of code the test exercises. Extent somewhat correlates with impurity, but generally does not directly affect performance.
+
+> And, the prescriptive part:
+
+> - Ruthlessly optimize purity, moving one step down on the ladder of impurity gives huge impact.
+>- Generally, just let the tests have their natural extent. Extent isn’t worth optimizing by itself, but it can tell you something about your application’s architecture.
+
+- [Source](https://matklad.github.io/2022/07/04/unit-and-integration-tests.html)
