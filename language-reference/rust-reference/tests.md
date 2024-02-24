@@ -103,3 +103,71 @@ mod tests {
 ### Test Organization
 
 # Running Tests
+
+Run tests in parallel with application output suppressed:
+
+```
+$ cargo test
+```
+
+> Some command line options go to cargo test, and some go to the resulting test binary. To separate these two types of arguments, you list the arguments that go to cargo test followed by the separator -- and then the ones that go to the test binary.
+
+```
+$ cargo test --help
+```
+
+```
+$ cargo test -- --help
+```
+
+Limit parallel test runs:
+
+```
+$ cargo test -- --test-threads=1
+```
+
+Prevent application output suppression
+
+```
+$ cargo test -- --show-output
+```
+
+Run a specific test:
+
+```
+$ cargo test my_test
+```
+
+Run all tests who's name contains a string:
+
+> Also note that the module in which a test appears becomes part of the test’s name, so we can run all the tests in a module by filtering on the module’s name.
+
+```
+$ cargo test part_of_test_name
+```
+
+Ignore specific tests:
+
+```rs
+#[test]
+#[ignore]
+fn expensive_test() {
+    // ...
+}
+```
+
+Run only ignored tests:
+
+```
+$ cargo test -- --ignored:
+```
+
+Run all tests including ignored tests:
+
+```
+$ cargo test -- --include-ignored
+```
+
+# Test Organization
+
+Come back to https://rust-book.cs.brown.edu/ch11-03-test-organization.html and decide if the idiomatic approach makes sense.
