@@ -77,3 +77,13 @@ impl Rectangle {
     } // call with Rectangle::make_square()
 }
 ```
+
+# Constructors
+
+There is no keyword for declaring constructors, but the method name `new` is idiomatic. However, many users expect a `new()` function to never fail, so if the return value of the constructor is instead of type `Result<T>`, we should use the name `build` instead.
+
+```rs
+fn build(args: &[String]) -> Result<Config, &'static str> {
+    ...
+}
+```

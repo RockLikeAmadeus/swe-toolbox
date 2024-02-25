@@ -44,6 +44,24 @@ let greeting_file = File::open("hello.txt") // production
         .expect("hello.txt should be included in this project");
 ```
 
+Returning `Result` type from functions
+
+```rs
+use std::process;
+
+// Error values will always be string literals with lifetime 'static
+fn build(args: &[String]) -> Result<Config, &'static str> { ... }
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    let config = Config::build(&args).unwrap_or_else(|err| {
+        println!("Problem parsing arguments: {err}");
+        process::exit(1);
+    });
+    ...
+}
+```
+
 Propagating Errors to Calling Code:
 
 ```rs
@@ -118,7 +136,7 @@ stack backtrace:
 note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
 ```
 
-###  Custom Types for Validation
+### Custom Types for Validation
 
 ```rs
 pub struct Guess {
