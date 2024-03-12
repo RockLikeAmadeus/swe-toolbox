@@ -1,5 +1,4 @@
-[Step-by-step Processes/How do I do X?](how-to)
-[Step-by-step Processes/How do I do X?](how-to/README.md)
+## [Step-by-step Processes/How do I do X?](how-to)
 
 # Code Organization
 
