@@ -1,4 +1,7 @@
 ## [Step-by-step Processes/How do I do X?](how-to)
+## Understand Rust
+- [How is Rust code organized](#code-organization)
+- [Essential Syntax and Style](#basic-syntax-and-style)
 
 # Code Organization
 
