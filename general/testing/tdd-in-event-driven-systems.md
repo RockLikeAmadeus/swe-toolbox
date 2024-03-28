@@ -3,14 +3,14 @@ An event is a message sent by an object. The object that raises the event is cal
 
 The pieces of the puzzle look like this:
 
-EventSender (i.e. Button)
-	event (the definition of the message, i.e. Click)
-	raise event method (OnEventName, i.e. OnClick)
+- EventSender (i.e. Button)
+	- event (the definition of the message, i.e. Click)
+	- raise event method (OnEventName, i.e. OnClick)
 	
-EventReceiver
-	explicit subscription (i.e. button.Click += HandleClick)
-	Handle[Event] (defines the *callback*, i.e. HandleClick)
-		Takes as arguments the sender (object) and the event args (EventArgs type or some derivation of it).
+- EventReceiver
+	- explicit subscription (i.e. button.Click += HandleClick)
+	- Handle[Event] (defines the *callback*, i.e. HandleClick)
+		- Takes as arguments the sender (object) and the event args (EventArgs type or some derivation of it).
 
 
 # Testing Event-Driven Systems
