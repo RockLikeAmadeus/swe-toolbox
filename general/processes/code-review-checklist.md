@@ -1,0 +1,52 @@
+- ## Use this checklist on your own code before opening a PR
+- ### Principles of Clean Code
+	- Does one thing well
+	- Should read like well-written prose
+	- Has strong attention to detail
+	- Is "pretty much what you'd expect"
+	- Clarity is kind
+- # Checklist
+	- ## General
+		- [ ] Document comments on methods should have parameter descriptions filled out for every added public method and property
+		- [ ] Unit tests exist for any interfaces that were developed
+		- [ ] Unit tests do not test the implementation details of the concrete types that implement new interfaces
+		- [ ] Code is as small as can be, is not unnecessarily bulky
+		- [ ] Code contains no _true_ diplication (and makes no attempt to avoid accidental duplication; that is, when there is similar code that has a reasonable possibility to diverge in the future)
+		- [ ] Placeholder task for doing a google search for code review tasks to fill in any blanks or add any other good ideas for things to look for
+	- ## Names (Variables, Functions, Arguments, Classes, Files, Directories)
+		- [ ] Names reveal intent (if a name requires a comment to understand, maybe it should have a more descriptive name)
+		- [ ] Names are descriptive about their significance (`List1` is not explicit)
+		- [ ] Names include units, if applicable
+		- [ ] Acronyms are used carefully without likelihood of generating confusion
+		- [ ] Names with broad scopes are long enough to be searchable (a variable called `e` is basically impossible to search for); the broader the scope, the longer the name
+		- [ ] Method names are verbs or verb phrases
+		- [ ] Property and variable names, as well as class and object names, are nouns or noun phrases
+			- [ ] Class names avoid "noise" words such as `Data`, `Info`, or `Details`
+		- [ ] The code does not force the reader to mentally map a meaningless variable name to the actual concept to which it refers
+		- [ ] Code has one word per abstract concept (i.e. doesn't use "fetch", "retrieve", and "get" simultaneously and inconsistently)
+	- ## Functions
+		- [ ] Functions should be small (extract into sub-functions where appropriate)
+			- How small? Single-digit lines if possible
+		- [ ] Function calls within blocks should add documentary value by having descriptive names
+		- [ ] Indent level for functions should be no more than one or two
+		- [ ] Switch statements are replaced with polymorphism (bury the switch statement in the basement of an abstract factory)
+		- [ ] Functions should have as few arguments as possible, using techniques such as
+			- Instance variables
+			- Wrapping multiple parameters that describe a related concept into a class isn't cheating
+		- [ ] Output arguments are avoided
+		- [ ] "Flag" parameters are avoided (functions with boolean flags do two things, by definition)
+		- [ ] Embed argument names into functions, when helpful
+		- [ ] Functions do not have side effects (they do only what the name of the function says they do)
+			- Functions should "do" something or "answer" something, but not both!
+		-
+		-
+	- ## Comments
+	- ## Formatting
+	- ## Objects/Data Structures
+	- ## Error Handling
+	- ## Boundaries
+	- ## Unit Tests
+	- ## Classes
+	- ## Systems
+	- ## Emergence
+	- ## Concurrency
