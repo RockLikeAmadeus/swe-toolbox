@@ -24,11 +24,11 @@ mod tests {
 ##### Assertions
 
 ```rs
-assert!
+assert!()
 // For custom types passed to these,
 // use `#[derive(PartialEq, Debug)]`
-assert_eq! // equal
-assert_ne! // not equal
+assert_eq!() // equal
+assert_ne!() // not equal
 ```
 
 ##### Custom Failure Messages
@@ -48,6 +48,19 @@ fn greeting_contains_name() {
 ##### Testing Handling of Error Conditions
 
 ```rs
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    // `expected` is optional, but usually wise.
+    // Verifies the panic message contains provided string
+    #[should_panic(expected = "less than or equal to 100")]
+    fn guess_constructor_panics_when_greater_than_100() {
+        Guess::new(200);
+    }
+}
+
 pub struct Guess {
     value: i32,
 }
@@ -67,19 +80,6 @@ impl Guess {
         }
 
         Guess { value }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    // `expected` is optional, but usually wise.
-    // Verifies the panic message contains provided string
-    #[should_panic(expected = "less than or equal to 100")]
-    fn greater_than_100() {
-        Guess::new(200);
     }
 }
 ```
