@@ -223,7 +223,7 @@ fn control_flow(condition: bool) {
         println!("{number}!");
     }
     // match
-   match coin { // match on a ref `&coin` to avoid moves
+    match coin { // match on a ref `&coin` to avoid moves
         Coin::Penny => {
             println!("Lucky penny!");
             1
