@@ -1,5 +1,7 @@
 ## [Step-by-step Processes/How do I do X?](how-to)
+
 ## Understand Rust
+
 - [How is Rust code organized?](#code-organization)
 - [Essential syntax and style](#basic-syntax-and-style)
 - [Ownership and borrowing](#ownership-essentials)
@@ -14,7 +16,7 @@ Use Cargo. Cargo will expect your code to be in the `src` directory.
 
 ### Crates
 
-Crates are the smallest unit of code that compilers considers at once. Crates can either be _library_ crates or _binary_ crates. Binary crates must have a `main()` function.
+Crates are the smallest unit of code that compilers considers at once. Crates can either be _library_ crates or _binary_ crates (think of them like C# projects, which can be either library/DLL projects or executable projects). Binary crates must have a `main()` function.
 
 All crates have a crate _root_ file. By convention, Cargo considers `src/main.rs` the crate root of a binary crate with the same name as the package. The same applies for library crates, with the crate root considered to be `src/lib.rs`.
 
@@ -22,13 +24,13 @@ Crates can be published on `crates.io`
 
 ### Packages
 
-Packages are bundles of one or more crates. Packages contain the `cargo.toml` file, and are what get created by `$ cargo new`. A package can contain any number of binary crates, but only one library crate. If a package contains multiple binary crates, they should each be a separate file in `src/bin/`
+Packages are bundles of one or more crates, and might best be thought of like C# solutions (I think). Packages contain the `cargo.toml` file, and are what get created by `$ cargo new`. A package can contain any number of binary crates, but only one library crate. If a package contains multiple binary crates, they should each be a separate file in `src/bin/`
 
 ### Modules
 
 [Modules Cheat Sheet](language-concepts/code-organization.md#modules-cheat-sheet)
 
-Include modules in your crates with
+Modules are sort of like C# namespaces (I think). Include modules in your crates with
 
 ```rs
 pub mod my_module;
@@ -44,9 +46,7 @@ Modules as well as the definitions contained within them are private by default.
 
 ### [More](./language-concepts/code-organization.md)
 
-**For more about code organization, go [here](./language-concepts/code-organization.md).**  
-  
-
+**For more about code organization, go [here](./language-concepts/code-organization.md).**
 
 # Documentation
 
