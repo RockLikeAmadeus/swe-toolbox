@@ -1,3 +1,9 @@
+## [Step-by-step Processes/How do I do X?](how-to)
+## Understand Rust
+- [How is Rust code organized?](#code-organization)
+- [Essential syntax and style](#basic-syntax-and-style)
+- [Ownership and borrowing](#ownership-essentials)
+
 # Code Organization
 
 Packages contain crates, which contain modules.
@@ -20,7 +26,7 @@ Packages are bundles of one or more crates. Packages contain the `cargo.toml` fi
 
 ### Modules
 
-[Modules Cheat Sheet](code-organization.md#modules-cheat-sheet)
+[Modules Cheat Sheet](language-concepts/code-organization.md#modules-cheat-sheet)
 
 Include modules in your crates with
 
@@ -35,6 +41,12 @@ Then define the module in a separate source file.
 ### Access Modifiers
 
 Modules as well as the definitions contained within them are private by default. Expose them by prefixing with the `pub` keyword.
+
+### [More](./language-concepts/code-organization.md)
+
+**For more about code organization, go [here](./language-concepts/code-organization.md).**  
+  
+
 
 # Documentation
 
@@ -211,7 +223,7 @@ fn control_flow(condition: bool) {
         println!("{number}!");
     }
     // match
-   match coin { // match on a ref `&coin` to avoid moves
+    match coin { // match on a ref `&coin` to avoid moves
         Coin::Penny => {
             println!("Lucky penny!");
             1
@@ -244,6 +256,10 @@ Moves of heap allocated values occur when:
     let s2 = s1; // <-- Move!!
     println!("{}, world!", s1); // <-- Compile error! s1 is invalid here!
 ```
+
+### [More](language-concepts/idiosyncracies/ownership.md)
+
+**For more about ownership and borrowing, go [here](language-concepts/idiosyncracies/ownership.md).**
 
 # Option Type
 
