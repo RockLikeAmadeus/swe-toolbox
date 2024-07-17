@@ -44,6 +44,15 @@ let greeting_file = File::open("hello.txt") // production
         .expect("hello.txt should be included in this project");
 ```
 
+also
+
+```rs
+if let Err(e) = ... {
+    println!("Application error: {e}");
+    process::exit(1);
+}
+```
+
 Returning `Result` type from functions
 
 ```rs
