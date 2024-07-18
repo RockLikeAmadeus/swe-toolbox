@@ -1,3 +1,9 @@
+# Printing Error Messages
+
+Don't use the `println!` macro, which prints to standard output, for error messages.
+
+Instead, use `eprintln!`, which prints to standard error.
+
 # Recoverable Errors
 
 ```rs
