@@ -1,6 +1,12 @@
 # Writing Tests
 
-Library projects created using Cargo have default scaffolding provided for automated tests.
+Rust tests are just functions annotated with the `test` attribute (e.g. `#[test]`. Library projects created using Cargo have default scaffolding provided for automated tests.
+
+The body of a test function typically does these three things:
+
+1. Set up any data or state that the test needs to run.
+2. Run the code that we want to test.
+3. Assert that the results are what we expect.
 
 Tests fail when something in the test function panics.
 
