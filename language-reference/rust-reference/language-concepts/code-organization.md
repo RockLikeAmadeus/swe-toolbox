@@ -2,6 +2,25 @@
 
 A common pattern is for a package to contain a single binary crate and along with a single library crate. This pattern is typically incarnated with the behavior being exposed by the library, and the binary being a default client for that library. The binary crate will have just enough code to interface with the user and with the library behind it. See the "Best Practices" note on [this](https://rust-book.cs.brown.edu/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html) page.
 
+### Separating your logic out of the binary and into a library
+
+**From the Rust Book**
+
+> The organizational problem of allocating responsibility for multiple tasks to the main function is common to many binary projects. As a result, the Rust community has developed guidelines for splitting the separate concerns of a binary program when main starts getting large. This process has the following steps:
+
+> - Split your program into a main.rs and a lib.rs and move your program’s logic to lib.rs.
+> - As long as your command line parsing logic is small, it can remain in main.rs.
+> - When the command line parsing logic starts getting complicated, extract it from main.rs and move it to lib.rs.
+
+> The responsibilities that remain in the main function after this process should be limited to the following:
+
+> - Calling the command line parsing logic with the argument values
+> - Setting up any other configuration
+> - Calling a run function in lib.rs
+> - Handling the error if run returns an error
+
+> This pattern is about separating concerns: main.rs handles running the program, and lib.rs handles all the logic of the task at hand. Because you can’t test the main function directly, this structure lets you test all of your program’s logic by moving it into functions in lib.rs. The code that remains in main.rs will be small enough to verify its correctness by reading it.
+
 # Modules Cheat Sheet
 
 Pulled directly from the [Rust book](https://rust-book.cs.brown.edu/ch07-02-defining-modules-to-control-scope-and-privacy.html):
@@ -51,19 +70,4 @@ pub fn eat_at_restaurant() {
 
 https://rust-book.cs.brown.edu/ch07-05-separating-modules-into-different-files.html
 
-# From the Rust Book
 
-> The organizational problem of allocating responsibility for multiple tasks to the main function is common to many binary projects. As a result, the Rust community has developed guidelines for splitting the separate concerns of a binary program when main starts getting large. This process has the following steps:
-
-> - Split your program into a main.rs and a lib.rs and move your program’s logic to lib.rs.
-> - As long as your command line parsing logic is small, it can remain in main.rs.
-> - When the command line parsing logic starts getting complicated, extract it from main.rs and move it to lib.rs.
-
-> The responsibilities that remain in the main function after this process should be limited to the following:
-
-> - Calling the command line parsing logic with the argument values
-> - Setting up any other configuration
-> - Calling a run function in lib.rs
-> - Handling the error if run returns an error
-
-> This pattern is about separating concerns: main.rs handles running the program, and lib.rs handles all the logic of the task at hand. Because you can’t test the main function directly, this structure lets you test all of your program’s logic by moving it into functions in lib.rs. The code that remains in main.rs will be small enough to verify its correctness by reading it.
