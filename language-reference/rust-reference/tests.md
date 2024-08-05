@@ -33,13 +33,29 @@ fn runs_without_errors() {
 }
 ```
 
-You should also test that your command line programs return 0, indicating a successful run, which `assert().success()` takes care of. Test for expected failures with
+You should also test that your command line programs return 0, indicating a successful run, which `assert().success()` takes care of. Making sure your program returns a response code helps to make it composable with other CLI programs. Test for expected failures with
 
 ```rs
 #[test]
 fn return_error_code() {
     let mut cmd = Command::cargo_bin("my_program").unwrap();
     cmd.assert().failure();
+}
+```
+
+### Verifying the output of a command line program
+
+```rs
+use assert_cmd::Command;
+use pretty_assertions::assert_eq;
+
+#[test]
+fn produces_expected_output() {
+    let mut cmd = Command::cargo_bin("my_program").unwrap();
+    let output = cmd.output().expect("Something went wrong");
+    assert!(output.status.success());
+    let stdout = String::from_utf8(out.stdout).expect("invalid UTF-8");
+    assert_eq!(stdout, "Hello, world!\n");
 }
 ```
 

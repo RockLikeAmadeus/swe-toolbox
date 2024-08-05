@@ -10,3 +10,7 @@ fn main() {
     dbg!(args);
 }
 ```
+
+---
+
+Making sure your program returns a response code helps to make it composable with other CLI programs. Response codes should be integer values from 0 to 255 for POSIX compatible interfaces, with 0 indicating success.
