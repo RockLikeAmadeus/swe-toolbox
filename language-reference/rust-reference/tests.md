@@ -1,3 +1,48 @@
+# Tools
+
+Add the `pretty_assertions` crate for more friendly test output.
+
+# Integration Tests
+
+The convention in Rust is to create a `tests` directory at the same level as your `src` directory.
+
+## Testing command line binaries
+
+For a command line program, you can test the actual execution of your code by directly executing the binary, like this:
+
+```rs
+use std::process::Command;
+
+#[test]
+fn it_works() {
+    let mut cmd = Command::new("my_program");
+    let res = cmd.output();
+    assert!(res.is_ok());
+}
+```
+
+This won't work on its own, since `my_program` doesn't exist in the same direrctory as this test. Add the crate `assert_cmd` to the project and change the test code to:
+
+```rs
+use assert_cmd::Command;
+
+#[test]
+fn runs_without_errors() {
+    let mut cmd = Command::cargo_bin("my_program").unwrap();
+    cmd.assert().success();
+}
+```
+
+You should also test that your command line programs return 0, indicating a successful run, which `assert().success()` takes care of. Test for expected failures with
+
+```rs
+#[test]
+fn return_error_code() {
+    let mut cmd = Command::cargo_bin("my_program").unwrap();
+    cmd.assert().failure();
+}
+```
+
 # Writing Tests
 
 Rust tests are just functions annotated with the `test` attribute (e.g. `#[test]`. Library projects created using Cargo have default scaffolding provided for automated tests.
