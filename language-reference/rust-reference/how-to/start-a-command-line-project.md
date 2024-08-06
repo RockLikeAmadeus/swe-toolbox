@@ -54,6 +54,36 @@ fn main() {
 
 There are macros and factories provided to help with this instantiation as well.
 
+#### Adding Arguments
+
+```rs
+use clap::{Arg, ArgAction, Command};
+
+fn main() {
+    let matches = Command::new("simple-echo")
+        .version("0.1.0")
+        .author("Alec Hampton")
+        .about("Simplified implementation of the `echo` command")
+        .arg(
+            Arg::new("test")
+                .value_name("TEXT")
+                .help("Input text")
+                .required(true)
+                .num_args(1..)
+        )
+        .arg(
+            Arg::new("omit_newline")
+                .short('n')
+                .action(ArgAction::SetTrue)
+                .help("Specify this argument to avoid ending the output with a new line character")
+        )
+        .get_matches();
+    println!("{:#?}", matches);
+}
+
+```
+
+
 # Response Codes
 
 Making sure your program returns a response code helps to make it composable with other CLI programs. Response codes should be integer values from 0 to 255 for POSIX compatible interfaces, with 0 indicating success.
