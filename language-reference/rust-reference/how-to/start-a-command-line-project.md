@@ -38,7 +38,21 @@ To do...
 
 ### Builder API
 
-To do
+The **clap** crate defines a `Command` struct (see [docs](https://docs.rs/clap/latest/clap/struct.Command.html)), and instantiating an instance of `Command` represents defining your actual CLI. With that in mind, the simplest way to define your CLI using `clap` would look like this:
+
+```rs
+use clap::Command;
+
+fn main() {
+    let _matches = Command::new("simple-echo")
+        .version("0.1.0")
+        .author("Alec Hampton")
+        .about("Simplified implementation of the `echo` command")
+        .get_matches();
+}
+```
+
+There are macros and factories provided to help with this instantiation as well.
 
 # Response Codes
 
