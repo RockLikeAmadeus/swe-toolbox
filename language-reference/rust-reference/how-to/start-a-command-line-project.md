@@ -13,11 +13,32 @@ fn main() {
 }
 ```
 
-### With clap
+## With clap
 
 ```bash
 $ cargo add clap
 ```
+
+Clap provides two distinct APIs for handling command line arguments in your application: the _derive_ API and the _builder_ API. According to [this]([source](https://medium.com/@itsuki.enjoy/rust-take-your-cli-to-the-next-level-with-clap-a0f05875ef45)) source, the differences are
+
+> Derive API:
+>    - Easier to read, write, and modify
+>    - Easier to keep the argument declaration and reading of argument in sync
+>    - Easier to reuse
+> 
+> Builder API
+>    - Faster compile times if you aren’t already using other procedural macros
+>    - More flexibility, e.g. you can look up an arguments values, their ordering with other arguments, and what set them. The Derive API can only report values and not indices of or other data.
+> 
+> It’s also worth mentioning that the two methods can be mixed together.
+
+### Derive API
+
+To do...
+
+### Builder API
+
+To do
 
 # Response Codes
 
