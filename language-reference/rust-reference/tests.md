@@ -2,6 +2,8 @@
 
 Add the `pretty_assertions` crate for more friendly test output.
 
+Also consider [nextest](https://nexte.st/) for a better testing experience.
+
 # Integration Tests
 
 The convention in Rust is to create a `tests` directory at the same level as your `src` directory.
