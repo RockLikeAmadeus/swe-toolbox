@@ -2,7 +2,7 @@
 
 ## Organzing Go Code
 
-Go **Modules** are composed of **Packages** (run `go help modules`). Go **Packages** are just directories of `.go` files that start with the `package` statement (run `go help packages`).
+Go **Modules** are composed of **Packages** (run `go help modules`). Go **Packages** are just directories of `.go` files that start with the `package` statement (run `go help packages`).    
 
 To create a new Go module (project), navigate to the directory that you want to be the project root, and run `$ go mod init github.com/RockLikeAmadeus/my-project`. For more info, run `go help mod init`. For advice on structuring your new project, check out [this article](https://dave.cheney.net/2014/12/01/five-suggestions-for-setting-up-a-go-project).
 
@@ -18,7 +18,7 @@ For basic syntax, go [here](https://learnxinyminutes.com/docs/go/).
 
 Go is like most programming languages, but these are the main things to be aware of that make it a little different:
 
-- There are no private and public keywords in Go. To make a field (or a `struct` itself) public, you just need to capitalize the first letter of its name. For example, Laptop instead of laptop and Cpu instead of cpu.
+- There are no private and public keywords in Go. To make a field (or a `struct` itself) public, you just need to capitalize the first letter of its name. For example, Laptop instead of laptop and Cpu instead of cpu. Data visibility in Go is scoped to the package, meaning private fields, methods, or types are still accessible to other package members.
 
 - You can define _named return values_, which create a new variable in your function initialized with its zero value. This will provide some automatic documentation functionality, but it should generally be used only when the meaning of the output isn't clear from the context. It looks like this:
 ```go
@@ -50,6 +50,10 @@ func outerFunc() {
 ```
 
 - Interfaces are implicitly implemented by structs. There is no `implements` keyword, or anything similar.
+
+- When you call a function or method, the arguments are always copied. Passing by reference requires explicit handling of pointers. Struct pointers are automatically de-referenced so if the type is `*Account` (a pointer to an account), you can access it like `myAccount.Balance()`, which is really a shortcut for `(*myAccount).Balance()`.
+
+- Go lets you create simple new types as wrappers of other types, as in `type Money int`. You can create instances of this wrapper type with the syntax `Money(225)`. The type is still represented as an integer, but you can declare methods on these types, which makes this feature surprisingly useful. For instance, you can implement the `Stringer` interface from `fmt` to define how your type is printed when used with the `%s` format string.
 
 ## Collections
 
@@ -109,6 +113,8 @@ func (r Rectangle) Area() float64 {
 	return r.Width * r.Height
 }
 ```
+
+Often (most of the time?) you'll want to specify pointer receivers (`func (r *Rectangle)`), particularly if your methods will change the underlying value of the object. If you use a pointer receiver for any of your methods, be sure and update all of your methods to take a pointer receiver, for consistency.
 
 ## Interfaces
 
