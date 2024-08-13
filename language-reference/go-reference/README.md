@@ -49,6 +49,8 @@ func outerFunc() {
 }
 ```
 
+- Interfaces are implicitly implemented by structs. There is no `implements` keyword, or anything similar.
+
 ## Collections
 
 The foundational collections are arrays, slices, and maps. Iterate over arrays and slices with `range`
@@ -95,7 +97,26 @@ Slices can be sliced like `slice[low:high]`, where either `low` or `high` can be
 
 ## Structs
 
-TODO
+```go
+type Rectangle struct {
+	Width  float64
+	Height float64
+}
+
+// A method is a function with a receiver
+func (r Rectangle) Area() float64 {
+	// By convention, name the receiver variable the first letter of the type
+	return r.Width * r.Height
+}
+```
+
+## Interfaces
+
+```go
+type Shape interface {
+	Area() float64
+}
+```
 
 # Writing tests
 
@@ -143,9 +164,47 @@ func assertCorrectMessage(t testing.TB, got, want string) {
 
 ```
 
-## Testable Examples
+### Testable Examples
 
 For now, see [here](https://go.dev/blog/examples).
+
+### Table Driven Tests
+
+If you want to test identical behavior with a large number of different inputs, you can make your test logic more compact and easier to extend with table-driven tests. In this example, we start by initializing a slice of struct instances, where the type is defined inline using _anonymous struct_ syntax.
+
+```go
+func TestArea(t *testing.T) {
+
+	areaTests := []struct {
+		name    string
+		shape   Shape
+		hasArea float64
+	}{
+		{name: "Rectangle", shape: Rectangle{Width: 12, Height: 6}, hasArea: 72.0},
+		{name: "Circle", shape: Circle{Radius: 10}, hasArea: 314.1592653589793},
+		{name: "Triangle", shape: Triangle{Base: 12, Height: 6}, hasArea: 36.0},
+	}
+
+	for _, tt := range areaTests {
+		// using tt.name from the case to use it as the `t.Run` test name
+		t.Run(tt.name, func(t *testing.T) {
+			got := tt.shape.Area()
+			if got != tt.hasArea {
+				t.Errorf("%#v received %g expected %g", tt.shape, got, tt.hasArea)
+			}
+		})
+	}
+}
+```
+
+With the above syntax, the output of the test will be quite friendly, like this:
+
+```
+--- FAIL: TestArea (0.00s)
+    --- FAIL: TestArea/Rectangle (0.00s)
+        shapes_test.go:33: main.Rectangle{Width:12, Height:6} received 72.00 expected 72.10
+```
+
 
 ## Tools: 
 
