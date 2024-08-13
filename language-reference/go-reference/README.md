@@ -2,7 +2,7 @@
 
 Go **Modules** are composed of **Packages** (run `go help modules`). Go **Packages** are just directories of `.go` files that start with the `package` statement (run `go help packages`).
 
-To create a new Go module (project), navigate to the directory that you want to be the project root, and run `$ go mod init github.com/RockLikeAmadeus/my-project`. For more info, run `go help mod init`
+To create a new Go module (project), navigate to the directory that you want to be the project root, and run `$ go mod init github.com/RockLikeAmadeus/my-project`. For more info, run `go help mod init`. For advice on structuring your new project, check out [this article](https://dave.cheney.net/2014/12/01/five-suggestions-for-setting-up-a-go-project).
 
 The `main()` function in Go is the entry point of executable applications.
 
@@ -12,9 +12,9 @@ For basic syntax, go [here](https://learnxinyminutes.com/docs/go/).
 
 A few oddities to be aware of, though:
 
-- There are no private and public keywords in Go. To make a field (or a struct itself) public, you just need to capitalize the first letter of its name. For example, Laptop instead of laptop and Cpu instead of cpu.
+- There are no private and public keywords in Go. To make a field (or a `struct` itself) public, you just need to capitalize the first letter of its name. For example, Laptop instead of laptop and Cpu instead of cpu.
 
-- You can define _named return values_, which create a new variable in your function initialized with its zero value. This will provide some automatic documentation functionality, so do it when it makes sense.
+- You can define _named return values_, which create a new variable in your function initialized with its zero value. This will provide some automatic documentation functionality, but it should generally be used only when the meaning of the output isn't clear from the context.
 
 ```go
 func greetingPrefix(language string) (prefix string) {
@@ -29,6 +29,8 @@ func greetingPrefix(language string) (prefix string) {
 	return
 }
 ```
+
+- When you have more than one argument of the same type in a function rather than having (x int, y int) you can shorten it to (x, y int). This works for declaring variables (and I think structs) as well.
 
 # Different ways of instantiating structs
 
@@ -77,8 +79,12 @@ func assertCorrectMessage(t testing.TB, got, want string) {
 		t.Errorf("got %q want %q", got, want)
 	}
 }
-}
+
 ```
+
+## Testable Examples
+
+For now, see [here](https://go.dev/blog/examples).
 
 ---
 
