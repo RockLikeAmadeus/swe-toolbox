@@ -1,3 +1,18 @@
+# Contents
+
+- [Code Organization](#organzing-go-code)
+- [Syntax](#basic-syntax)
+- [Best Practices](#best-practices)
+- [Surprising Features](#surprising-features)
+- [Collections](#collections)
+    - [Arrays](#arrays)
+    - [Slices](#slices)
+- [Structs](#structs)
+- [Interfaces](#interfaces)
+- [Error Handling](#error-handling)
+
+TODO: Write a quick tool that I can run against a directory containing markdown files, that will recursively search for all markdown files and upate them with a useful table of contents at the top.
+
 # Haven't written Go code lately? Start here.
 
 ## Organzing Go Code
@@ -13,6 +28,10 @@ Try `$ go help mod`
 ## Basic Syntax
 
 For basic syntax, go [here](https://learnxinyminutes.com/docs/go/).
+
+## Best Practices
+
+[Effective Go](https://go.dev/doc/effective_go)
 
 ## Surprising Features
 
