@@ -18,6 +18,10 @@ For basic syntax, go [here](https://learnxinyminutes.com/docs/go/).
 
 Go is like most programming languages, but these are the main things to be aware of that make it a little different:
 
+- Variables can be declared at the package level, but the `:=` short initialization syntax is not valid at package level, so `var` must be used.
+
+- Functions and methods can return multiple values.
+
 - There are no private and public keywords in Go. To make a field (or a `struct` itself) public, you just need to capitalize the first letter of its name. For example, Laptop instead of laptop and Cpu instead of cpu. Data visibility in Go is scoped to the package, meaning private fields, methods, or types are still accessible to other package members.
 
 - You can define _named return values_, which create a new variable in your function initialized with its zero value. This will provide some automatic documentation functionality, but it should generally be used only when the meaning of the output isn't clear from the context. It looks like this:
@@ -51,7 +55,9 @@ func outerFunc() {
 
 - Interfaces are implicitly implemented by structs. There is no `implements` keyword, or anything similar.
 
-- When you call a function or method, the arguments are always copied. Passing by reference requires explicit handling of pointers. Struct pointers are automatically de-referenced so if the type is `*Account` (a pointer to an account), you can access it like `myAccount.Balance()`, which is really a shortcut for `(*myAccount).Balance()`.
+- When you call a function or method, the arguments are always copied. Passing by reference, or attempting to avoid copies of large data structures, requires explicit handling of pointers. Struct pointers are automatically de-referenced so if the type is `*Account` (a pointer to an account), you can access it like `myAccount.Balance()`, which is really a shortcut for `(*myAccount).Balance()`.
+
+- When a function returns a pointer, you need to make sure you manualy check for `nil`.
 
 - Go lets you create simple new types as wrappers of other types, as in `type Money int`. You can create instances of this wrapper type with the syntax `Money(225)`. The type is still represented as an integer, but you can declare methods on these types, which makes this feature surprisingly useful. For instance, you can implement the `Stringer` interface from `fmt` to define how your type is printed when used with the `%s` format string.
 
@@ -124,7 +130,39 @@ type Shape interface {
 }
 ```
 
-# Writing tests
+## Error Handling
+
+If it's possible for your function to fail, it is idiomatic to return an `err` for the caller to check and act on. The return type (or one of the return types) on your function should be the interface `error`, which you import from the `errors` package.
+
+```go
+func (w *Wallet) Withdraw(amount Bitcoin) error {
+
+	if amount > w.balance {
+		return errors.New("oh no")
+	}
+
+	w.balance -= amount
+	return nil
+}
+```
+
+Some unit tests will _expect_ an error. Errors can be converted to a string with `.Error()`. If we don't receive an error, we don't want to test properties of the error, so we call `t.Fatal()`.
+
+```go
+assertError := func(t testing.TB, got error, want string) {
+	t.Helper()
+
+	if got == nil {
+		t.Fatal("didn't get an error but wanted one")
+	}
+
+	if got.Error() != want {
+		t.Errorf("got %q, want %q", got, want)
+	}
+}
+```
+
+## Writing tests
 
 Go unit tests live in files alongside (at the same level of) the files that they test, and must have the same name as the file suffixed with `_test`. In their most basic form they look like this:
 
@@ -219,3 +257,5 @@ With the above syntax, the output of the test will be quite friendly, like this:
 [Wails](https://wails.io/) - like Tauri, but for Go.
 
 [Cobra](https://github.com/spf13/cobra) - for CLIs, widely used for tools written in Go.
+
+[errcheck](https://github.com/kisielk/errcheck) - automatically exercise your error checking coverage.
