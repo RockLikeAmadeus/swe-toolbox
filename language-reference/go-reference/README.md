@@ -242,6 +242,14 @@ func assertCorrectMessage(t testing.TB, got, want string) {
 
 ```
 
+Run all tests with 
+```bash
+$ go test
+$ go test ./... # recursive
+$ go test ./... # verbose
+$ go test -v ./... # recursive and verbose
+```
+
 ### Testable Examples
 
 For now, see [here](https://go.dev/blog/examples).
