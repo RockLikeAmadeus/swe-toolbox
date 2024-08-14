@@ -39,6 +39,8 @@ Go is like most programming languages, but these are the main things to be aware
 
 - Variables can be declared at the package level, but the `:=` short initialization syntax is not valid at package level, so `var` must be used.
 
+- Go does not allow unused variables. If a value is intentionally not used, give it the name `_`.
+
 - Functions and methods can return multiple values.
 
 - There are no private and public keywords in Go. To make a field (or a `struct` itself) public, you just need to capitalize the first letter of its name. For example, Laptop instead of laptop and Cpu instead of cpu. Data visibility in Go is scoped to the package, meaning private fields, methods, or types are still accessible to other package members.
@@ -79,6 +81,12 @@ func outerFunc() {
 - When a function returns a pointer, you need to make sure you manualy check for `nil`.
 
 - Go lets you create simple new types as wrappers of other types, as in `type Money int`. You can create instances of this wrapper type with the syntax `Money(225)`. The type is still represented as an integer, but you can declare methods on these types, which makes this feature surprisingly useful. For instance, you can implement the `Stringer` interface from `fmt` to define how your type is printed when used with the `%s` format string.
+
+- Casting syntax is backwards; the value, not the type, goes in parenthesis: `int64(*myIntWrapper)`
+
+## Key Style Notes
+
+- names should use `camelCase` or `PascalCase`, rather than `snake_case`
 
 ## Collections
 
@@ -132,7 +140,7 @@ type Rectangle struct {
 	Height float64
 }
 
-// A method is a function with a receiver
+// A method is a function with a receiver. A receiver is _not_ an argument.
 func (r Rectangle) Area() float64 {
 	// By convention, name the receiver variable the first letter of the type
 	return r.Width * r.Height
@@ -140,6 +148,13 @@ func (r Rectangle) Area() float64 {
 ```
 
 Often (most of the time?) you'll want to specify pointer receivers (`func (r *Rectangle)`), particularly if your methods will change the underlying value of the object. If you use a pointer receiver for any of your methods, be sure and update all of your methods to take a pointer receiver, for consistency.
+
+### Constructing Structs
+
+```go
+cash := new(Money) // zero value; the type of cash is *Money
+cashVal := *(new(Money)) // the type of cashVal here is Money. Is this bad style, though?
+```
 
 ## Interfaces
 
