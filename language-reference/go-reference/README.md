@@ -25,9 +25,17 @@ The `main()` function in Go is the entry point of executable applications.
 
 Try `$ go help mod`
 
+More info [here](./code-organization.md)
+
 ## Basic Syntax
 
 For basic syntax, go [here](https://learnxinyminutes.com/docs/go/).
+
+## Basic Commands
+
+```bash
+$ go mod tidy # Clean up your Go mod file
+```
 
 ## Best Practices
 
@@ -198,7 +206,11 @@ assertError := func(t testing.TB, got error, want string) {
 
 ## Writing tests
 
-Go unit tests live in files alongside (at the same level of) the files that they test, and must have the same name as the file suffixed with `_test`. In their most basic form they look like this:
+Go unit tests can be organized in two ways. The most basic Go unit tests live in files alongside (at the same level of) the files that they test, and must have the same name as the file suffixed with `_test`.
+
+The other, probably better way to organize tests is to have your tests in a `_test` package that imports the package under test, so that it can truly exercises only the public interface of the package.
+
+In their most basic form, tests look like this:
 
 ```go
 package main
