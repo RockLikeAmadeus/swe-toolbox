@@ -205,7 +205,6 @@ With the above syntax, the output of the test will be quite friendly, like this:
         shapes_test.go:33: main.Rectangle{Width:12, Height:6} received 72.00 expected 72.10
 ```
 
-
 ## Tools: 
 
 [Awesome Go](https://awesome-go.com/) - like blessed.rs, but for Go.
