@@ -1,3 +1,5 @@
+Sources: Fundamentals of Software Architecture; Richards & Ford
+
 # Architecture Characteristics
 
 **Important Note: Applications can support a large number of these architecture characterists, but _shouldn't_, as supporting a specific characteristic adds complexity to the design. The first part of defining a software architecture is deciding _which_ characteristics to support, and the aim should be to support the fewest possible, rather than the most.**
