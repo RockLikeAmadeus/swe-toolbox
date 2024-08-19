@@ -19,8 +19,8 @@ After prioritizing architecture characteristics, one of the first concerns is ho
 
 1. Identify your initial components
    - Base this on top-level partitioning, i.e.
-     - Technical partitioning, as in layered architectures like MVC, or
-     - Domain partitioning, like a conceptually decomposed structure for a microservices approach.
+     - **Technical partitioning**, as in layered architectures like MVC, or
+     - **Domain partitioning**, like a conceptually decomposed structure for a microservices approach.
    - Outside of top-level partitioning, just try and think of a reasonable structure.
    - Finally, map domain functionality to specific components, to see where specific behavior should reside.
    - The likelihood that this is your final component structure is quite low.
@@ -40,15 +40,15 @@ After prioritizing architecture characteristics, one of the first concerns is ho
    - Continue to iterate on component structuring throughout development; lower-level software design considerations will regularly inform component structure.
 6. Repeat (likely starting at step 3)
 
-### Component granularity
+## Component granularity
 
 Determining the right level of component granularity is a balancing act. Too fine-grained component design requires too much communication between components to achieve results. Too coarse-grained component design encourage high-internal coupling, which leads to difficulties in deployability and testability, as well as modularity-related negative side-effects.
 
-### Componet Design
+## Componet Design
 
 Lots of design techniques exist, all with various trade-offs.
 
-##### Discovering Components
+### Discovering Components
 
 Avoid the "Entity Trap" anti-pattern, which primarily involves a simplistic design with one-to-one mapping of components to domain concepts (at least, as I understood it; this section could use a re-read).
 
@@ -67,4 +67,46 @@ This decision isn't always so obvious as you might think, but can actually be an
 
 Think about whether the entire system will share the same desired architecture characteristics, or whether different sets of characteristics (quanta) can apply separately to different components of the system (i.e. does a particular role require more fault-tolerance than another, or less elasticity than another?). If the answer is the former--the system as a whole should support a shared set of architecture characteristics--the _monolith_ approach actually offers multiple advantages. Of course, in the latter case, favor a distributed architecture.
 
-# Architecte Styles
+# Architecture Styles
+
+Styles are concerned with the overarching structure of how the UI and backend source code are organized. This is as opposed to architecture _patterns_, which are lower-level design structures that help form specific solutions with an architecture style.
+
+The name of a style is primarily a shorthand for talking about a general topology and assumed and default architecture characteristics.
+
+## Fundamental Patterns
+
+### Big ball of mud
+
+The absence of any discernable architecture structure. Avoid.
+
+### Unitary architecture
+
+Typically only exist on embedded systems and other highly-constrained environments.
+
+### Client-Server
+
+These are largely historical, and out of date by today's standards:
+
+- Desktop plus database server
+- Browser plus web server
+- Three-tier architecture (front-end, application-tier, database-tier)
+
+## Monolith Styles
+
+### Layered Architecture Style
+
+### Pipeline Architecture Style
+
+### Microkernal Architecture Style
+
+## Distributed Styles
+
+### Service-Based Architecture Style
+
+### Event-Driven Architecture Style
+
+### Space-Based Architecture Style
+
+### Orchestration-Driven Service-Oriented Architecture
+
+### Microservices Architecture
