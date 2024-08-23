@@ -6,7 +6,7 @@ Sources: BDD in Action
 
 In a BDD workflow, features and their requirements are specified using concrete examples, partly because it is an effective way of communicating the intent of the system that leaves little room for ambiguity.
 
-Most/many BDD tools rely on a format called _Gherkin_, which is designed to be easy to understand for non-technical stakeholders, and easy to automate using tools like _Cucummber_ and _SpecFlow_, so that the specification serves as both the definition for automated tests _and_ human-readable requirements documentation.
+Most/many BDD tools rely on a format called _Gherkin_, which is designed to be easy to understand for non-technical stakeholders, and easy to automate using tools like _Cucummber_ and _SpecFlow_, so that the specification serves as both the definition for automated tests _and_ human-readable requirements documentation. _However, note that [David Farley](https://www.youtube.com/watch?v=YAZr3LsCzn0&ab_channel=ContinuousDelivery) prefers to use [his own custom DSL](/general/testing/accceptance-testing.md#dave-farleys-four-layer-acceptance-test-architecture) (domain-specific language) that he builds on top of his code, rather than Gherkin, so that's an option as well_.
 
 Using the Gherkin format, the requirements for a particular feature are grouped into a single text file called a _feature file_, containing a short description of the feature, followed by a number of formalized examples for how it works in practice. 
 
