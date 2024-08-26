@@ -91,7 +91,7 @@ These are largely historical, and out of date by today's standards:
 - Browser plus web server
 - Three-tier architecture (front-end, application-tier, database-tier)
 
-## Monolith Styles
+## Monolith (single deployment unit) Styles
 
 ### Layered Architecture Style
 
@@ -99,7 +99,23 @@ These are largely historical, and out of date by today's standards:
 
 ### Microkernal Architecture Style
 
-## Distributed Styles
+## Distributed (multiple deployment unit) Styles
+
+The 8 fallacies of distributed computing (which imply tradeoffs in the architecture characteristics of your resulting system that don't apply for monolithic systems):
+
+1. The network is reliable.
+2. Latency is zero.
+3. Bandwidth is infinite (GraphQL should help).
+4. The network is secure (this will ultimately impact performance as well).
+5. The physical network topology never changes.
+6. There is only one administrator.
+7. Transport cost ($) is zero.
+8. The network hardware is homogenous.
+
+Even more difficulties only present in distributed systems:
+- Distributed logging (logging consolidation tools can help, but don't solve all problems)
+- Distributed transactions (that is, data consistency and data integrity--think ACID; transactional sagas and BASE transactions can help)
+- Contract (interface) maintenance and versioning
 
 ### Service-Based Architecture Style
 
