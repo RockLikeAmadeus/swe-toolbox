@@ -1,15 +1,25 @@
 # Contents
 
-- [Code Organization](#organzing-go-code)
-- [Syntax](#basic-syntax)
-- [Best Practices](#best-practices)
-- [Surprising Features](#surprising-features)
-- [Collections](#collections)
-    - [Arrays](#arrays)
-    - [Slices](#slices)
-- [Structs](#structs)
-- [Interfaces](#interfaces)
-- [Error Handling](#error-handling)
+- [Contents](#contents)
+- [Haven't written Go code lately? Start here.](#havent-written-go-code-lately-start-here)
+	- [Organzing Go Code](#organzing-go-code)
+	- [Basic Syntax](#basic-syntax)
+	- [Basic Commands](#basic-commands)
+	- [Best Practices](#best-practices)
+	- [Surprising Features](#surprising-features)
+	- [Key Style Notes](#key-style-notes)
+	- [Collections](#collections)
+		- [Arrays](#arrays)
+		- [Slices](#slices)
+	- [Structs](#structs)
+		- [Constructing Structs](#constructing-structs)
+	- [Interfaces](#interfaces)
+	- [Error Handling](#error-handling)
+	- [Writing tests](#writing-tests)
+		- [Testable Examples](#testable-examples)
+		- [Table Driven Tests](#table-driven-tests)
+		- [Executing only short-running tests](#executing-only-short-running-tests)
+	- [Tools:](#tools)
 
 TODO: Write a quick tool that I can run against a directory containing markdown files, that will recursively search for all markdown files and upate them with a useful table of contents at the top.
 
@@ -301,6 +311,20 @@ With the above syntax, the output of the test will be quite friendly, like this:
 --- FAIL: TestArea (0.00s)
     --- FAIL: TestArea/Rectangle (0.00s)
         shapes_test.go:33: main.Rectangle{Width:12, Height:6} received 72.00 expected 72.10
+```
+
+### Executing only short-running tests
+
+```bash
+go test -short ./...
+```
+
+We can add the following to our _acceptance_ tests to see if the user wants to run our acceptance tests by inspecting the value of the flag
+
+```go
+if testing.Short() {
+	t.Skip()
+}
 ```
 
 ## Tools: 
