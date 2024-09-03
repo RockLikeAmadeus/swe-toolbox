@@ -10,3 +10,5 @@ https://api-docs.mailtrap.io/docs/mailtrap-api-docs/127a373cd0493-receive-events
 https://www.reddit.com/r/softwaretesting/comments/1d4z2yb/what_do_you_use_for_automating_email_testing/
 
 https://greenmail-mail-test.github.io/greenmail/ <-- with Docker?
+
+At the end of the day, ended up using a project called mailhog, which worked very well, and has a ready made Docker image

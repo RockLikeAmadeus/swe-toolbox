@@ -333,6 +333,10 @@ if testing.Short() {
 
 [Wails](https://wails.io/) - like Tauri, but for Go.
 
+[Bubble Tea](https://github.com/charmbracelet/bubbletea) - For TUIS; comes from [Charm](https://charm.sh/)
+
 [Cobra](https://github.com/spf13/cobra) - for CLIs, widely used for tools written in Go.
 
 [errcheck](https://github.com/kisielk/errcheck) - automatically exercise your error checking coverage.
+
+[Charm Log](https://github.com/charmbracelet/log) - logging, also from Charm
