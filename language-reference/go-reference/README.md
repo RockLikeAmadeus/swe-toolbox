@@ -20,6 +20,7 @@
 		- [Table Driven Tests](#table-driven-tests)
 		- [Executing only short-running tests](#executing-only-short-running-tests)
 	- [Tools:](#tools)
+		- [Utilities](#utilities)
 
 TODO: Write a quick tool that I can run against a directory containing markdown files, that will recursively search for all markdown files and upate them with a useful table of contents at the top.
 
@@ -340,3 +341,6 @@ if testing.Short() {
 [errcheck](https://github.com/kisielk/errcheck) - automatically exercise your error checking coverage.
 
 [Charm Log](https://github.com/charmbracelet/log) - logging, also from Charm
+
+### Utilities
+[Funk](https://github.com/thoas/go-funk) - map, filter, contains, etc.
