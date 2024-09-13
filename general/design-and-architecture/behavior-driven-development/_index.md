@@ -2,7 +2,11 @@ Sources: BDD in Action
 
 # Learning progress
 
-BDD in Action, Chapter 3
+BDD in Action, Chapter 3, search for
+
+Can each member of your team articulate the business objectives of your project?
+
+And continue notes in [here](./high-level-end-to-end-bdd-example.md)
 
 # Requirements Discovery and Specification
 

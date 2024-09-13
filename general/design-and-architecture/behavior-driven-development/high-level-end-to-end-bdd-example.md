@@ -19,4 +19,6 @@ This example describes the process of building an application for a public trans
 
 ### 1. Identify business objectives
 
-Identify the business problem we're solving. 
+Identify the business problem we're solving. In this case, at a high level, we want to build an application that makes it easier for commuters to plan their commutes. But we want to get more specific than that, so we'll state the project vision as such:
+
+"The application will help to reduce average travel time for regular commuters by 10% within a year, by allowing them to plan their journeys more effectively.”
