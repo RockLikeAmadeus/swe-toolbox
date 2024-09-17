@@ -4,7 +4,7 @@ Sources: BDD in Action
 
 BDD in Action, Chapter 3, search for
 
-Tracy and her team now have a list of features to deliver,
+Throughout the rest of this book, we’ll illustrate examples using several different BDD tools.
 
 And continue notes in [here](./high-level-end-to-end-bdd-example.md)
 

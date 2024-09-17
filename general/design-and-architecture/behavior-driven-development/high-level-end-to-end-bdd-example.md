@@ -112,3 +112,7 @@ Scenario: Display the next train going to the requested destination
 ```
 
 ## 4. Automate: From executable specifications to automated tests
+
+Depending on your tech stack, there are many specialized BDD tools that you can use to automate your acceptance criteria, such as Cucumber, SpecFlow, and Behave. These aren't absolutely necessary, but can make it easier to express automated tests in a structured form (given, when, then).
+
+There are also tools for other aspects of this process, such as the open source [Serenity BDD](https://serenity-bdd.info/), and [Selenium](https://www.selenium.dev/).
