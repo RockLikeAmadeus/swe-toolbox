@@ -4,9 +4,22 @@ Sources: BDD in Action
 
 BDD in Action, Chapter 3, search for
 
-Can each member of your team articulate the business objectives of your project?
+Tracy and her team now have a list of features to deliver,
 
 And continue notes in [here](./high-level-end-to-end-bdd-example.md)
+
+# High-Level Process
+
+The process essentially has a 6-step cycle:
+
+![alt text](BDD-activities.png)
+
+1. [Speculate](#speculate-identifying-business-values-and-features): Identify high-level business goals and key features for achieving them
+2. [Illustrate](): Get concrete about a specific feature using examples
+3. [Formulate](): Transform examples into executable specifications
+4. [Automate](): Transform executable specifications into automated acceptance tests
+5. [Demonstrate](): Show that the feature does what it is supposed to do
+6. [Validate](): Observe how the feature behaves in the real world
 
 # Requirements Discovery and Specification
 

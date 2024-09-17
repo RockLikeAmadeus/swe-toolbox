@@ -1,24 +1,71 @@
-[Source](https://livebook.manning.com/book/bdd-in-action-second-edition/chapter-3/)
+[Source: BDD in Action, Chapter 3](https://livebook.manning.com/book/bdd-in-action-second-edition/chapter-3/)
 
 # High-Level End-to-End BDD Example
 
-The process essentially has a 6-step cycle:
-
-![alt text](BDD-activities.png)
-
-1. [Speculate](#speculate-identifying-business-values-and-features): Identify high-level business goals and key features for achieving them
-2. [Illustrate](): Get concrete about a specific feature using examples
-3. [Formulate](): Transform examples into executable specifications
-4. [Automate](): Transform executable specifications into automated acceptance tests
-5. [Demonstrate](): Show that the feature does what it is supposed to do
-6. [Validate](): Observe how the feature behaves in the real world
-
 This example describes the process of building an application for a public transport department which provides train timetable data and rel-time updates about delays, track work, etc.
 
-## Speculate: Identifying business values and features
+It's broken down based on the steps specified [here](./_index.md#high-level-process).
+
+## 1. Speculate: Identifying business values and features
 
 ### 1. Identify business objectives
 
 Identify the business problem we're solving. In this case, at a high level, we want to build an application that makes it easier for commuters to plan their commutes. But we want to get more specific than that, so we'll state the project vision as such:
 
 "The application will help to reduce average travel time for regular commuters by 10% within a year, by allowing them to plan their journeys more effectively.”
+
+### 2. Discover capabilities and features
+
+Now, we focus on ideation for features that will directly support our stated business objectives. The technique of Impact Mapping can be a useful exercise to discover and prioritize high-level capabilities and features through the lens of four questions: why, who, how, and what.
+1. Why (are we doing this)?
+2. Who (is this for, are the key actors)?
+3. How (might their behavior change with our solution)?
+4. What (features might support this behavior change)?
+
+![alt text](./impact-mapping-example.png)
+
+### 3. Describe each feature
+
+The following format is common and helps ensure that each feature actively contributes to a business goal. It is especially appropriate for higher-level features:
+
+```
+In order to <achieve a business goal or deliver business value>
+As a <stakeholder>
+I want <to be able to do something>
+```
+
+For example:
+
+```
+In order to plan my trips more effectively
+As a commuter
+I want to know the optimal itinerary between two stations
+```
+
+Another valid format, perhaps more appropriate for the detailed user stories within a feature:
+
+
+```
+As a <stakeholder>
+I want <something>
+So that <I can achieve some business goal>
+```
+
+For example:
+
+```
+As a commuter
+I want to know the best way to travel between two stations
+So that I can get to my destination quickly
+```
+
+Or even:
+
+```
+As a commuter
+I want to be able to easily find the optimal route between two stations
+So that I can get to my destination quickly
+Whereas currently I need to look up the timetable in a paper booklet
+```
+
+## 2. Illustrate: Exploring features with examples
