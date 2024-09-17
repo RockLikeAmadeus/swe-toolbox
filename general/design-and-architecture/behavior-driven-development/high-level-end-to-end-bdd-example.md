@@ -69,3 +69,46 @@ Whereas currently I need to look up the timetable in a paper booklet
 ```
 
 ## 2. Illustrate: Exploring features with examples
+
+Thinking only about abstractions can lead to flawed assumptions and other problems. Here, we want to talk through concrete examples, using a technique such as [Example Mapping](internal-link-here).
+
+![alt text](./example-mapping-example.png)
+
+### Slice the feature into user stories
+
+_Direct Connections_
+
+As a commuter traveling between two stations on the same line
+
+I want to know what time the next trains for my destination will leave
+
+So that I can spend less time waiting at the station
+
+_Alternative Routes_
+
+As a commuter traveling between two stations on different lines
+
+I want to know what time the fastest train to my destination will leave
+
+So that I can spend less time waiting at the station or for connecting trains
+
+## 3. Formulate: From examples to executable specifications
+
+In BDD, the following notation is often used to express examples:
+
+```
+Given <a context>
+When <something happens>
+Then <you expect some outcome>
+```
+
+When expressed this way, these are called _scenarios_, and they are intentionally a bit less flexible in order to use these as the basis for automated tests later on. With concrete scenarios defined in this way, you'll be able to more easily notice logical errors, missing context, or situations that are more complex than first thought:
+
+```
+Scenario: Display the next train going to the requested destination
+  Given the T1 train to Chatswood leaves Hornsby at 8:02, 8:15, 8:21
+  When Travis wants to travel from Hornsby to Chatswood at 8:00        
+  Then he should be told about the trains at: 8:02, 8:15
+```
+
+## 4. Automate: From executable specifications to automated tests
