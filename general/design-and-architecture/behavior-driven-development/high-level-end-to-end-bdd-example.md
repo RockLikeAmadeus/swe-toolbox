@@ -116,3 +116,38 @@ Scenario: Display the next train going to the requested destination
 Depending on your tech stack, there are many specialized BDD tools that you can use to automate your acceptance criteria, such as Cucumber, SpecFlow, and Behave. These aren't absolutely necessary, but can make it easier to express automated tests in a structured form (given, when, then).
 
 There are also tools for other aspects of this process, such as the open source [Serenity BDD](https://serenity-bdd.info/), and [Selenium](https://www.selenium.dev/).
+
+### Cucumber feature files
+
+We can define the feature file based on the feature we described in the last section like this:
+
+`show_next_departing_trains.feature`:
+```
+Feature: Show next departing trains
+ 
+  As a commuter traveling between two stations on the same line
+  I want to know what time the next trains for my destination will leave
+  So that I can spend less time waiting at the station
+  Scenario: Next train going to the requested destination on the same line
+    Given the T1 train to Chatswood leaves Hornsby at 8:02, 8:15, 8:21
+    When Travis wants to travel from Hornsby to Chatswood at 8:00
+    Then he should be told about the trains at: 8:02, 8:15
+```
+
+Running this executable specification without any underlying test code will produce an error, but if we're using Serenity BDD (I think), it will also generate a set of reports:
+
+![alt text](example-test-report.png)
+
+### Automating the executable specifications
+
+First, we make sure that our test runner is configured to run all of the feature files (likely under the features directory somewhere). In Java, that would look like this:
+
+```java
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(features="src/test/resources/features/",   
+                 glue="manning.bddinaction"
+)
+public class AcceptanceTestSuite {}
+```
+
+but if you aren't using Java and Serenity, you can probably set this up more manually.
