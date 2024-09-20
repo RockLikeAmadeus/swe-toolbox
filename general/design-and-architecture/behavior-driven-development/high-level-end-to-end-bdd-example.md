@@ -183,3 +183,65 @@ public class DepartingTrainsStepDefinitions {
 Code like this tells you precisely what your underlying code needs to do to satisfy the business requirements.
 
 ### Implementing the glue code
+
+From this point, we can start to think about not just what our production code should do, but also how best to test it. Because the BDD approach lends itself to starting with the desired outcome and working backwards, beginning with the `then` step is reasonable. For this example, we imagine a service to implement the timetable logic; we don't know quite what it will look like yet, but we know that it needs to give us a list of proposed departure times.
+
+Writing the glue code is the perfect opportunity to experiment with different API designs and see what feels the most appropriate. We update the method annotated with `@Then` to describe the expected outcome:
+
+```java
+@Then("he should be told about the trains at: {times}")
+  public void shouldBeToldAboutTheTrainsAt(List<LocalTime> expected) {
+    assertThat(proposedDepartures).isEqualTo(expected);
+  }
+ 
+ // represents time as an instance of java.time.LocalTime
+  @ParameterType(".*")
+  public LocalTime time(String timeValue) {
+    return LocalTime.parse(timeValue, DateTimeFormatter.ofPattern("H:mm"));
+  }
+ 
+  @ParameterType(".*")
+  public List<LocalTime> times(String timeValue) {
+    return stream(timeValue.split(","))
+            .map(String::trim)
+            .map(this::time)
+            .collect(Collectors.toList());
+  }
+```
+
+Of course, `proposedDepartures` isn't defined yet, so we begin to define the `@When` case:
+
+```java
+List<LocalTime> proposedDepartures;
+ 
+  @When("Travis want to travel from {} to {} at {time}")
+  public void travel(String from, String to, LocalTime departureTime) {
+    proposedDepartures = itineraryService.findNextDepartures(departureTime,
+                                                             from, to);
+  }
+ 
+ // I don't know why this is defined again, maybe an error?
+  @ParameterType(".*")
+  public LocalTime time(String timeValue) {
+    return LocalTime.parse(timeValue);
+  }
+```
+
+At the top of the class, we construct a simple `itineraryService`...
+
+```java
+ItineraryService itineraryService = new ItineraryService();
+```
+
+...and wherever our production code lives, we define the class itself with the minimum necessary structure to get the project to compile:
+
+```java
+public class ItineraryService {
+      public List<LocalTime> findNextDepartures(LocalTime departureTime,                      
+                                                String from, String to) {
+        return null;
+    }
+  }
+```
+
+We may note that, in order to function as intended, the `ItineraryService` will eventually need to know about the timetable details mentioned in the `Given` step. This will likely turn into its own `TimetableService` class, but to avoid getting sidetracked, we just create a simple `TimeTable` interface to model how the `ItineraryService` will interact with the service we will flesh out later. This is an _outside-in_ approach, typical in BDD: as we implement a layer, we discover functions or other dependencies that this layer will rely on. For simpler problems, we can build those dependencies on the spot. For more complex code, its best to model them as an interface or a dummy implementation and come back to it later as other scenarios drive their need.
