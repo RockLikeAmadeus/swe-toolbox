@@ -4,7 +4,7 @@ Sources: BDD in Action
 
 BDD in Action, Chapter 3, search for
 
-Throughout the rest of this book, we’ll illustrate examples using several different BDD tools.
+BDD practitioners like to start with the outcome they need to obtain
 
 And continue notes in [here](./high-level-end-to-end-bdd-example.md)
 
