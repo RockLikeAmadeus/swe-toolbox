@@ -186,6 +186,8 @@ Code like this tells you precisely what your underlying code needs to do to sati
 
 From this point, we can start to think about not just what our production code should do, but also how best to test it. Because the BDD approach lends itself to starting with the desired outcome and working backwards, beginning with the `then` step is reasonable. For this example, we imagine a service to implement the timetable logic; we don't know quite what it will look like yet, but we know that it needs to give us a list of proposed departure times.
 
+#### Defining the expectations in the `Then` method
+
 Writing the glue code is the perfect opportunity to experiment with different API designs and see what feels the most appropriate. We update the method annotated with `@Then` to describe the expected outcome:
 
 ```java
@@ -208,6 +210,8 @@ Writing the glue code is the perfect opportunity to experiment with different AP
             .collect(Collectors.toList());
   }
 ```
+
+#### Discovering the service class API in the `When` method
 
 Of course, `proposedDepartures` isn't defined yet, so we begin to define the `@When` case:
 
@@ -245,3 +249,10 @@ public class ItineraryService {
 ```
 
 We may note that, in order to function as intended, the `ItineraryService` will eventually need to know about the timetable details mentioned in the `Given` step. This will likely turn into its own `TimetableService` class, but to avoid getting sidetracked, we just create a simple `TimeTable` interface to model how the `ItineraryService` will interact with the service we will flesh out later. This is an _outside-in_ approach, typical in BDD: as we implement a layer, we discover functions or other dependencies that this layer will rely on. For simpler problems, we can build those dependencies on the spot. For more complex code, its best to model them as an interface or a dummy implementation and come back to it later as other scenarios drive their need.
+
+#### Going from acceptance tests to unit tests
+
+While acceptance tests often use a full (or near-fill) application stack, unit tests concentrate on individual components in isolation to build up the components that implement the desired behavior. Test-driven development using unit tests makes it easier to focus on getting a particular unit of the code working, and identifying what other services or components it will depend on to do its job. Additionally, having unit tests in place makes it easier to isolate errors in the future. Typically, we write manu small unit tests to get a larger acceptance test to pass.
+
+![alt text](the-BDD-TDD-cycle.png)
+
