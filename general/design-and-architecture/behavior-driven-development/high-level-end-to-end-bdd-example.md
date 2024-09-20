@@ -151,3 +151,35 @@ public class AcceptanceTestSuite {}
 ```
 
 but if you aren't using Java and Serenity, you can probably set this up more manually.
+
+Now we can write test automation code to be called whenever our scenario is executed. We write a method for each of the `Given`, `When`, and `Then` steps. Cucumber uses special annotations (`@Given`, `@When`, and `@Then` in Java) to know which methods to run for each step of the scenario. Additionally, we use a special notation called Cucumber Expressions to identify the parts of the scenario that represent the actual test data (variables), which we often call _glue code_ since it binds the text in the scenario steps to the actual test automation code.
+
+In Java, we might make a `stepdefinitions` package which defines the following class with empty methods:
+
+```java
+package com.bddinaction.traintimetables.stepdefinitions;
+ 
+import io.cucumber.java.ParameterType;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+ 
+public class DepartingTrainsStepDefinitions {
+ 
+    @Given("the {} train to {} leaves {} at {}")    
+    public void theTrainLeavesAt(String line,
+                                 String to,
+                                 String from,
+                                 String departureTimes) {}
+ 
+    @When("Travis want to travel from {} to {} at {}")
+    public void travel(String from, String to, String departureTime) {}
+ 
+    @Then("he should be told about the trains at: {}")
+    public void shouldBeToldAboutTheTrainsAt(String expectedTimes) {}
+}
+```
+
+Code like this tells you precisely what your underlying code needs to do to satisfy the business requirements.
+
+### Implementing the glue code
