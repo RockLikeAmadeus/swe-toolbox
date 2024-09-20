@@ -4,7 +4,7 @@ Sources: BDD in Action
 
 BDD in Action, Chapter 3, search for
 
-BDD practitioners like to start with the outcome they need to obtain
+After some experimenting, Tess and Dave agree that the main job of this method is to find out
 
 And continue notes in [here](./high-level-end-to-end-bdd-example.md)
 

@@ -256,3 +256,50 @@ While acceptance tests often use a full (or near-fill) application stack, unit t
 
 ![alt text](the-BDD-TDD-cycle.png)
 
+In our example, we start implementing the `findNextDepartures()` method of the `ItineraryService` using a TDD approach. We define a failing test, iteratively, as we discover just how the unit-under-test (in this case, the itineraryService) should work:
+
+```java
+package manning.bddinaction.itineraries;
+ 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import java.time.LocalTime;
+import java.util.List;
+ 
+import static org.assertj.core.api.Assertions.assertThat;
+ 
+@DisplayName("When finding the next train departure times")
+class WhenFindingNextDepatureTimes {
+ 
+    @Test
+    @DisplayName("we should get the first train after the requested time")
+    void tripWithOneScheduledTime() {
+  
+        // Given
+        timeTable = departures(at("8:10"), at("8:20"), at("8:30"));
+        ItineraryService itineraryService = new ItineraryService(timeTable);
+ 
+        // When
+        List<LocalTime> proposedDepartures
+            = itineraryService.findNextDepartures(at("8:25"),
+                                                  "Hornsby",
+                                                  "Central");
+ 
+        // Then
+        assertThat(proposedDepartures)
+            .containsExactly(at("8:30"));
+    }
+
+    // Utility method
+    private LocalTime at(String time) {
+      return LocalTime.parse(time, DateTimeFormatter.ofPattern("H:mm"));
+    }
+ 
+    // Will return a TimeTable, once we know how TimeTable works...
+    private TimeTable departures(LocalTime... departures) {
+      return null; 
+    }    
+}
+```
+
+At this point, we could guess at what methods the `TimeTable` class needs, but it may be easier to simply begin implementing the `findNextDepartures()` method and see what information we'll need a `TimeTable` to provide.
