@@ -714,3 +714,10 @@ public class InMemoryTimeTable implements TimeTable, CanScheduleServices {
 
 At last we have arrived at passing acceptance criteria, with a collection of small unit tests to test the components in isolation.
 
+## Demonstrate: Tests as living documentation
+
+Now that we have a passing acceptance test scenario built with the BDD process, we have much more than just a repeatable automated test. We also have a concrete measure of our progres, indicating just where we're at in the development progression:
+
+![alt text](acceptance-progress-report.png)
+
+More than that, we're also building a library of documented concrete examples of how the system is used to solve specific business requirements. For web tests, this can easily include screenshots to illustrate the process visually.

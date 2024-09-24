@@ -2,11 +2,7 @@ Sources: BDD in Action
 
 # Learning progress
 
-BDD in Action, Chapter 3, search for
-
-After some experimenting, Tess and Dave agree that the main job of this method is to find out
-
-And continue notes in [here](./high-level-end-to-end-bdd-example.md)
+BDD in Action, Chapter 4
 
 # High-Level Process
 
