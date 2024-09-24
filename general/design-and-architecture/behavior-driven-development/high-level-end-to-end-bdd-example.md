@@ -572,4 +572,145 @@ public class ScheduledService {
 
 #### Getting to a passing acceptance test: implementing the TimeTable service
 
-At this point, each of the "given", "when", and "then" steps work individually, but the test scenario in its entirety isn't passing. We need to implement the TimeTable service--specifically, the `findLinesThrough()` and `getDepartures()` methods.
+At this point, each of the "given", "when", and "then" steps work individually, but the test scenario in its entirety isn't passing. We need to implement the TimeTable service--specifically, the `findLinesThrough()` and `getDepartures()` methods. We start with a failing test...
+
+```java
+@Test
+@DisplayName("When querying train services")
+class WhenQueryingTrainServices {
+  // Given
+  InMemoryTimeTable timeTable = new InMemoryTimeTable();
+
+  @Test
+  @DisplayName("We can ask which lines go through any two stations")
+  void queryLinesThroughStations() {
+      // When
+      timeTable.scheduleService("T1",
+                                LocalTimes.at("09:15"),
+                                "Hornsby", "Central");
+      // Then
+      assertThat(timeTable.findLinesThrough("Hornsby", 
+                              "Central")).hasSize(1);
+  }    
+}
+```
+
+...and do the bare minimum to get to the test to build and pass...
+
+```java
+@Override
+public List<String> findLinesThrough(String from, String to) {
+  schedules.entrySet()
+            .stream()
+            .filter(line -> (line.getValue().getDeparture().equals(from)          
+                    && line.getValue().getDestination().equals(to)))
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toList());
+}
+```
+
+...and finally, refactor for readability...
+
+```java
+private Set<String> lineNames() { return  schedules.keySet(); }
+ 
+private boolean lineGoesThrough(String line, String from, String to){
+  return schedules.getOrDefault(line, ScheduledService.NO_SERVICE)
+                  .goesBetween(from,to);
+}
+  
+@Override
+public List<String> findLinesThrough(String from, String to) {
+  return lineNames().stream()
+                    .filter(line  -> lineGoesThrough(line, from, to))
+                    .collect(Collectors.toList());
+}
+```
+
+...which leads us to refactor `ScheduledService`...
+
+```java
+public class ScheduledService {
+  private final String from;
+  private final String to;
+  private final List<LocalTime> departureTimes;
+ 
+  public static ScheduledService NO_SERVICE
+                   = new ScheduledService("","", Lists.emptyList());
+ 
+  public ScheduledService(String from, String to, List<LocalTime> at) {...}
+ 
+  public List<LocalTime> getDepartureTimes() {
+    return departureTimes;
+  }
+ 
+  public boolean goesBetween(String from, String to) {
+    return this.from.equals(from) && this.to.equals(to);
+  }
+}
+```
+
+Which completes one red-green-refactor cycle.
+
+Then, we add a new test to demonstrate how to get the departure times of a given line:
+
+```java
+@Test
+@DisplayName("Each line can have a number of departure times")
+void trainLinesHaveMoreThanOneDepartureTime() {
+  // When
+  timeTable.scheduleService("T1",
+              LocalTimes.at("09:15","09:45"),
+              "Hornsby",
+              "Central");
+  // Then
+  assertThat(timeTable.getDepartures ( "T1", "Hornsby")).hasSize(2);
+  }
+```
+
+We continue on to get the test to pass, and then to refactor, and after a handful of small tests developed over a handful of TDD cycles, we ultimately wind up with an `InMemoryTimeTable` class that looks something like this:
+
+```java
+package manning.bddinaction.timetables;
+ 
+import java.time.LocalTime;
+import java.util.*;
+import java.util.stream.Collectors;
+ 
+public class InMemoryTimeTable implements TimeTable, CanScheduleServices {
+  private Map<String, ScheduledService> schedules = new HashMap<>();
+ 
+  @Override
+  public void scheduleService(String line,
+                                List<LocalTime> departingAt,
+                                String from,
+                                String to) {
+      schedules.put(line, 
+                    new ScheduledService(from, to, departingAt));     
+  }
+ 
+  private Set<String> lineNames() { return  schedules.keySet(); }
+ 
+  private boolean lineGoesThrough(String line, String from, String to) {
+    return schedules.getOrDefault(line, ScheduledService.NO_SERVICE)
+                        .goesBetween(from,to);
+  }
+  @Override
+  public List<String> findLinesThrough(String from, String to) {
+    return lineNames().stream()
+                      .filter(line  -> lineGoesThrough(line, from,to))
+                      .collect(Collectors.toList());
+  }
+ 
+  @Override
+  public List<LocalTime> getDepartures(String lineName, String from) {
+    if (!schedules.containsKey(lineName)) {
+      throw new UnknownLineException("No line found: " + lineName);
+    }
+    return schedules.get(lineName).getDepartureTimes();
+  }
+}
+```
+
+At last we have arrived at passing acceptance criteria, with a collection of small unit tests to test the components in isolation.
+
