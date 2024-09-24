@@ -568,4 +568,8 @@ public class ScheduledService {
 }
 ```
 
-...which gets us a passing test.
+...which gets us a passing test. We can continue thinking through and implementing the timetable behavior using the red-green-refactor TDD process. Once they are satisfied, they can be confident that the "given" step is functional.
+
+#### Getting to a passing acceptance test: implementing the TimeTable service
+
+At this point, each of the "given", "when", and "then" steps work individually, but the test scenario in its entirety isn't passing. We need to implement the TimeTable service--specifically, the `findLinesThrough()` and `getDepartures()` methods.
