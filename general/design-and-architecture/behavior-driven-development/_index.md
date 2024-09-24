@@ -10,12 +10,12 @@ The process essentially has a 6-step cycle:
 
 ![alt text](./images/BDD-activities.png)
 
-1. [Speculate](#speculate-identifying-business-values-and-features): Identify high-level business goals and key features for achieving them
-2. [Illustrate](): Get concrete about a specific feature using examples
-3. [Formulate](): Transform examples into executable specifications
-4. [Automate](): Transform executable specifications into automated acceptance tests
-5. [Demonstrate](): Show that the feature does what it is supposed to do
-6. [Validate](): Observe how the feature behaves in the real world
+1. [Speculate](./BDD-phases/1_speculate.md): Identify high-level business goals and key features for achieving them
+2. [Illustrate](./BDD-phases/2_illustrate.md): Get concrete about a specific feature using examples
+3. [Formulate](./BDD-phases/3_formulate.md): Transform examples into executable specifications
+4. [Automate](./BDD-phases/4_automate.md): Transform executable specifications into automated acceptance tests
+5. [Demonstrate](./BDD-phases/5_demonstrate.md): Show that the feature does what it is supposed to do
+6. [Validate](./BDD-phases/6_validate.md): Observe how the feature behaves in the real world
 
 # Requirements Discovery and Specification
 
