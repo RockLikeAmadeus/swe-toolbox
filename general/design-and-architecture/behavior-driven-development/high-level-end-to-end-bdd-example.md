@@ -241,8 +241,7 @@ ItineraryService itineraryService = new ItineraryService();
 
 ```java
 public class ItineraryService {
-      public List<LocalTime> findNextDepartures(LocalTime departureTime,                      
-                                                String from, String to) {
+      public List<LocalTime> findNextDepartures(LocalTime departureTime, String from, String to) {
         return null;
     }
   }
@@ -252,7 +251,7 @@ We may note that, in order to function as intended, the `ItineraryService` will 
 
 #### Going from acceptance tests to unit tests
 
-While acceptance tests often use a full (or near-fill) application stack, unit tests concentrate on individual components in isolation to build up the components that implement the desired behavior. Test-driven development using unit tests makes it easier to focus on getting a particular unit of the code working, and identifying what other services or components it will depend on to do its job. Additionally, having unit tests in place makes it easier to isolate errors in the future. Typically, we write manu small unit tests to get a larger acceptance test to pass.
+While acceptance tests often use a full (or near-full) application stack, unit tests concentrate on individual components in isolation to build up the components that implement the desired behavior. Test-driven development using unit tests makes it easier to focus on getting a particular unit of the code working, and identifying what other services or components it will depend on to do its job. Additionally, having unit tests in place makes it easier to isolate errors in the future. Typically, we write many small unit tests to get a larger acceptance test to pass.
 
 ![alt text](the-BDD-TDD-cycle.png)
 
@@ -303,3 +302,69 @@ class WhenFindingNextDepatureTimes {
 ```
 
 At this point, we could guess at what methods the `TimeTable` class needs, but it may be easier to simply begin implementing the `findNextDepartures()` method and see what information we'll need a `TimeTable` to provide.
+
+After some experimenting, we decide that the main job of the `findNextDepartures()` method is to find out which lines go between the two stations (which the TimeTable should know), and then to find the next two trains to arrived after the specified time:
+
+```java
+package manning.bddinaction.itineraries;
+ 
+import manning.bddinaction.timetables.TimeTable;
+ 
+import java.time.LocalTime;
+import java.util.List;
+import java.util.stream.Collectors;
+ 
+public class ItineraryService {
+    private TimeTable timeTable;
+ 
+    public ItineraryService(TimeTable timeTable) {
+        this.timeTable = timeTable;
+    }
+ 
+    public List<LocalTime> findNextDepartures(LocalTime departureTime, String from, String to) {
+ 
+      var lines = timeTable.findLinesThrough(from, to);
+
+      return lines.stream()
+              .flatMap(line -> timeTable.getDepartures(line).stream())
+              .filter(trainTime -> !trainTime.isBefore(departureTime))
+              .sorted()
+              .limit(2)
+              .collect(Collectors.toList());
+    }
+}
+```
+
+At this point, rather than branching out onto a tangent and building out the TimeTable class, we simply implement a dummy TimeTable that returns a hard-coded list of times. By attempting to build out the `ItineraryService`, we've discovered two things we need from the `TimeTable` class: it needs to know which train lines go through any two stations, and it needs to know what time trains leave a given station on each line. This is the outside-in approach, which we use to define the initial expected interface for a `TimeTable`:
+
+```java
+public interface TimeTable {
+  List<String> findLinesThrough(String from, String to);
+  List<LocalTime> getDepartures(String lineName, String from);
+}
+```
+
+Now we can return to the original test and implement the dummy `TimeTable` that our `ItineraryService` test will use:
+
+```java
+private TimeTable departures(LocalTime... departures) {
+  return new TimeTable() {
+    @Override
+    public List<String> findLinesThrough(String from,
+                                          String to) {
+      return List.of("T1");
+    }
+
+    @Override
+    public List<LocalTime> getDepartures(String line, String from) {
+      return List.of(departures);
+    }
+  };
+}
+```
+
+With this, the first test should pass.
+
+##### Adding a few more unit tests
+
+We continue to explore the behavior and ultimately add a few more tests to illustrate the different facets of this behavior, such as different scenarios, or edge cases.
