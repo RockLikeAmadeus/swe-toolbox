@@ -458,4 +458,114 @@ With this, the initial version of the itinerary service is complete, making the 
 
 Finally, we move to automating the `Given` step: "Given the T1 train to Central leaves Hornsby at 8:02, 8:15, 8:21".
 
-This step will prepare the `TimeTable` that the production itinerary service will use. Unlike earlier where we used a dummy time table to get a _unit_ test to pass, we're back at the level of _acceptance_ tests, so we want to verify that all the system components work together as they should.
+This step will prepare the `TimeTable` that the production itinerary service will use. Unlike earlier where we used a dummy time table to get a _unit_ test to pass, we're back at the level of _acceptance_ tests, so we want to verify that all the system components work together as they should. Going back to the glue code, above, we fill out the implementation for the `@Given` method:
+
+```java
+InMemoryTimeTable timeTable = new InMemoryTimeTable();
+ItineraryService itineraryService = new ItineraryService(timeTable);
+
+@Given("the {} train to {}  leaves {}  at {times}")
+public void theTrainLeavesAt(String line,
+                            String from,
+                            String to,
+                        List<LocalTime> departureTimes) {
+  List<LocalTime> departureTimes = localTimesFrom(departingAt);
+  timeTable.scheduleService(line, departureTimes, from, to);
+}
+```
+
+The `scheduleService` method should be implemented by our time table class in order to register a set of departure times between stations on a given line. This is something of a specific concern, so for now, we don't include it as part of the `TimeTable` interface:
+
+```java
+public interface CanScheduleServices{
+  void scheduleService(String line,
+                      List<LocalTime> departingAt,
+                      String departure,
+                      String destination);
+}
+```
+
+##### Implementing the service (using unit tests)
+
+Now we just need a time table class that implements both the `TimeTable`  as well as the `CanScheduleService` interfaces. Again, we use a TDD approach that starts with a failing unit test.
+
+```java
+@DisplayName("When scheduling train services")
+class WhenRecordingTrainSchedules {
+ 
+  // Given
+  InMemoryTimeTable timeTable = new InMemoryTimeTable();
+
+  @Test
+  @DisplayName("We can schedule a trip with a single scheduled time")
+  void tripWithOneScheduledTime() {
+    // When
+    timeTable.scheduleService("T1", LocalTimes.at("09:15"),
+                              "Hornsby",
+                              "Central");
+    // Then
+    assertThat(timeTable.getDepartures("T1", "Hornsby")).
+        .hasSize(1);
+  }
+}
+```
+
+then we define a skeleton implementation, to get the test to build:
+
+```java
+public class InMemoryTimeTable implements TimeTable, CanScheduleServices {
+ 
+  @Override
+  public void scheduleService(String line,
+                              List<LocalTime> departingAt,
+                              String departure,
+                              String destination) {}
+
+  @Override
+  public List<String> findLinesThrough(String from, String to) {
+      return null;
+  }
+
+  @Override
+  public List<LocalTime> getDepartures(String lineName, String from) {
+      return null;
+  }
+}
+```
+
+We start implementing the functionality, in order to get the test to pass...
+
+```java
+public class InMemoryTimeTable implements TimeTable, CanScheduleServices {
+  private Map<String, ScheduledService> schedules = new HashMap<>();
+
+  @Override
+  public void scheduleService(String line,
+                              List<LocalTime> departingAt,
+                              String from,
+                              String to) {
+      schedules.put(line, 
+                    new ScheduledService(from, to, departingAt));
+  }
+  ...
+}
+```
+
+...which leads us to defining a domain class for a scheduled service...
+
+```java
+public class ScheduledService {
+    private final String departure;
+    private final String destination;
+    private final List<LocalTime> departureTimes;
+ 
+    public ScheduledService(String from, String to, List<LocalTime> at) {
+        this.departure = from;
+        this.destination = to;
+        this.departureTimes = at;
+    }
+       ...
+}
+```
+
+...which gets us a passing test.
