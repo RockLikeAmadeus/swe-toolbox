@@ -2,7 +2,9 @@ Sources: BDD in Action
 
 # Learning progress
 
-BDD in Action, Chapter 4
+BDD in Action, Chapter 4. Search for
+
+Let’s start by introducing the client you’ll work with throughout the rest of the book
 
 # High-Level Process
 
