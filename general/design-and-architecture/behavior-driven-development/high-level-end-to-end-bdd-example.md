@@ -22,7 +22,7 @@ Now, we focus on ideation for features that will directly support our stated bus
 3. How (might their behavior change with our solution)?
 4. What (features might support this behavior change)?
 
-![alt text](./impact-mapping-example.png)
+![alt text](./images/impact-mapping-example.png)
 
 ### 3. Describe each feature
 
@@ -72,7 +72,7 @@ Whereas currently I need to look up the timetable in a paper booklet
 
 Thinking only about abstractions can lead to flawed assumptions and other problems. Here, we want to talk through concrete examples, using a technique such as [Example Mapping](internal-link-here).
 
-![alt text](./example-mapping-example.png)
+![alt text](./images/example-mapping-example.png)
 
 ### Slice the feature into user stories
 
@@ -136,7 +136,7 @@ Feature: Show next departing trains
 
 Running this executable specification without any underlying test code will produce an error, but if we're using Serenity BDD (I think), it will also generate a set of reports:
 
-![alt text](example-test-report.png)
+![alt text](./images/example-test-report.png)
 
 ### Automating the executable specifications
 
@@ -253,7 +253,7 @@ We may note that, in order to function as intended, the `ItineraryService` will 
 
 While acceptance tests often use a full (or near-full) application stack, unit tests concentrate on individual components in isolation to build up the components that implement the desired behavior. Test-driven development using unit tests makes it easier to focus on getting a particular unit of the code working, and identifying what other services or components it will depend on to do its job. Additionally, having unit tests in place makes it easier to isolate errors in the future. Typically, we write many small unit tests to get a larger acceptance test to pass.
 
-![alt text](the-BDD-TDD-cycle.png)
+![alt text](./images/the-BDD-TDD-cycle.png)
 
 In our example, we start implementing the `findNextDepartures()` method of the `ItineraryService` using a TDD approach. We define a failing test, iteratively, as we discover just how the unit-under-test (in this case, the itineraryService) should work:
 
@@ -718,6 +718,6 @@ At last we have arrived at passing acceptance criteria, with a collection of sma
 
 Now that we have a passing acceptance test scenario built with the BDD process, we have much more than just a repeatable automated test. We also have a concrete measure of our progres, indicating just where we're at in the development progression:
 
-![alt text](acceptance-progress-report.png)
+![alt text](./images/acceptance-progress-report.png)
 
 More than that, we're also building a library of documented concrete examples of how the system is used to solve specific business requirements. For web tests, this can easily include screenshots to illustrate the process visually.
