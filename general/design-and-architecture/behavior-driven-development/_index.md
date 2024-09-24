@@ -8,7 +8,7 @@ BDD in Action, Chapter 4
 
 The process essentially has a 6-step cycle:
 
-![alt text](BDD-activities.png)
+![alt text](./images/BDD-activities.png)
 
 1. [Speculate](#speculate-identifying-business-values-and-features): Identify high-level business goals and key features for achieving them
 2. [Illustrate](): Get concrete about a specific feature using examples
