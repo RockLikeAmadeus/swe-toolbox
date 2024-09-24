@@ -451,3 +451,11 @@ class WhenFindingNextDepatureTimes {
   }
 }
 ```
+
+With this, the initial version of the itinerary service is complete, making the `when` step of our scenario fully operational.
+
+#### Automating the preconditions in the @Given method
+
+Finally, we move to automating the `Given` step: "Given the T1 train to Central leaves Hornsby at 8:02, 8:15, 8:21".
+
+This step will prepare the `TimeTable` that the production itinerary service will use. Unlike earlier where we used a dummy time table to get a _unit_ test to pass, we're back at the level of _acceptance_ tests, so we want to verify that all the system components work together as they should.
