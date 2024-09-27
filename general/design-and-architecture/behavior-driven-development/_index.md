@@ -4,7 +4,7 @@ Sources: BDD in Action
 
 BDD in Action, Chapter 4. Search for
 
-Let’s start by introducing the client you’ll work with throughout the rest of the book
+BDD is a deeply collaborative process. We have seen the value
 
 # High-Level Process
 
@@ -25,9 +25,6 @@ The first two phases at a slightly lower level follow this structure
 
 ![alt text](images/vision-to-spec-pyramid.png)
 
-Business goals typically involve one or all of: increasing revenue, protecting revenue, reducing costs.
-
-Features are typically too big to build at once, so we break the feature up into more manageable chunks represented as individual user stories, from which we produce a set of examples.
 
 # Requirements Discovery and Specification
 
