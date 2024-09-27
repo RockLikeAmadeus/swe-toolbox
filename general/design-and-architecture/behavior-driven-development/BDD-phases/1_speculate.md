@@ -65,4 +65,10 @@ For example, a complete list of goals for a frequent flyer program might include
 - Increase ticket sales revenue by 5% over the next year by encouraging travelers to fly with Flying High rather than with a rival company.
 - Increase the customer base by 10% within a year by building a positive image of the Frequent Flyer program.
 - Avoid losing existing customers to the new rival Hot Shots Frequent Flyer program.
-- Reduce hotline costs by enabling Frequent Flyer members to purchase flights with their points directly online, unlike the current program, where travelers need to call to make a booking. 
+- Reduce hotline costs by enabling Frequent Flyer members to purchase flights with their points directly online, unlike the current program, where travelers need to call to make a booking.
+
+When you're presented with a requirement or a set of requirements, "pop the why stack" by asking _why_ questions until you get to the ultimate motivation for the requirement.
+
+# Tease out features from the business goals
+
+## Impact Mapping
