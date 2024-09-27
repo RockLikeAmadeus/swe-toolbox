@@ -14,6 +14,8 @@ In a convention team structure, the strategic planning work involves all stakeho
 
 This part involves the top two sections of [this pyramid](../_index.md#from-vision-to-executable-specification).
 
+### Vision
+
 It's best to start with a _vision statement_.  A good vision statement will be simple, clear, and concise, and will focus on the project's objectives, _not_ on how it will deliver those objectives. A useful template follows:
 
 ```
@@ -38,3 +40,29 @@ UNLIKE other airline Frequent Flyer programs,
 OUR PRODUCT lets members use their points easily for any sort of online or 
  brick-and-mortar purchase.
 ```
+
+### Business Goals
+
+A good business goal might be simply "increase ticket sales by 5%", or could be more formal, as in:
+
+```
+In order to increase ticket sales by 5% over the next year
+As the Flying High Sales Manager
+I want to encourage travelers to fly with Flying High rather than with a rival company
+```
+
+Keep in mind the S.M.A.R.T goal framework when deciding on business goals. 
+
+Almost all business goals can be boiled down to one or more of these four
+
+- Increasing revenue
+- Reducing costs
+- Protecting revenue
+- Avoiding future costs 
+
+For example, a complete list of goals for a frequent flyer program might include
+
+- Increase ticket sales revenue by 5% over the next year by encouraging travelers to fly with Flying High rather than with a rival company.
+- Increase the customer base by 10% within a year by building a positive image of the Frequent Flyer program.
+- Avoid losing existing customers to the new rival Hot Shots Frequent Flyer program.
+- Reduce hotline costs by enabling Frequent Flyer members to purchase flights with their points directly online, unlike the current program, where travelers need to call to make a booking. 
