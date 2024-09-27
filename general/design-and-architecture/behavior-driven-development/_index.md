@@ -19,6 +19,16 @@ The process essentially has a 6-step cycle:
 5. [Demonstrate](./BDD-phases/5_demonstrate.md): Show that the feature does what it is supposed to do
 6. [Validate](./BDD-phases/6_validate.md): Observe how the feature behaves in the real world
 
+#### From vision to executable specification
+
+The first two phases at a slightly lower level follow this structure
+
+![alt text](images/vision-to-spec-pyramid.png)
+
+Business goals typically involve one or all of: increasing revenue, protecting revenue, reducing costs.
+
+Features are typically too big to build at once, so we break the feature up into more manageable chunks represented as individual user stories, from which we produce a set of examples.
+
 # Requirements Discovery and Specification
 
 ## Concrete examples and Gherkin
