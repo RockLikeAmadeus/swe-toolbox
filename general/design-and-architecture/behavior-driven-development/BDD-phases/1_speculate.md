@@ -72,3 +72,12 @@ When you're presented with a requirement or a set of requirements, "pop the why 
 # Tease out features from the business goals
 
 ## Impact Mapping
+
+Creating impact maps is a visual and intuitive approach to building up an initial picture of what you're trying to achieve with your project. They help visualize the relationship between the business goals, the relevant actors, and the expected features, and deliver other benefits as well. They center around five related questions:
+
+1. Pain point - What business problem are we solving and how can we measure it?
+2. Goal - What are we going to do about it? What are we aiming to improve, and by how much?
+3. Actors - Who are the key people involved
+4. Impact - How can we help these actors to help us achieve our goals? What changes in behavior are we driving?
+5. Deliverables - What application features might support these behavior changes?
+
