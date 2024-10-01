@@ -77,7 +77,17 @@ Creating impact maps is a visual and intuitive approach to building up an initia
 
 1. Pain point - What business problem are we solving and how can we measure it?
 2. Goal - What are we going to do about it? What are we aiming to improve, and by how much?
-3. Actors - Who are the key people involved
+3. Actors - Who are the key people involved? This often goes beyond just _users_ of your system. It's important to note that even if the overall benefit is a net positive, the overall impact for some individual actors might be negative, though we should try to minimize that negative impact.
 4. Impact - How can we help these actors to help us achieve our goals? What changes in behavior are we driving?
 5. Deliverables - What application features might support these behavior changes?
+
+Step 2, the Goal step, is where we outline the first, left-most nodes in our impact map. The remaining nodes branch out from this node, based on the subsequent steps.
+
+![alt text](images/impact-map-example.png)
+
+### Reverse Impact Mapping
+
+This process can be done in reverse in the common case in which you're given a set of requirements or a list of features from the powers that be. Impact mapping in reverse can help you to get clear about the business goals at the root of the features or requirements you've been handed.
+
+## Pirate Canvases
 
