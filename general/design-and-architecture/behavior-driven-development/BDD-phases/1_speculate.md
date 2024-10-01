@@ -91,3 +91,34 @@ This process can be done in reverse in the common case in which you're given a s
 
 ## Pirate Canvases
 
+Pirate canvases are another approach to thinking about the features of your product, which can help explore the broader ecosystem of products and services in addition to the project at hand. The first concept to be aware of regarding pirate canvases are _pirate metrics_.
+
+### Pirate metrics
+
+Investor Dave McClure identified five key metrics that businesses, especially startups, need to focus on in order to be successful: Acquisition, Activation, Retention, Referral, and Return.
+
+![alt text](images/pirate-metrics.png)
+
+_Acquisition_ is about how we pull actors into our ecosystem of products/services. This often involves offering to solve at least part of their problems for free. Remember that users are not the only actors in our system. Essentially, acquisition is about making potential users _aware_ of our solution.
+
+_Activation_ is actually getting users to engage, by signing up for a trial, registering their email address, or even purchasing or signing up for our service.
+
+_Retention_ is getting activated customers to stay, or to come back.
+
+_Referral_ is about growth via personal recommendations, positive reviews, etc.
+
+_Return_ is a measure of how much each user contributes to our organizations goals, in return for the problem we're solving.
+
+Each of these metrics should correspond to concrete, measurable numbers. What those numbers are will vary for each metric, and for each domain. For example:
+
+- Acquisition could be measured by counting the number of visitors to our Frequent Flyer website.
+- Activation might correspond to the number of users who sign up for the Frequent Flyer card.
+- Retention might measure the number of users who sign up to the Frequent Flyer program and come back to check out the latest special deals.
+- Referral could keep track of the number of likes or shares on social media, or the number of positive reviews on travel websites.
+- Return could be measured by things like ticket sales from Frequent Flyer members, or maybe the impact in the overall ticket sales.
+
+It's important to keep track of these metrics as to measure your progress towards achieving business goals and to be aware of bottlenecks so that you know what your next most important problem to tackle is.
+
+### From pirate metrics to pirate canvases
+
+Pirate metrics are a useful tool for analyzing existing products, but they can also help identify new features or new products altogether.
