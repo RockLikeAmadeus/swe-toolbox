@@ -8,7 +8,7 @@ We begin with Strategic Planning, where we transform business opportunities or c
 
 ## Strategic Planning
 
-In a convention team structure, the strategic planning work involves all stakeholders, from high-level strategic decision makers to the individual contributors who will implement the features. This planning happens continuously throughout the project, rather than all at once at the beginning of the project (think agile approach rather than waterfall).
+In a conventional team structure, the strategic planning work involves all stakeholders, from high-level strategic decision makers to the individual contributors who will implement the features. This planning happens continuously throughout the project, rather than all at once at the beginning of the project (think agile approach rather than waterfall).
 
 ## Describing vision and goals for the business
 
