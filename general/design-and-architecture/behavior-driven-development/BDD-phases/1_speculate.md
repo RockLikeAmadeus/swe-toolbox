@@ -91,7 +91,7 @@ This process can be done in reverse in the common case in which you're given a s
 
 ## Pirate Canvases
 
-Pirate canvases are another approach to thinking about the features of your product, which can help explore the broader ecosystem of products and services in addition to the project at hand. The first concept to be aware of regarding pirate canvases are _pirate metrics_.
+Pirate canvases are another approach to thinking about the features of your product, one which can help explore the broader ecosystem of products and services in addition to the project at hand. The first concept to be aware of regarding pirate canvases are _pirate metrics_.
 
 ### Pirate metrics
 
@@ -117,8 +117,30 @@ Each of these metrics should correspond to concrete, measurable numbers. What th
 - Referral could keep track of the number of likes or shares on social media, or the number of positive reviews on travel websites.
 - Return could be measured by things like ticket sales from Frequent Flyer members, or maybe the impact in the overall ticket sales.
 
-It's important to keep track of these metrics as to measure your progress towards achieving business goals and to be aware of bottlenecks so that you know what your next most important problem to tackle is.
+It's important to keep track of these metrics to measure your progress towards achieving business goals and to be aware of bottlenecks so that you know what your next most important problem to tackle is.
+
+Pirate metrics are a useful tool for analyzing existing products, but they can also help identify new features or new products altogether.
 
 ### From pirate metrics to pirate canvases
 
-Pirate metrics are a useful tool for analyzing existing products, but they can also help identify new features or new products altogether.
+Developing a pirate canvas starts by asking a general question, like "what sucks about ____?", which is a good starting point for thinking about what unique solutions you can provide. Rather than thinking about individual features or even specific applications, we start thinking about the answer to this question by using the five pirate metrics. Discuss or think about each metric in turn, identifying the aspects of each area that can be improved, then using the "five whys" to get to the root cause of that problem. A template for the header of a pirate canvas looks something like this
+
+![alt text](images/pirate-canvas-template.png)
+
+The first step is to fill this in with the pain points relevant to each metric, and get clear about how we might measure improvements to this metric, while drilling down into recursive "whys" to get to the root cause. For example:
+
+![alt text](images/pirate-canvas-header-example.png)
+
+### Building the Epic Landscape.
+
+From this point, we can start to identify possible solutions to these problems that we could consider implementing. We translate the pain points and metrics into measurable goals, and then starting with these goals, follow a similar approach to that of impact mapping to identify actors, impacts, and deliverables. These deliverables become the _epics_ in the Epic Landscape.
+
+Ultimately, you might arrive at a canvas that looks something like this:
+
+
+
+Notice that these deliverables don't necessarily involve software, because pirate canvases encourage us to look beyond only software solutions, instead considering the broader ecosystem as a whole (though software solutions are just as valid).
+
+From this exercise, you can see that a number of possible deliverables begin to become clear. Of course, we aren't limited to one actor/impact/deliverable per metric.
+
+![alt text](images/pirate-canvas-complete-example.png)
