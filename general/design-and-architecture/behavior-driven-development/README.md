@@ -2,9 +2,7 @@ Sources: BDD in Action
 
 # Learning progress
 
-BDD in Action, Chapter 4. Search for
-
-BDD is a deeply collaborative process. We have seen the value
+BDD in Action, Chapter 5. Very start of chapter. But consider re-organizing notes on the speculate page, as well as in all of BDD notes or all of SWE toolbox, first.
 
 # High-Level Process
 
