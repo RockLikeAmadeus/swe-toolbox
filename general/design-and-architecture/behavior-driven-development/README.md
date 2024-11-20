@@ -1,12 +1,36 @@
 Sources: BDD in Action
 
+# Learning progress
+
+BDD in Action, Chapter 5. Very start of chapter. But consider re-organizing notes on the speculate page, as well as in all of BDD notes or all of SWE toolbox, first.
+
+# High-Level Process
+
+The process essentially has a 6-step cycle:
+
+![alt text](./images/BDD-activities.png)
+
+1. [Speculate](./BDD-phases/1_speculate.md): Identify high-level business goals and key features for achieving them
+2. [Illustrate](./BDD-phases/2_illustrate.md): Get concrete about a specific feature using examples
+3. [Formulate](./BDD-phases/3_formulate.md): Transform examples into executable specifications
+4. [Automate](./BDD-phases/4_automate.md): Transform executable specifications into automated acceptance tests
+5. [Demonstrate](./BDD-phases/5_demonstrate.md): Show that the feature does what it is supposed to do
+6. [Validate](./BDD-phases/6_validate.md): Observe how the feature behaves in the real world
+
+#### From vision to executable specification
+
+The first two phases at a slightly lower level follow this structure
+
+![alt text](images/vision-to-spec-pyramid.png)
+
+
 # Requirements Discovery and Specification
 
 ## Concrete examples and Gherkin
 
 In a BDD workflow, features and their requirements are specified using concrete examples, partly because it is an effective way of communicating the intent of the system that leaves little room for ambiguity.
 
-Most/many BDD tools rely on a format called _Gherkin_, which is designed to be easy to understand for non-technical stakeholders, and easy to automate using tools like _Cucummber_ and _SpecFlow_, so that the specification serves as both the definition for automated tests _and_ human-readable requirements documentation. _However, note that [David Farley](https://www.youtube.com/watch?v=YAZr3LsCzn0&ab_channel=ContinuousDelivery) prefers to use [his own custom DSL](/general/testing/accceptance-testing.md#dave-farleys-four-layer-acceptance-test-architecture) (domain-specific language) that he builds on top of his code, rather than Gherkin, so that's an option as well_.
+Most/many BDD tools rely on a format called _Gherkin_, which is designed to be easy to understand for non-technical stakeholders, and easy to automate using tools like _Cucumber_ and _SpecFlow_, so that the specification serves as both the definition for automated tests _and_ human-readable requirements documentation. _However, note that [David Farley](https://www.youtube.com/watch?v=YAZr3LsCzn0&ab_channel=ContinuousDelivery) prefers to use [his own custom DSL](/general/testing/accceptance-testing.md#dave-farleys-four-layer-acceptance-test-architecture) (domain-specific language) that he builds on top of his code, rather than Gherkin, so that's an option as well_.
 
 Using the Gherkin format, the requirements for a particular feature are grouped into a single text file called a _feature file_, containing a short description of the feature, followed by a number of formalized examples for how it works in practice. 
 
@@ -73,4 +97,8 @@ Scenario Outline: Earning interest
   | 10000           | SuperSaver   | 5.0      | 41.67    | 10041.67    |
 ```
 
-Also see: https://gist.github.com/dogoku/0c024c55ec124355f01472abc70550f5
+More about [Gherkin syntax](https://gist.github.com/dogoku/0c024c55ec124355f01472abc70550f5)
+
+# Example
+
+[High-Level end-to-end example](./high-level-end-to-end-bdd-example.md)
