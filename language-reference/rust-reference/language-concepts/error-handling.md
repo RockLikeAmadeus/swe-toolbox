@@ -1,3 +1,9 @@
+# Printing Error Messages
+
+Don't use the `println!` macro, which prints to standard output, for error messages.
+
+Instead, use `eprintln!`, which prints to standard error.
+
 # Recoverable Errors
 
 ```rs
@@ -42,6 +48,15 @@ Shortcuts:
 let greeting_file = File::open("hello.txt").unwrap(); // dev
 let greeting_file = File::open("hello.txt") // production
         .expect("hello.txt should be included in this project");
+```
+
+also
+
+```rs
+if let Err(e) = ... {
+    println!("Application error: {e}");
+    process::exit(1);
+}
 ```
 
 Returning `Result` type from functions

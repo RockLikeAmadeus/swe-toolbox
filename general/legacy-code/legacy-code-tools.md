@@ -38,3 +38,4 @@
 			- Techniques:
 				- Sprout Method
 			- Remember that if you don't cover the code that calls these new functions, you aren't testing their use
+- From [LGWT](https://quii.gitbook.io/learn-go-with-tests/testing-fundamentals/scaling-acceptance-tests) Use acceptance tests!

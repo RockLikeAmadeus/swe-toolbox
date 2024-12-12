@@ -164,6 +164,8 @@ fn data_structures() {
     // string literals are slices (type &str)!
     let hello: &str = &s[..5];
     let world: &str = &s[6..11];
+    // Generally, you should use &str in function arguments and
+    // returns when you can (but you can't always).
 
     // hash map: `use std::collections::HashMap;`
     let mut scores = HashMap::new();

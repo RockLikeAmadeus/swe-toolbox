@@ -1,6 +1,75 @@
+# Tools
+
+Add the `pretty_assertions` crate for more friendly test output.
+
+Also consider [nextest](https://nexte.st/) for a better testing experience.
+
+# Integration Tests
+
+The convention in Rust is to create a `tests` directory at the same level as your `src` directory.
+
+## Testing command line binaries
+
+For a command line program, you can test the actual execution of your code by directly executing the binary, like this:
+
+```rs
+use std::process::Command;
+
+#[test]
+fn it_works() {
+    let mut cmd = Command::new("my_program");
+    let res = cmd.output();
+    assert!(res.is_ok());
+}
+```
+
+This won't work on its own, since `my_program` doesn't exist in the same direrctory as this test. Add the crate `assert_cmd` to the project and change the test code to:
+
+```rs
+use assert_cmd::Command;
+
+#[test]
+fn runs_without_errors() {
+    let mut cmd = Command::cargo_bin("my_program").unwrap();
+    cmd.assert().success();
+}
+```
+
+You should also test that your command line programs return 0, indicating a successful run, which `assert().success()` takes care of. Making sure your program returns a response code helps to make it composable with other CLI programs. Test for expected failures with
+
+```rs
+#[test]
+fn return_error_code() {
+    let mut cmd = Command::cargo_bin("my_program").unwrap();
+    cmd.assert().failure();
+}
+```
+
+### Verifying the output of a command line program
+
+```rs
+use assert_cmd::Command;
+use pretty_assertions::assert_eq;
+
+#[test]
+fn produces_expected_output() {
+    let mut cmd = Command::cargo_bin("my_program").unwrap();
+    let output = cmd.output().expect("Something went wrong");
+    assert!(output.status.success());
+    let stdout = String::from_utf8(out.stdout).expect("invalid UTF-8");
+    assert_eq!(stdout, "Hello, world!\n");
+}
+```
+
 # Writing Tests
 
-Library projects created using Cargo have default scaffolding provided for automated tests.
+Rust tests are just functions annotated with the `test` attribute (e.g. `#[test]`. Library projects created using Cargo have default scaffolding provided for automated tests.
+
+The body of a test function typically does these three things:
+
+1. Set up any data or state that the test needs to run.
+2. Run the code that we want to test.
+3. Assert that the results are what we expect.
 
 Tests fail when something in the test function panics.
 
