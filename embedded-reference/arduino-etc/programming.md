@@ -1,0 +1,1 @@
+Arduino programs are called "sketches", and have the `.ino` extension, which denotes files that contain code written in the Arduino language. The Arduino language is a variant of C++, and the important stuff can be referenced [here](/language-reference/arduino-lang-reference/README.md).
