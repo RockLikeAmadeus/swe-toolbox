@@ -43,7 +43,7 @@ Nodes emit **Signals** when certain events occur. They are Godot's version of th
 
 # Creating a "Game Object Prefab" (Scene)
 
-The first step is to decide on a root node for the scene. "As a general rule, a scene's root node should reflect the object's desired functionality - what the object is." `Area2D` is a useful one.
+The first step is to decide on a root node for the scene. "As a general rule, a scene's root node should reflect the object's desired functionality - what the object is." `Area2D` is a useful one, but it expects a collider, so isn't the right choice for elements that won't require collision logic.
 
 Once you've decided on a root node type and selected it (after clicking "Other Node" in the Scene dock), you can double click the name of the root node to rename the root node to be the name of the Scene you're creating (i.e. change `Area2D` to `Player`).
 
