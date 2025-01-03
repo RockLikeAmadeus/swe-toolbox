@@ -43,6 +43,8 @@ Nodes emit **Signals** when certain events occur. They are Godot's version of th
 
 There are a ton of built-in signals, and you can create custom ones as well. To see the list of built-in signals that your node can emit, select the node or scene and select the Node tab on the right, make sure Signals is selected. This will list the Signals for each child node of the scene.
 
+### Subscribe to a built-in signal
+
 To subscribe to a built-in signal, ~~select it in the Signals list with the node selected on the righthand side, and either double click or right-click and select "Connect". For C#, change the name of the Receiver Method to use Pascal case, click "Connect"~~, do so in pure code until Godot has removed the "C# Callback code won't be generated, please add it manually" warning, indicating that they've updated the engine to allow connecting through the IDE. For now, do it entirely in Code:
 
 ```cs
@@ -55,6 +57,27 @@ public override void _Ready()
 private void OnAreaEntered(Area2D area) {
     GD.Print("Scored!");
 }
+```
+
+### Create a custom signal
+
+The name of the custom signal in this example is "OnScored". On the class that emits the signal:
+
+```cs
+[Signal] public delegate void OnScoredEventHandler();
+```
+
+Adding this line will generate a signal in the list in the Godot IDE (after rebuilding). Emit the signal with
+
+```cs
+EmitSignal(SignalName.OnScored);
+```
+
+Then in the class that will subscribe to the signal, add a new function with a signature that matches your delegate:
+
+```cs
+// TODO - subscribe to the event
+private void OnScoredEventHandler()
 ```
 
 # Creating a "Game Object Prefab" (Scene)
