@@ -33,7 +33,7 @@ public override void Ready() {
 }
 ```
 
-###### Spawning objects in the game
+###### Spawn an object in the game
 
 ```cs
 [Export] private PackedScene _enemyScene;
@@ -49,3 +49,8 @@ public void SpawnEnemy() {
 	enemy.OnHit += OnHit; // is this a memory leak?
 }
 ```
+
+###### Perform an action at a regular interval
+
+Add a **Timer** node as a child of your scene and set the **Wait Time** interval. The **One Shot** flag will only run the timer a single time. Toggle **Autostart** if necessary. This Node will simply emit the **timeout** event every cycle, so you can subscribe to this to add behavior.
+
