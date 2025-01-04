@@ -1,8 +1,8 @@
-###### Determine the boundaries of the screen
+#### Determine the boundaries of the screen
 
 `GetViewportRect();`
 
-###### Remove the current node/scene from the game tree
+#### Remove the current node/scene from the game tree
 
 ```cs
 private void OnAreaEntered(Area2D area) {
@@ -10,7 +10,9 @@ private void OnAreaEntered(Area2D area) {
 }
 ```
 
-###### Reference an existing node in the scene tree
+#### Reference an existing node in the scene tree
+
+Don't do this:
 
 ```cs
 Gem gem = GetNode<Gem>("gem"); // Not ideal
@@ -33,7 +35,15 @@ public override void Ready() {
 }
 ```
 
-###### Spawn an object in the game
+#### Reference multiple nodes in the scene tree
+
+There are multiple ways to do this.
+
+##### Call `GetChildren()` from within a script attached to the root node
+
+##### Assign nodes to a particular group and get nodes in that group
+
+#### Spawn an object in the game
 
 ```cs
 [Export] private PackedScene _enemyScene;
@@ -50,11 +60,11 @@ public void SpawnEnemy() {
 }
 ```
 
-###### Perform an action at a regular interval
+#### Perform an action at a regular interval
 
 Add a **Timer** node as a child of your scene and set the **Wait Time** interval. The **One Shot** flag will only run the timer a single time. Toggle **Autostart** if necessary. This Node will simply emit the **timeout** event every cycle, so you can subscribe to this to add behavior.
 
-###### Stop execution of the Process function on a node
+#### Stop execution of the Process function on a node
 ```cs
 SetProcess(false);
 ```

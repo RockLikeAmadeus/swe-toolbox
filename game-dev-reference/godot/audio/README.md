@@ -1,0 +1,1 @@
+We add **AudioStreamPlayer** nodes to our scenes to play audio. **AudioStreamPlayer2D**, unlike the non-2D version, is positional, so will play sounds "from" specific positions in your game (only noticeable with headphones or surround sound speakers).
