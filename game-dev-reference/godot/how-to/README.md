@@ -54,3 +54,8 @@ public void SpawnEnemy() {
 
 Add a **Timer** node as a child of your scene and set the **Wait Time** interval. The **One Shot** flag will only run the timer a single time. Toggle **Autostart** if necessary. This Node will simply emit the **timeout** event every cycle, so you can subscribe to this to add behavior.
 
+###### Stop execution of the Process function on a node
+```cs
+SetProcess(false);
+```
+
