@@ -32,3 +32,20 @@ public override void Ready() {
     _gem = GetNode<Gem>(_gemPath);
 }
 ```
+
+###### Spawning objects in the game
+
+```cs
+[Export] private PackedScene _enemyScene;
+```
+
+After rebuilding in the IDE, drag the .tscn file from the file system view into this exported property.
+
+```cs
+public void SpawnEnemy() {
+    Enemy enemy = (Enemy)_enemyScene.Instantiate();
+    AddChild(enemy); // Adds new node as child of `this`
+    enemy.Position = new Vector2(0,0);
+	enemy.OnHit += OnHit; // is this a memory leak?
+}
+```
