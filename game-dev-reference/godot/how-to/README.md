@@ -1,3 +1,6 @@
+#### [Set up a new C# Project](new-c-sharp-project-setup.md)
+#### [Decide what type of root node my new scene should have]()
+
 #### Determine the boundaries of the screen
 
 `GetViewportRect();`
