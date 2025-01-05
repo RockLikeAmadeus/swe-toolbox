@@ -89,3 +89,7 @@ Once you've decided on a root node type and selected it (after clicking "Other N
 Now that you've set the scene's root node, you can add child nodes to give it more functionality.
 
 A useful sequence for creating a basic game object is to create an `Area2D` root node, then add a `Sprite2D` child (or `AnimatedSprite2D`), as well as a collider (`CollisionShape2D`). If the object needs custom logic, right click the node and select `Attach Script`.
+
+# Get Started
+
+[How-To](./how-to/)
