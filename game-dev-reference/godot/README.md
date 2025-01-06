@@ -144,3 +144,7 @@ A useful sequence for creating a basic game object is to create an `Area2D` root
 # Groups
 
 Nodes and scenes can be in local (to the scene) or global "groups", which let you tag them and distinguish them more easily.
+
+### CallDeferred
+
+Look this up.
