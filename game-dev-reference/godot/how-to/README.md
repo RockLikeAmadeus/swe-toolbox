@@ -5,6 +5,10 @@
 
 `GetViewportRect();`
 
+#### Be notified when an object becomes (or becomes not) visible on the screen
+
+Use the VisibleOnScreenNotifier2D Node. (There is currently a bug where the related Signals are only emitted when the game window is in focus)
+
 #### Remove the current node/scene from the game tree
 
 ```cs
@@ -72,3 +76,47 @@ Add a **Timer** node as a child of your scene and set the **Wait Time** interval
 SetProcess(false);
 ```
 
+#### Stop execution of child node processing (i.e. pause)
+
+```cs
+_pipesSpawnTimer.Stop();
+foreach (Pipes pipes in _pipesContainer.GetChildren()) {
+    pipes.SetProcess(false);
+}
+```
+
+#### Share variables, constants, shared logic, etc. between scenes
+
+Use Godot's "Autoloads", which are the engine's version of Singletons (take a look at the documentation). Autoloads still inherit from Node, so you still have access to all of its parents methods and properties, like `_Ready()`.
+
+Create a new folder in the file system explorer in the Godot IDE, and call it Globals or Autoloads. Right click the directory >> Create new >> Script. Typically you might call it `_____Manager` or, `SignalBus`.
+
+Finally, register the new script as an Autoload: Project >> Project Settings >> Globals >> Autoload and add the new script. The order of the autoloads listed here determines the order that Godot will instantiate them, which is relevant when autoloads depend on one another.
+
+For GDScript autoloads, Godot will automatically set the script up as a singleton. For C#, however, you need to do it manually.
+
+```cs
+public partial class GameManager : Node
+{
+	public static GameManager Instance { get; private set; }
+
+	private PackedScene _gameScene =
+		GD.Load<PackedScene>("res://Scenes/Game/Game.tscn");
+	private PackedScene _mainScene =
+		GD.Load<PackedScene>("res://Scenes/Main/Main.tscn");
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		Instance = this;
+	}
+
+	private static void LoadMain() { // Making this static makes calling easier
+		Instance.GetTree().ChangeSceneToPacked(_mainScene);
+	}
+
+	private static void LoadGame() { // Making this static makes calling easier
+		Instance.GetTree().ChangeSceneToPacked(_gameScene);
+	}
+}
+```

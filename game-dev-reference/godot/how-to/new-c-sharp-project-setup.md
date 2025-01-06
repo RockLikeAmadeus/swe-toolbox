@@ -6,7 +6,7 @@
 6. Create new task and project launch configuration to launch the game from VS Code.
    1. Make a new folder at the root of the project called `.vscode`.
    2. Add `launch.json` to this folder with the following contents (this relies on having the GODOT4 environment variable set).
-   ```
+   ```json
    {
         "version": "0.2.0",
         "configurations": [
@@ -38,7 +38,7 @@
     }
    ```
    3. Add `tasks.json` with the following contents.
-   ```
+   ```json
    {
         "version": "2.0.0",
         "tasks": [

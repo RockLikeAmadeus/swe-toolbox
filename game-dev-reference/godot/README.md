@@ -73,11 +73,53 @@ Adding this line will generate a signal in the list in the Godot IDE (after rebu
 EmitSignal(SignalName.OnScored);
 ```
 
-Then in the class that will subscribe to the signal, add a new function with a signature that matches your delegate:
+~~Then in the class that will subscribe to the signal, add a new function with a signature that matches your delegate:~~
 
 ```cs
-// TODO - subscribe to the event
-private void OnScoredEventHandler()
+~~// TODO - subscribe to the event
+~~private void OnScoredEventHandler()
+```
+
+In the class that will subscribe to the signal, establish some form of reference to the node or scene emitting the signal...
+
+```cs
+[Export] private Plane _plane; // requires a drag and drop in IDE
+```
+
+...and then subscribe in the ready function
+
+```cs
+public override void _Ready()
+{
+    _plane.OnPlaneDied += GameOver;
+}
+```
+
+### Signal Bus pattern
+
+In most cases, you should utilize the event bus pattern to emit and subscribe to signals rather than directly connecting up two distinct Nodes. The signal bus is an [Autoload](./how-to/README.md#share-variables-constants-shared-logic-etc-between-scenes) on which we declare all of our signals, and then all subscribers can easily listen to it.
+
+![Signal Bus Pattern](signal-bus-pattern.png)
+
+When we use this method, we need to make sure we are explicitly unsubscribing to events when the Node that subscribes to them is cleaned up.
+
+Game:
+```cs
+public partial class Game : Node2D
+{
+	public override void _Ready()
+	{
+		SignalBus.Instance.OnPlaneDied += GameOver;
+	}
+
+    public override void _ExitTree()
+    {
+		SignalBus.Instance.OnPlaneDied -= GameOver;
+    }
+```
+
+SignalBus:
+```cs
 ```
 
 # Creating a "Game Object Prefab" (Scene)
@@ -93,3 +135,12 @@ A useful sequence for creating a basic game object is to create an `Area2D` root
 # Get Started
 
 [How-To](./how-to/)
+
+# Tips
+
+- Don't make one big scene do everything. Objects can delete themselves when it's time to delete them, for instance.
+- Don't use abstract numbers for things that should be represented as physical locations in the game (create a Marker2D node).
+
+# Groups
+
+Nodes and scenes can be in local (to the scene) or global "groups", which let you tag them and distinguish them more easily.
