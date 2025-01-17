@@ -4,7 +4,9 @@ See [Dodge The Creeps](https://github.com/RockLikeAmadeus/dodge-the-creeps).
 
 # Key Concepts
 
-A Godot game is a _tree_ of _nodes_ that you organize together into _scenes_. Nodes can communicate between each other using _signals_.
+A Godot game is a _tree_ of _nodes_ that you organize together into _scenes_. Nodes can communicate between each other using _signals_. That's pretty much everything there is to making games in Godot, everything else is just finding the built in nodes that Godot provides for common behavior, or writing code that adds behavior to the existing nodes, most of which ultimately needs to happen in the `Process()` or `PhysicsProcess()` functions, which are called (effectively) every frame. Don't overthink it!
+
+Some other things to be aware of, some of which are just types of nodes: audio stream players, animation players, globals/autoloads, UI, layers, groups, markers, tile maps
 
 ## Scenes
 
@@ -109,17 +111,34 @@ public partial class Game : Node2D
 {
 	public override void _Ready()
 	{
-		SignalBus.Instance.OnPlaneDied += GameOver;
+		SignalBus.Instance.OnPlayerDied += GameOver;
 	}
 
     public override void _ExitTree()
     {
-		SignalBus.Instance.OnPlaneDied -= GameOver;
+		SignalBus.Instance.OnPlayerDied -= GameOver;
     }
+}
 ```
 
 SignalBus:
 ```cs
+public partial class SignalBus : Node
+{
+	[Signal] public delegate void OnPlayerDiedEventHandler();
+
+	public static SignalBus Instance;
+
+	public override void _Ready()
+	{
+		Instance = this;
+	}
+
+	public static void EmitOnPlayerDied() {
+		Instance.EmitSignal(SignalName.OnPlayerDied);
+	}
+}
+
 ```
 
 # Creating a "Game Object Prefab" (Scene)
