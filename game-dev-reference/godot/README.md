@@ -111,12 +111,12 @@ public partial class Game : Node2D
 {
 	public override void _Ready()
 	{
-		SignalBus.Instance.OnPlayerDied += GameOver;
+		SignalBus.OnPlayerDied += GameOver;
 	}
 
     public override void _ExitTree()
     {
-		SignalBus.Instance.OnPlayerDied -= GameOver;
+		SignalBus.OnPlayerDied -= GameOver;
     }
 }
 ```
