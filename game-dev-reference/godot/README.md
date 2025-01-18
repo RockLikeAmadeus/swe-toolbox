@@ -6,7 +6,7 @@ See [Dodge The Creeps](https://github.com/RockLikeAmadeus/dodge-the-creeps).
 
 A Godot game is a _tree_ of _nodes_ that you organize together into _scenes_. Nodes can communicate between each other using _signals_. That's pretty much everything there is to making games in Godot, everything else is just finding the built in nodes that Godot provides for common behavior, or writing code that adds behavior to the existing nodes, most of which ultimately needs to happen in the `Process()` or `PhysicsProcess()` functions, which are called (effectively) every frame. Don't overthink it!
 
-Some other things to be aware of, some of which are just types of nodes: audio stream players, animation players, globals/autoloads, UI, layers, groups, markers, tile maps
+Some other things to be aware of, some of which are just types of nodes: audio stream players, animation players, globals/autoloads, UI, layers, groups, markers, tile maps, resources, scripts
 
 ## Scenes
 
@@ -19,6 +19,12 @@ Godot **Scenes** serve a flexible dual purpose, acting as the Scene equivalent i
 1. They always have one root node, like the "Player" in our example.
 2. You can save them to your local drive and load them later.
 3. You can create as many instances of a scene as you'd like. You could have five or ten characters in your game, created from your Character scene."
+
+### Inherited Scenes
+
+Scene >> New inherited scene.
+
+Yellow nodes in the tree are inherited from the base and can't be removed. Close the base Scene tab if you have it open so you don't accidentally modify it when you mean to modify the inherited scene.
 
 ## Nodes
 
@@ -34,6 +40,8 @@ Godot **Scenes** serve a flexible dual purpose, acting as the Scene equivalent i
 - You can extend them with new properties and functions.
 - You can add them to another node as a child.
 "
+
+A node can only have one script, but when you want to split out functionality into multiple dedicated files, the best thing to do is add plain old `Node`-type nodes to your scenes that have the scripts attached--each of these child nodes, and their attached scripts, can have a dedicated purpose to keep things nicely separated.
 
 ## The Scene Tree
 
