@@ -6,7 +6,9 @@ See [Dodge The Creeps](https://github.com/RockLikeAmadeus/dodge-the-creeps).
 
 A Godot game is a _tree_ of _nodes_ that you organize together into _scenes_. Nodes can communicate between each other using _signals_. That's pretty much everything there is to making games in Godot, everything else is just finding the built in nodes that Godot provides for common behavior, or writing code that adds behavior to the existing nodes, most of which ultimately needs to happen in the `Process()` or `PhysicsProcess()` functions, which are called (effectively) every frame. Don't overthink it!
 
-Some other things to be aware of, some of which are just types of nodes: audio stream players, animation players, globals/autoloads, UI, layers, groups, markers, tile maps, resources, scripts
+Some other things to be aware of, some of which are just types of nodes: audio stream players, animation players and tweens, globals/autoloads, UI, layers, groups, markers, tile maps, [resources](https://docs.godotengine.org/en/stable/tutorials/scripting/resources.html), [custom resource types](https://docs.godotengine.org/en/stable/tutorials/scripting/resources.html#creating-your-own-resources), [tools](https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html), and scripts.
+
+Godot also provides their own collections library, with data structures that have built in RNG functionality, among other things.
 
 ## Scenes
 
