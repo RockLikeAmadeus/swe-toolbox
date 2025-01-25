@@ -32,7 +32,19 @@ At a high-level, the process of building software should look like this the proc
 
 Somewhere between steps 2 and 3 of this process, you additionally want to come up with a high-level system design, and then build up what [the GOOS book] calls a walking skeleton based on that design. That way, as you start to build out acceptance tests, you already have the structure in place such that all that remains is a matter of implementing features. It's important to note that the design on which the skeleton is based doesn't need to be perfect or be the final design, but should support end-to-end use cases.
 
-If your project will have a user interface, then for each feature you implement during the BDD process you want to think about what that UI will look like. Follow [these steps](./front-end-reference/README.md#the-process-of-building-user-interfaces) when you get to that point.
+If your project will have a user interface, then  that high-level design will need to include what the UI will look like. Follow [these steps](./front-end-reference/README.md#the-process-of-building-user-interfaces) when you get to that point.
+
+Before building up that skeleton, you'll also need to think about the data models that will be created and passed around that represent the real-world entities mirroring your domain, as well as the separation of components and the APIs between those components. 
+
+At a high-level, these steps then are
+
+1. Determine high-level goals and features
+2. Define specific examples
+3. Create the high-level system and UI design
+4. Build a walking skeleton
+5. Write a failing acceptance test for the first feature
+6. Implement the feature, using TDD recursively
+7. Go back to step 5
 
 ##### Other resources on starting a new software project
 https://quii.gitbook.io/learn-go-with-tests/testing-fundamentals/scaling-acceptance-tests
