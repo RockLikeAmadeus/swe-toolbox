@@ -2,6 +2,8 @@
 
 React applications should be built test-first, just like everything else. That means, according to YAGNI, we don't want anything in our applications that doesn't meet a needed specification, so we won't typically want to use `create-react-app` to avoid all of the extra stuff it includes.
 
+That said, for something quick and dirty, you can use [create-react-app](https://create-react-app.dev/docs/getting-started) or, if you've got more serious build tool requirements, [Vite](https://vite.dev/guide/)
+
 ## Pre-requisites
 
 We need to have NPM, Jest, React, and Babel installed
