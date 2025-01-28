@@ -1,135 +1,54 @@
-Always be learning. Why? Because everything is constantly changing? That's one reason (and a good one). But if the state of software engineering were frozen in time from this day forward, there would still be more to learn than could be learned in a lifetime. Being a software engineer means understanding the inner workings of, and being able to build, fix, modify, and extend the most complex machines humans have ever conceived. Doing so _well_ without dedicating yourself to improving your understanding of the bodies of knowledge upon which the discipline is built is a fantasy.
+[Aspects of Software Engineering](general/aspects-of-software-engineering.md) <br>
+[Design and Architecture](general/design-and-architecture/README.md) <br>
+[Working with Legacy Code](general/legacy-code/legacy-code-tools.md) <br>
+[Testing/TDD](general/testing/README.md) <br>
+[Code-Review Checklist](general/processes/code-review-checklist.md) <br>
 
-Understanding what those relevant bodies of knowledge _are_ is step one.
+###### Languages
+[Language Reference](./language-reference/README.md) <br>
 
-# Aspects of Software Engineering
+###### Stack-Specific
+[Front End Reference](./front-end-reference/README.md) <br>
 
-Note: even where I have not explicitly listed it, all concepts are broken into two parts: the first is the ideas and the abstractions that comprise a concept; the second are the specific implementations of those abstractions that we have to deal with as engineers. For example, it is important to understand _cloud computing_ in general, but that knowledge is usually not much use without an understanding of the specific _cloud computing platform_ you'll need to use, such as AWS or GCP. Furthermore, you'll want to understand the ideas behind processor architecture, but you might also want to study, for instance, the x86 instruction set specificially.
+###### Applications Spaces
+[Embedded Reference](./embedded-reference/README.md) <br>
+[Game Dev Reference](./game-dev-reference/README.md) <br>
 
+###### Full Application Stacks
+[MERN Stack](./application-stacks/MERN/README.md)
 
+###### More
+[Protocols](./protocols/README.md) <br>
+[Third-Party Tools](tools/README.md) <br>
+[Other Resources](resources/README.md) <br>
 
-- Non-Technical Bodies of Knowledge
-    - Leadership
-    - Communication
-        - Technical Writing
-        - Diagramming
-            - UML
-    - Process Methodologies
-        - Agile
-        - SCRUM
-        - Kanban
-        - SAFe
-        - Waterfall
-    - Domain Specifics (depends on your industry)
-    - Career
-    - Software Licensing
-- Technical Bodies of Knowledge
-    - Conceptual
-        - How computer systems _could_ work, and how our computer systems _do_ work (these are tightly linked)
-            - Machine Architecture
-                - Processor Architecture
-                - Memory
-                - I/O
-            - Operating Systems
-                - File Systems
-                - Process Scheduling
-            - Machine Language
-            - High-Level Language Implementations 
-                - Compilers
-                - Linkers
-                - Interpreters
-                - Garbage Collectors
-                - Stack-Based Virtual Machines
-                - etc.
-            - Computer Networking
-            - The Web
-                - Internet Concepts
-                - Web Protocols
-            - Data
-                - Data Science
-                - Persistence Mechanisms
-                    - Databases
-                        - Relational Databases
-                        - Document Databases
-                        - Data Warehouses
-                        - Replication
-                        - Sharding
-                        - Partitioning
-                        - Specific Implementations
-                            - Database Management Software
-                            - Query Languages
-            - Specific Solutions (common architectures, operating systems, network standards)
-        - Applications of Software
-            - Artificial Intelligence/Machine Learning
-            - The Blockchain
-            - Embedded Systems
-            - Games
-            - Graphics
-            - Search
-            - etc.
-        - Math
-    - Actionable
-        - Building and Maintaining Systems
-            - Development/Programming
-                - Algorithms
-                - Data Structures
-                - Time and Memory Complexity (as it relates to Algorithms and Data Structures)
-                - Parallel and Concurrent Programming
-                - Programming Paradigms
-                    - Structure Programming
-                    - OOP
-                    - Functional Programming
-                - Specific Programming Languages
-                - Programming Style and Formatting
-                - Program Structure and Design (readability, maintainability, and the art of "clean code")
-                - Web Programming
-                    - Web Development Frameworks
-            - Testing
-                - Automated Unit Testing and Test-Driven Development
-                - Acceptance and Integration Testing
-            - Architecture and Design
-                - Design Patterns
-                - Design Principles
-                - Monoliths, SOAs, and Microservices (what is the name for this?)
-                - Domain-Driven Design
-                - API Design
-                - Meeting Functional and Non-Functional Requirements
-                - "ilities"
-                - Cloud Computing
-                    - Cloud Computing Concepts
-                        - Infrastructure
-                        - Infrastructure as Code
-                        - Cloud Design Patterns
-                        - Serverless Architectures
-                    - Specific Cloud Computing Solutions (AWS, GCP, Azure)
-                - Messaging Schemes
-                    - Inter-Process Communication (IPC)
-                    - Message Queues
-                    - Event-Driven Architecture
-                    - Remote Procedure Calls
-                    - APIs (REST, SOAP, GraphQL)
-            - Tools
-                - OS Terminal
-                - IDEs/Text Editors
-                - Source/Version Control
-                - Issue Tracking
-                - Visual Diagramming
-                - Package Managers
-                - Debuggers
-            - Computer and Network Security and Privacy
-                - Hacking and Penetration Testing
-                - Cryptography
-                - Authentication and Authorization
-            - User Interfaces
-                - Interface Design/UX Design
-                - Accessibility
-                - Specific Implementations
-                    - Web-Based GUIs
-                    - Native GUIs
-        - Deployment and Operation
-            - Containerization
-            - Container Orchestration
-            - Implementations (Docker, Kubernetes)
-            - CI/CD
-            - Build Servers and Build Pipelines
-            - Cloud Services
+<br><br><br>
+
+---
+
+# Building Software
+
+At a high-level, the process of building software should look like this the process described [here](./general/design-and-architecture/behavior-driven-development/README.md#high-level-process).
+
+Somewhere between steps 2 and 3 of this process, you additionally want to come up with a high-level system design, and then build up what [the GOOS book](https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627) calls a walking skeleton based on that design. That way, as you start to build out acceptance tests, you already have the structure in place such that all that remains is a matter of implementing features. It's important to note that the design on which the skeleton is based doesn't need to be perfect or be the final design, but should support end-to-end use cases. From the book:
+
+> The development of a "walking skeleton" is the moment when we start to make choices about the high-level structure of our application. We can't automate the build, deploy, and test cycle without _some_ idea of the overall project structure. We don't need much detail yet, just a broad-brush picture of what major system components will be needed to support the first planned release and how they will communicate. Our rule of thumb is that we should be able to draw the design for the "walking skeleton" in a few minutes on a white board.
+
+If your project will have a user interface, then  that high-level design will need to include what the UI will look like. Follow [these steps](./front-end-reference/README.md#the-process-of-building-user-interfaces) when you get to that point.
+
+Before building up that skeleton, you'll also need to think about the data models that will be created and passed around that represent the real-world entities mirroring your domain, as well as the separation of components and the APIs between those components. 
+
+At a high-level, these steps then are
+
+1. Determine high-level goals and features
+2. Define specific examples
+3. Create the high-level system and UI design
+4. Build a walking skeleton
+5. Write a failing acceptance test for the first feature
+6. Implement the feature, using TDD recursively
+7. Go back to step 5
+
+##### Other resources on starting a new software project
+https://quii.gitbook.io/learn-go-with-tests/testing-fundamentals/scaling-acceptance-tests
+
+Also check out https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository

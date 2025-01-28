@@ -1,0 +1,5 @@
+- _EnterTree() - added to the tree
+- _Ready() - node and children ready
+- _Process(delta) - called every frame
+- _PhysicsProcess(delta) - called every frame at a regular interval
+- ExitTree() - node being removed
