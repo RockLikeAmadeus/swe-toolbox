@@ -14,7 +14,7 @@ Godot also provides their own collections library, with data structures that hav
 
 Godot **Scenes** serve a flexible dual purpose, acting as the Scene equivalent in an engine like Unity, while simultaneously behaving similarly to Unity's prefabs. Godot scenes are nestable, and are always composed of one or more _nodes_.
 
-"A Godot scene could be a Weapon, a Character, an Item, a Door, a Level, part of a level… anything you'd like. It works like a class in pure code, except you're free to design it by using the editor, using only the code, or mixing and matching the two. It's different from prefabs you find in several 3D engines, as you can then inherit from and extend those scenes. "
+"A Godot scene could be a Weapon, a Character, an Item, a Door, a Level, part of a level… anything you'd like. It works like a class in pure code, except you're free to design it by using the editor, using only the code, or mixing and matching the two. It's different from prefabs you find in several 3D engines, as you can then inherit from and extend those scenes."
 
 "On top of acting like nodes, scenes have the following characteristics:
 
@@ -30,7 +30,7 @@ Yellow nodes in the tree are inherited from the base and can't be removed. Close
 
 ## Nodes
 
-**Nodes** are your games smallest building blocks that you arrange into trees. A tree of nodes can be saved as a _scene_, much like Unity allows you to define a game object composed of components that can be saved as prefabs. Nodes serve the purpose of both Game Objects _and_ Components from Unity.
+**Nodes** are your game's smallest building blocks that you arrange into trees. A tree of nodes can be saved as a _scene_, much like Unity allows you to define a game object composed of components that can be saved as prefabs. Nodes serve the purpose of both Game Objects _and_ Components from Unity.
 
 "Nodes are part of a tree and always inherit from their parents up to the Node class. Although the engine does feature some nodes like collision shapes that a parent physics body will use, most nodes work independently from one another. In other words, Godot's nodes do not work like components in some other game engines."
 
