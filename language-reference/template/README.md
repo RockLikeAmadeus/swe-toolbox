@@ -1,10 +1,13 @@
+
+# What makes <language> unique?
+
+What are a couple of the most important high-level things to be aware of that make this language what it is? What features and quirks define the language and must be kept in mind at (pretty much) all times? Note: this section is not for notes on unique syntax--that section is below.
+
 # What do I need installed to write <language> code
 
 A couple quick notes on what should be installed, i.e. compilers, interpreters, package managers, common workflow tools, etc... Include notes on specific language/compiler versions if appropriate.
 
-# What makes <language> unique?
-
-What are a couple of the most important high-level things to be aware of that make this language what it is? What features and quirks define the language and must be kept in mind at (pretty much) all times?
+# FOR INTERPRETED LANGUAGES ONLY I want to execute simple commands in the REPL.
 
 # I just want to write a quick script with <language>
 
