@@ -10,13 +10,13 @@ From Conda, run `pip install ipython` for a more feature-full Python interpreter
 
 When it comes to which version of Python to use (2 or 3), just use Python 3 unless you're explicitly working on a legacy Python 2 codebase. That's the default behavior with Anaconda, anyway.
 
-# I want to execute simple commands in the REPL. 
+# I want to execute simple commands in the REPL
 
 Run the interpreter with `$ python` or, for more features, `$ ipython`. If you're on Windows, you may need to do this from the Anaconda Prompt terminal.
 
 To exit either, run `quit()`.
 
-# I just want to write a quick script with <language>
+# I just want to write a quick script with Python
 
 Run scripts with `$ python main.py`
 
@@ -31,7 +31,7 @@ port = sys.argv[2]
 
 Or for more complex cases, use the [argparse](https://docs.python.org/3/library/argparse.html#module-argparse) module
 
-# I'm starting a new software project with <language>
+# I'm starting a new software project with Python
 
 Python code is made up of packages which are made up of modules. Modules are just Python files, the things that get imported with `import`.
 

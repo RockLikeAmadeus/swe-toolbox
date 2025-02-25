@@ -7,7 +7,7 @@ What are a couple of the most important high-level things to be aware of that ma
 
 A couple quick notes on what should be installed, i.e. compilers, interpreters, package managers, common workflow tools, etc... Include notes on specific language/compiler versions if appropriate.
 
-# FOR INTERPRETED LANGUAGES ONLY I want to execute simple commands in the REPL.
+# FOR INTERPRETED LANGUAGES ONLY I want to execute simple commands in the REPL
 
 # I just want to write a quick script with <language>
 
