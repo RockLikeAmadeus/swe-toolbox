@@ -12,13 +12,19 @@ When it comes to which version of Python to use (2 or 3), just use Python 3 unle
 
 # I want to execute simple commands in the REPL. 
 
+Run the interpreter with `$ python` or, for more features, `$ ipython`. If you're on Windows, you may need to do this from the Anaconda Prompt terminal.
+
+To exit either, run `quit()`.
+
 # I just want to write a quick script with <language>
 
-Notes on writing and then running a standalone script or small process here.
+Run scripts with `$ python main.py`
 
 # I'm starting a new software project with <language>
 
-Notes on the structure and terminology of more complex, multi-file projects here. Talk about how code is organized in <language>, how files are named, common patterns for specific types of projects, and tools commonly used for scaffolding new projects. Keep it brief, and leave the details to [this page I haven't created yet].
+Python code is made up of packages which are made up of modules. Modules are just Python files, the things that get imported with `import`.
+
+Packages are directories containing one or more `.py` files and a `__init__.py` file, which is often empty.
 
 # Syntax and Style
 
@@ -30,3 +36,7 @@ Also include the most notable syntax-related things to know about that make this
 ## Comprehensive Syntax and Style
 
 Links to relevant example syntax and style guides, like learnxinyminutes.com, or official style guides.
+
+# Continue filling this out
+
+[here](https://docs.python.org/3/tutorial/interpreter.html)
