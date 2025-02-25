@@ -18,8 +18,16 @@ import socket
 host = sys.argv[1]
 port = sys.argv[2]
 
-print(host)
-print(port)
-# The client connection process using the sockets API is defined here
+# The client connection process using the sockets API is described here
 # https://beej.us/guide/bgnet0/html/split/introducing-the-sockets-api.html#client-connection-process
+
+# Step 1. Ask the OS for a Socket:
 client_socket = socket.socket()
+
+# Step 2. is the DNS lookup, which Python's implementation of connect() takes care of for you.
+# But if you really wanted to, you could do it yourself with `socket.getaddrinfo()`
+# Step 3. Connect the socket to the destination IP address on the destination port
+client_socket.connect(host, port)
+
+# Step 4. Build and send the data.
+# In this case, we're sending HTTP, so that's what we'll build, but it could be anything.
