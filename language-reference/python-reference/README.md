@@ -1,4 +1,4 @@
-# What makes <language> unique?
+# What makes Python unique?
 
 What are a couple of the most important high-level things to be aware of that make this language what it is? What features and quirks define the language and must be kept in mind at (pretty much) all times?
 
