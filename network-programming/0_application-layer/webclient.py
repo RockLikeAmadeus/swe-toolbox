@@ -11,6 +11,15 @@
 # • The socket.create_server() function.
 # • Anything in the urllib modules.
 
+import sys
 import socket
 
+# Parse command line args
+host = sys.argv[1]
+port = sys.argv[2]
+
+print(host)
+print(port)
+# The client connection process using the sockets API is defined here
+# https://beej.us/guide/bgnet0/html/split/introducing-the-sockets-api.html#client-connection-process
 client_socket = socket.socket()

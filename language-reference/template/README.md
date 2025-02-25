@@ -11,7 +11,7 @@ A couple quick notes on what should be installed, i.e. compilers, interpreters, 
 
 # I just want to write a quick script with <language>
 
-Notes on writing and then running a standalone script or small process here.
+Notes on writing and then running a standalone script or small process here. Include the simplest way to retrieve command line arguments.
 
 # I'm starting a new software project with <language>
 

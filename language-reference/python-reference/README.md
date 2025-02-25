@@ -20,6 +20,17 @@ To exit either, run `quit()`.
 
 Run scripts with `$ python main.py`
 
+To parse command line arguments, use `sys.argv`. The first element is the script name, so start at 1:
+
+```python
+import sys
+
+host = sys.argv[1]
+port = sys.argv[2]
+```
+
+Or for more complex cases, use the [argparse](https://docs.python.org/3/library/argparse.html#module-argparse) module
+
 # I'm starting a new software project with <language>
 
 Python code is made up of packages which are made up of modules. Modules are just Python files, the things that get imported with `import`.
