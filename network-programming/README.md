@@ -12,6 +12,8 @@ Other languages provide varying levels of abstraction on top of the sockets API 
 
 ---
 
-Connecting to a remote process through the sockets API looks something like [this simple script](./0_application-layer/webclient.py) for clients.
+Connecting to a remote process through the sockets API looks something like [this simple script](./0_application-layer/webclient.py) for clients. The client script can make requests to whatever real-world host or IP address you provide it.
 
-A simple server that can listen for requests from a client using the sockets API looks like [this script].
+A simple server that can listen for requests from a client using the sockets API looks like [this script](webserver.py). The server can be reached out to via your web browser. 
+
+If you start up the server script in a terminal window (`python webserver.py`), and then execute the client script in a separate terminal (`python webclient.py 127.0.0.1 28333`), you can see these two scripts talk to each other over the socket API.

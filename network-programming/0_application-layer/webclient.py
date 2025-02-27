@@ -14,6 +14,8 @@
 import sys
 import socket
 
+BUFFER_SIZE_BYTES = 4096
+
 # Parse command line args
 host = sys.argv[1]
 port = 80 if len(sys.argv) < 3 else int(sys.argv[2]) 
@@ -48,7 +50,7 @@ client_socket.sendall(msg)
 # Now we wait for the response, and we keep reading the response until `recv` is empty, which tells
 # us that there's no more data to read
 while True:
-    reply = client_socket.recv(4096)
+    reply = client_socket.recv(BUFFER_SIZE_BYTES)
     print(reply)
     if (len(reply) == 0):
         break

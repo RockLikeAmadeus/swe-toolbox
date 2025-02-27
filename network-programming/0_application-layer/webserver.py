@@ -14,44 +14,45 @@
 import sys
 import socket
 
-# Parse command line args
-host = sys.argv[1]
-port = 80 if len(sys.argv) < 3 else int(sys.argv[2]) 
+BUFFER_SIZE_BYTES = 4096
 
-# The client connection process using the sockets API is described here
-# https://beej.us/guide/bgnet0/html/split/introducing-the-sockets-api.html#client-connection-process
+# Parse command line args
+port = 28333 if len(sys.argv) < 2 else int(sys.argv[1]) 
+
+# The server listening process using the sockets API is described here
+# https://beej.us/guide/bgnet0/html/split/introducing-the-sockets-api.html#server-listening-process
 
 # Step 1. Ask the OS for a Socket:
-client_socket = socket.socket()
+server_socket = socket.socket()
 
-# Step 2. is the DNS lookup, which Python's implementation of connect() takes care of for you.
-# But if you really wanted to, you could do it yourself with `socket.getaddrinfo()`
-# Step 3. Connect the socket to the destination IP address on the destination port
-client_socket.connect((host, port))
+# Do that thing beej says here
 
-# Step 4. Build and send the data.
-# In this case, we're sending a so-called "HTTP request", which is why it has this specific form,
-# but it could be anything.
-str_msg = """GET / HTTP/1.1\r
-Host: example.com\r
-Connection: close\r
+# Step 2. Bind the socket to a port
+# This just tells the OS what port you'll be listening on
+server_socket.bind(('', port)) # '' here means choose any local address
 
-"""
+# Step 3. Listen for incoming connections
+server_socket.listen()
 
-#  Over the web, the standard string encoding is ISO-8859-1, so convert from a string to an array
-# of raw bytes
-msg = str_msg.encode("ISO-8859-1")
-
-# Now send it. We do it all at once, which the Python wrapper over the sockets API makes easy for us
-client_socket.sendall(msg)
-
-# Now we wait for the response, and we keep reading the response until `recv` is empty, which tells
-# us that there's no more data to read
+# Step 4. Accept incoming connections
+# The accept() function blocks until a client tries to connect
+# Then, it returns a brand new socket specifically for the connection to that client
 while True:
-    reply = client_socket.recv(4096)
-    print(reply)
-    if (len(reply) == 0):
-        break
+    new_socket, return_addr = server_socket.accept()
+    # Step 5. Send and receive data
+    # A real-world server would probably spin off a separate thread process to maintain this 
+    # connection and send data back and forth to the client, but in this simple case we'll just send 
+    # a static response and close the connection before checking for the next client connection
+    request = ""
+    while True:
+        request += new_socket.recv(BUFFER_SIZE_BYTES).decode("ISO-8859-1")
+        # This should be an HTTP request, so we're looking for a blank line to know we're done
+        if ("\r\n\r\n" in request):
+            break
+    print(request)
 
-# Step 5. Close up the connection
-client_socket.close()
+    # response here
+
+    new_socket.close()
+
+# Step 6. Go back and accept another connection
