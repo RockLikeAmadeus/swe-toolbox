@@ -1,5 +1,15 @@
-#### Completed
+### Completed
 
-#### In Progress
+### In Progress
 
-#### Could Be Next
+### Could Be Next
+
+- []() - Not Owned
+- []() - Not Owned
+- []() - Not Owned
+- []() - Not Owned
+- []() - Not Owned
+- []() - Not Owned
+- []() - Not Owned
+- []() - Not Owned
+- []() - Not Owned

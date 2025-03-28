@@ -9,3 +9,4 @@ Some sources for coming up with a list of possible next resources:
 Amazon wishlist
 Free programming books github repo
 Humble Bundle books on Dropbox
+Udemy Library/Wishlist
