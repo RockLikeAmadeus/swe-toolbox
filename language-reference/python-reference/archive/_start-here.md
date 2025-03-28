@@ -14,7 +14,7 @@ Python code is made up of packages which are made up of modules.
 
 Modules are just Python files, the things that get imported with `import`.
 
-Packages are directories containing `.py` files and a `__init__.py` file, which is often empty.
+Packages are directories containing one or more `.py` files and a `__init__.py` file, which is often empty.
 
 # Running Code
 
