@@ -19,12 +19,19 @@
 - [Tiny C Projects](https://www.amazon.com/hz/wishlist/ls/GZ7RR7BXJOGH/ref=nav_wishlist_lists_1) - Not Owned
 - [Expert C Programming: Deep C Secrets](https://www.amazon.com/dp/0131774298/?coliid=I206DRPWM1ED1V&colid=GZ7RR7BXJOGH&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 
+#### C++
+- [The Definitive C++ Book List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
+
 #### Rust
--[Rust in Action](https://www.amazon.com/dp/B09H3NQCBJ/?coliid=I1ZVHREUVXZZZD&colid=GZ7RR7BXJOGH&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
+- [Rust in Action](https://www.amazon.com/dp/B09H3NQCBJ/?coliid=I1ZVHREUVXZZZD&colid=GZ7RR7BXJOGH&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 - [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs](https://www.amazon.com/dp/1098109430/?coliid=I2KSOIGQM4B4SE&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it#) - Not Owned
 - [Programming Rust: Fast, Safe Systems Development](https://www.amazon.com/dp/1492052590/?coliid=I3I0COHFW8VLQD&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 
+#### Containers
+- [Free books on containers](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md#computer-organization-and-architecture)
+
 #### General Cloud
+- [Free books on Cloud computing](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md#cloud-computing)
 - [The Self-Taight Cloud Computing Engineer](https://www.amazon.com/dp/180512370X/?coliid=IL1M5E692J57J&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 - [Amazon Web Services in Action](https://www.amazon.com/dp/163343916X/?coliid=I2IYCFOWTTNPHI&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 - [Building and Delivering Microservices on AWS](https://www.amazon.com/dp/1803238208/?coliid=I2MYE4HYAXSDC0&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
@@ -37,8 +44,10 @@
 - [Mastering Go](https://www.amazon.com/dp/1805127144/?coliid=I2ZXQPYCCSYQFC&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 - [System Programming Essentials with Go](https://www.amazon.com/dp/1837634130/?coliid=I8VAHP1ICPOCA&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 
-#### Blockchain
-- [Web3 for Future Degens](https://www.amazon.com/dp/B0BW2X9BT2/?coliid=I28MGVCUFWPE4M&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
-- [Blockchain for Dummies](https://www.amazon.com/dp/1394159668/?coliid=I2GR0750XZYQFB&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 #### Hacking
 - [Linux Basics for Hackers](https://www.amazon.com/dp/B077WWRK8B/?coliid=I2FKGR4GXHOTRT&colid=GZ7RR7BXJOGH&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
+
+#### Blockchain
+- [Free books on Blockchain](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md#blockchain)
+- [Web3 for Future Degens](https://www.amazon.com/dp/B0BW2X9BT2/?coliid=I28MGVCUFWPE4M&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
+- [Blockchain for Dummies](https://www.amazon.com/dp/1394159668/?coliid=I2GR0750XZYQFB&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned

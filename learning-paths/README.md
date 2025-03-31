@@ -3,16 +3,19 @@ There are different _paths_ that maybe should be traveled in parallel:
 - learning more fundamentals (networking, hardware, computer systems, CodeCrafters work to rebuild existing tech from scratch, etc.)
 - learning good SWE practice (TDD, BDD, DDD, design patterns, software architecture, formal diagrams, processes i.e. SAFe and Kanban, etc.)
 - domain specifics (based on your industry)
+- professional development
 
 TODO: Map these on an actual mind map to start making it visual!
 
 Some sources for coming up with a list of possible next resources:
 
-Amazon wishlist
-Free programming books github repo
-Humble Bundle books on Dropbox
-Udemy Library/Wishlist
-Physical Books
+- [x] Amazon wishlist
+- [x] Free programming books github repo
+- [ ] Humble Bundle books on Dropbox
+- [ ] Udemy Library/Wishlist
+- [ ] Physical Books
+- [ ] Audible library
+- [ ] Audible wishlist
 NOTE: I've already gone through the default Wishlist on Amazon.
 
 When picking up a new resource:
