@@ -9,7 +9,8 @@ TODO: Map these on an actual mind map to start making it visual!
 
 Some sources for coming up with a list of possible next resources:
 
-- [x] Amazon wishlist
+- [x] Default Amazon wishlist
+- [ ] Other Amazon wishlists
 - [x] Free programming books github repo
 - [ ] Humble Bundle books on Dropbox
 - [ ] Udemy Library/Wishlist
