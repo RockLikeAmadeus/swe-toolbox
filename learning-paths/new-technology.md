@@ -2,7 +2,7 @@
 
 ### In Progress
 
-Read a little of Beej's guide and the authors' book in parallel and decide which one feels like a better one to start with
+Read a little of Beej's guide and the K&R book in parallel and decide which one feels like a better one to start with. According to the start of Beej's book, a good amount of the features in his book didn't exist when the second edition of the K&R book was written, so that alone may be good enough reason to go with Beej.
 
 #### C Language
 - [Beej's Guide to C](https://beej.us/guide/bgc/)
