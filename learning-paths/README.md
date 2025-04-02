@@ -26,3 +26,12 @@ Make sure you're using the latest edition of whatever book you're using, if it's
 As you study the topic, with each new thing you learn, continually go back to the big picture and fit that piece of knowledge into it, even by literally drawing a big-picture mind map and visualizing or writing where it fits in the mind map
 When done, move resource to Completed and re-order topics in To Do list
 
+Program
+Study: Comp
+Program
+Study: SWE Practice
+Program
+Study: New Tech
+Program
+Program
+

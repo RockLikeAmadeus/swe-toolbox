@@ -2,10 +2,13 @@
 
 ### In Progress
 
+- [Modern Software Engineering](https://www.amazon.com/dp/0137314914/?coliid=I10VVY2W0JT94&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - On Audible only, needs a re-read
+
 ### The Frontier
 
 #### General SWE Best Practices
 - [Free books on software architecture and related topics](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md#software-architecture)
+- [Addison-Wesley Signature Series (Beck) (7 Book Series)]() - Add Amazon Link, can be accessed from GOOS book page
 - [Modern Software Engineering](https://www.amazon.com/dp/0137314914/?coliid=I10VVY2W0JT94&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - On Audible only, needs a re-read
 - [Clean Code] - Re-read
 - [Clean Architecture] - Re-read
