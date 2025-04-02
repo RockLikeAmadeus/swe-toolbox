@@ -1,15 +1,10 @@
-### Completed
+### Traveled
 
 ### In Progress
 
-### Could Be Next
+### The Frontier
 
-#### Python
-- [Fluent Python](https://www.amazon.com/dp/1491946008/?coliid=I209GEPWDIBYWE&colid=GZ7RR7BXJOGH&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
-- [Effective Python](https://www.amazon.com/dp/0134034287/?coliid=I1W6HAR3MKTLQH&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it#) - Not Owned
-
-#### CSS
-- [CSS in Depth](https://www.amazon.com/dp/1617291781/?coliid=I25OVJ2XE0KQ2A&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
+#### Cypress
 
 #### React
 - [React Application Architecture for Production](https://www.amazon.com/dp/1801070539/?coliid=I2HTH7SZ1V5ISF&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
@@ -22,10 +17,17 @@
 #### C++
 - [The Definitive C++ Book List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
 
+#### CSS
+- [CSS in Depth](https://www.amazon.com/dp/1617291781/?coliid=I25OVJ2XE0KQ2A&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
+
 #### Rust
 - [Rust in Action](https://www.amazon.com/dp/B09H3NQCBJ/?coliid=I1ZVHREUVXZZZD&colid=GZ7RR7BXJOGH&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 - [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs](https://www.amazon.com/dp/1098109430/?coliid=I2KSOIGQM4B4SE&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it#) - Not Owned
 - [Programming Rust: Fast, Safe Systems Development](https://www.amazon.com/dp/1492052590/?coliid=I3I0COHFW8VLQD&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
+
+#### Python
+- [Fluent Python](https://www.amazon.com/dp/1491946008/?coliid=I209GEPWDIBYWE&colid=GZ7RR7BXJOGH&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
+- [Effective Python](https://www.amazon.com/dp/0134034287/?coliid=I1W6HAR3MKTLQH&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it#) - Not Owned
 
 #### Containers
 - [Free books on containers](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md#computer-organization-and-architecture)

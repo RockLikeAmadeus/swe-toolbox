@@ -17,7 +17,6 @@ Some sources for coming up with a list of possible next resources:
 - [ ] Physical Books
 - [ ] Audible library
 - [ ] Audible wishlist
-NOTE: I've already gone through the default Wishlist on Amazon.
 
 When picking up a new resource:
 First decide on the topic you most want to learn next on that path

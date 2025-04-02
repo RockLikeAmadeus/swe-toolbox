@@ -1,12 +1,15 @@
-### Completed
+### Traveled
 
 ### In Progress
 
-### Could Be Next
+### The Frontier
 
 #### General SWE Best Practices
 - [Free books on software architecture and related topics](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md#software-architecture)
 - [Modern Software Engineering](https://www.amazon.com/dp/0137314914/?coliid=I10VVY2W0JT94&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - On Audible only, needs a re-read
+- [Clean Code] - Re-read
+- [Clean Architecture] - Re-read
+- [The Pragmatic Programmer]
 - [Clean Craftsmanship](https://www.amazon.com/dp/B095C16LSW/?coliid=I1VVFXAX82L80H&colid=GZ7RR7BXJOGH&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 - [Code That Fits in Your Head](https://www.amazon.com/dp/0137464401/?coliid=I1NHNLKRPAXWH9&colid=GZ7RR7BXJOGH&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it) - Not Owned
 

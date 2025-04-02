@@ -1,12 +1,14 @@
-### Completed
+### Traveled
 
 ### In Progress
+
+- [Beej's Guide to Networking Concepts](https://beej.us/guide/bgnet0/pdf/bgnet0_usl_c_1.pdf) -
 
 #### Networking
 - [Free books on networking](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md#networking)
 - [Intro to Networking](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://do1.dr-chuck.net/net-intro/EN_us/net-intro.pdf) - Free
 
-### Could Be Next
+### The Frontier
 
 #### Operating Systems
 - [Free books on operating systems](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md#operating-systems)
