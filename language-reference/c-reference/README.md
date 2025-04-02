@@ -9,7 +9,7 @@ _What are a couple of the most important high-level things to be aware of that m
 
 _A couple quick notes on what should be installed, i.e. compilers, interpreters, package managers, common workflow tools, etc... Include notes on specific language/compiler versions if appropriate. Delete this block once the reference for this language is "complete"_
 
-[contents]
+You'll need a C compiler, which may come installed with your OS if it's not Windows. Try running `$ cc` or `$ gcc` or `$ clang` (Mac) from the command line. For Mac specifically, you may want to install XCode. For Windows, install WSL for gcc, or use an IDE. VS Code can easily run C programs with a debugger if you install the C/C++ extension.
 
 # I just want to write a quick script with C
 
