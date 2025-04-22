@@ -2,7 +2,9 @@
 [Design and Architecture](general/design-and-architecture/README.md) <br>
 [Working with Legacy Code](general/legacy-code/legacy-code-tools.md) <br>
 [Testing/TDD](general/testing/README.md) <br>
-[Code-Review Checklist](general/processes/code-review-checklist.md) <br>
+[Code-Review Checklist](general/processes/code-review-checklist.md) <br><br>
+
+[I need to build myself a tool](./general/i-need-to-build-myself-a-tool.md)
 
 ###### Languages
 [Language Reference](./language-reference/README.md) <br>
