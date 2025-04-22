@@ -3,7 +3,7 @@
 - [HTML](HTML)
 - [CSS](CSS)
 - [JavaScript](Frontend%20JavaScript)
-- [React](React)
+- [React](./React/README.md)
 
 <br>
 
