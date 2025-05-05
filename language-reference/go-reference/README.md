@@ -33,7 +33,7 @@ _Notes on writing and then running a standalone script or small process here. In
 
 # I'm starting a new software project with Go
 
-The top-level organizational unit in Go, the unit of _releasability_, is the **Module** (run `go help modules`). Dependencies are managed within a single module, and _typically make up a single project or library_.
+The top-level organizational unit in Go, the unit of _releasability_, is the **Module** (run `go help modules`). Dependencies are managed within a single module, which _typically makes up a single project or library_.
 
 Modules are composed of **Packages** (run `go help packages`). A Go package is an organizational unit that represents a distinct concept and has its own namespace. It can be made up by a single file, or can be spread across multiple files. Technically, Go packages are just _directories_ of `.go` files that start with the `package` statement (by itself on a single line, followed by the import statements and then the rest of the code).    
 
