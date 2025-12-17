@@ -1,3 +1,5 @@
+For quick syntax reference, open File >> Examples in the Arduino IDE.
+
 # Syntax
 
 ```arduino
