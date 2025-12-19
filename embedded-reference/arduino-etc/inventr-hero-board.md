@@ -1,4 +1,12 @@
-To talk to the HERO board, fire up the Arduino IDE. Under Tools >> Board, make sure Arduino UNO is selected as the port type. With the board plugged in via USB, go to Tools >> Port, and make sure the USB serial port is selected.
+To talk to the HERO board, fire up the Arduino IDE. Under Tools >> Board, make sure Arduino UNO is selected as the port type. With the board plugged in via USB, go to Tools >> Port, and make sure the USB serial port is selected.press the Verify (checkmark) button and then the Upload (->) button
+
+# Features
+
+LEDS:
+
+![alt text](hero-board-LEDs.png)
+
+We can control the LED labeled "L".
 
 # Testing the board
 

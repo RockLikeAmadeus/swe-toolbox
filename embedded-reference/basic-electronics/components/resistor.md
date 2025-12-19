@@ -1,0 +1,1 @@
+![Resistor Codes](images/resistor-codes.png)
