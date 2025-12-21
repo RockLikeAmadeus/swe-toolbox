@@ -1,4 +1,5 @@
 For quick syntax reference, open File >> Examples in the Arduino IDE.
+Also see [this reference](https://docs.arduino.cc/language-reference/).
 
 # Syntax
 
