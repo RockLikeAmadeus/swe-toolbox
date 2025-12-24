@@ -22,3 +22,9 @@ void loop() {
 }
 
 ```
+
+# Reading Analog Signals
+
+# Debugging with the Serial Monitor
+
+When connected to our machine via USB, the Arduino board internally makes use of a serial-to-USB converter, since the serial interface is what the MCU uses for more sophisticated messaging.
