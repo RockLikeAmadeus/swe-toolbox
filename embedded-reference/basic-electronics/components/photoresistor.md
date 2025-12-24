@@ -4,4 +4,8 @@ Because of the property of components in series that they are voltage sharing, m
 
 The first step is to create a basic circuit starting from the static 5V output of the Arduino's power pin., through a photoresistor, then through a basic static resistor, and finally through ground. This is self-contained circuit.
 
-In addition to using the Arduino to create the circuit itself, we then use the Arduino to also _measure one aspect of this circuit_, by connecting the from the Arduino A0 pin, to the static resistor, and then straight from there to ground. With this configuration, a simple read from the A0 pin will tell us the voltage drop across the resistor.
+In addition to using the Arduino to create the circuit itself, we then use the Arduino to also _measure one aspect of this circuit_, by connecting from the Arduino A0 pin to the static resistor, and then straight from there to ground. With this configuration, a simple read from the A0 pin will tell us the voltage drop across the resistor.
+
+Example:
+
+![alt text](./images/photoresistor-circuit.png)
