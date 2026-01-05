@@ -3,6 +3,15 @@
 
 _What are a couple of the most important high-level things to be aware of that make this language what it is? What features and quirks define the language and must be kept in mind at (pretty much) all times? Note: this section is not for notes on unique syntax--that section is below. Delete this block once the reference for this language is "complete"_
 
+C is the lowest-level language you can write before assembly, and knowing it will teach you a great deal about how the machine works at a more fundamental level. According to Beej, the only thing that really stands out for people when it comes to C are pointers, but I suspect this isn't quite the whole story.
+
+Of course, C doesn't have fancy string functionality, and if your application relies heavily on string parsing and manipulation you should use a different language. Strings in C have the type `char *`, to be read as "char pointer".
+
+A few more things:
+- Variables need to be initialized explicitly or they can contain nonsense data.
+- Functions must be defined before they're used--or, more commonly, a function _prototype_ must be declared before the function is used.
+- You should always use `void` between parens to indicate a function has no parameters, in the function definition and _especially_ in the prototype.
+
 [contents]
 
 # What do I need installed to write C code
@@ -34,6 +43,6 @@ Also include the most notable syntax-related things to know about that make this
 
 ## Comprehensive Syntax and Style
 
-_Links to relevant example syntax and style guides, like learnxinyminutes.com, or official style guides. Delete this block once the reference for this language is "complete"_
+[Essential Syntax](https://learnxinyminutes.com/c/)
 
 [contents]
