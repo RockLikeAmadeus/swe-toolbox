@@ -3,7 +3,7 @@
 
 _What are a couple of the most important high-level things to be aware of that make this language what it is? What features and quirks define the language and must be kept in mind at (pretty much) all times? Note: this section is not for notes on unique syntax--that section is below. Delete this block once the reference for this language is "complete"_
 
-C is the lowest-level language you can write before assembly, and knowing it will teach you a great deal about how the machine works at a more fundamental level. According to Beej, the only thing that really stands out for people when it comes to C are pointers, but I suspect this isn't quite the whole story.
+C is the lowest-level language you can write before assembly, and knowing it will teach you a great deal about how the machine works at a more fundamental level. According to Beej, the only thing that really stands out for people when it comes to C are pointers and manual memory management, but I suspect this isn't quite the whole story.
 
 Of course, C doesn't have fancy string functionality, and if your application relies heavily on string parsing and manipulation you should use a different language. Strings in C have the type `char *`, to be read as "char pointer".
 
@@ -11,6 +11,10 @@ A few more things:
 - Variables need to be initialized explicitly or they can contain nonsense data.
 - Functions must be defined before they're used--or, more commonly, a function _prototype_ must be declared before the function is used.
 - You should always use `void` between parens to indicate a function has no parameters, in the function definition and _especially_ in the prototype.
+- _Everything_ in C is pass by value, that is, a copy is put into the parameter. Even pointers are copies of pointers.
+- Arrays and pointers are pretty much the same thing.
+- Explicit casting is sometimes necessary, but rarely. If you find yourself doing it, ask if you really need to. See Chapter 15 of [Beej's Guide](https://beej.us/guide/bgc/pdf/bgc_usl_c_1.pdf)
+
 
 [contents]
 
@@ -38,6 +42,8 @@ _Notes on the structure and terminology of more complex, multi-file projects her
 
 _Examples of the most important syntax and style to know without having to go all the way to external resources.
 Also include the most notable syntax-related things to know about that make this language different than other languages. Delete this block once the reference for this language is "complete"_
+
+First use [Learn C in Y Minutes]. If the answer isn't there, look up the relevant chapter in [Beej's Guide](https://beej.us/guide/bgc/html/split/), which is really well organized and sufficiently concise.
 
 [contents]
 
