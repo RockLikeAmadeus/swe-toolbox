@@ -168,7 +168,7 @@ if testing.Short() {
 
 [errcheck](https://github.com/kisielk/errcheck) - automatically exercise your error checking coverage.
 
-[Charm Log](https://github.com/charmbracelet/log) - logging, also from Charm
-
 ### Utilities
 [Funk](https://github.com/thoas/go-funk) - map, filter, contains, etc.
+
+[Charm Log](https://github.com/charmbracelet/log) - logging, also from Charm

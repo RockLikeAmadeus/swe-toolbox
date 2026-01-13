@@ -46,7 +46,7 @@ _What are the basics of automated tests for this language? If testing isn't buil
 
 ## Essential Language Toolset Commands
 
-_tbd_
+_What commands with the languages compiler and/or included command-line tools should be known, or at least be known of?_
 
 ## Tools
 
