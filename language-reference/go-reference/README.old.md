@@ -21,19 +21,7 @@ TODO: Write a quick tool that I can run against a directory containing markdown 
 
 ## Organzing Go Code
 
-Go **Modules** are composed of **Packages** (run `go help modules`). Go **Packages** are just directories of `.go` files that start with the `package` statement (run `go help packages`).    
-
-To create a new Go module (project), navigate to the directory that you want to be the project root, and run `$ go mod init github.com/RockLikeAmadeus/my-project`. For more info, run `go help mod init`. For advice on structuring your new project, check out [this article](https://dave.cheney.net/2014/12/01/five-suggestions-for-setting-up-a-go-project).
-
-The `main()` function in Go is the entry point of executable applications.
-
-Try `$ go help mod`
-
-More info [here](./code-organization.md)
-
 ## Basic Syntax
-
-For basic syntax, go [here](https://learnxinyminutes.com/docs/go/).
 
 ## Basic Commands
 
