@@ -10,6 +10,7 @@
   - [Essential Syntax and Style](#essential-syntax-and-style)
   - [Comprehensive Syntax and Style](#comprehensive-syntax-and-style)
 - [Basics of Testing](#basics-of-testing)
+- [Useful Library Imports](#useful-library-imports)
 - [Essential Language Toolset Commands](#essential-language-toolset-commands)
 - [Tools](#tools)
 - [Utilities](#utilities)
@@ -58,6 +59,12 @@ _Links to relevant example syntax and style guides, like learnxinyminutes.com, o
 # Basics of Testing
 
 _What are the basics of automated tests for this language? If testing isn't built into the language, what testing frameworks are most popular? What is the basic syntax for writing automated tests, and how are test functions and files organized?_
+
+[Contents](#contents)
+
+# Useful Library Imports
+
+_What are the most commonly included libraries, preferably from the language's standard library? Specify the syntax for including them, what each library is used for, and optionally, a link to the libraries documentation page._
 
 [Contents](#contents)
 

@@ -20,6 +20,7 @@
   - [Testable Examples](#testable-examples)
   - [Table Driven Tests](#table-driven-tests)
   - [Executing only short-running tests](#executing-only-short-running-tests)
+- [Useful Library Imports](#useful-library-imports)
 - [Essential Language Toolset Commands](#essential-language-toolset-commands)
 - [Tools](#tools)
 - [Utilities](#utilities)
@@ -379,6 +380,22 @@ We can add the following to our _acceptance_ tests to see if the user wants to r
 if testing.Short() {
 	t.Skip()
 }
+```
+
+[Contents](#contents)
+
+# Useful Library Imports
+
+```
+import (
+	"fmt"              // Formatted I/O, analogous to C's printf and scanf (https://pkg.go.dev/fmt)
+	"io"               // Implements some I/O utility functions.
+	m "math"           // Math library with local alias m.
+	"net/http"         // Yes, a web server!
+	_ "net/http/pprof" // Profiling library imported only for side effects
+	"os"               // OS functions like working with the file system
+	"strconv"          // String conversions.
+)
 ```
 
 [Contents](#contents)
