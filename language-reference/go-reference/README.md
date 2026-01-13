@@ -79,13 +79,13 @@ func outerFunc() {
   
 - The only iteration construct in Go is `for`, and there is special syntax for iterating over a range.
 
-[contents](#contents)
+[Contents](#contents)
 
 # What do I need installed to write Go code
 
 Simply [install Go](https://go.dev/doc/install) and run `$ go version`. All of the workflow tools you're likely to need are packaged with the language.
 
-[contents](#contents)
+[Contents](#contents)
 
 # I just want to write a quick script with Go
 
@@ -105,7 +105,7 @@ func main() {
 
 _Notes on writing and then running a standalone script or small process here. Include the simplest way to retrieve command line arguments. Delete this block once the reference for this language is "complete"_
 
-[contents](#contents)
+[Contents](#contents)
 
 # I'm starting a new software project with Go
 
@@ -117,7 +117,7 @@ To create a new Go module (project), navigate to the directory that you want to 
 
 More info [here](./code-organization.md)
 
-[contents](#contents)
+[Contents](#contents)
 
 # Syntax and Style
 
@@ -133,7 +133,7 @@ for _, number := range numbers {
 }
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 #### Arrays
 
@@ -153,7 +153,7 @@ func Sum(numbers [5]int) int {
 }
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 #### Slices
 
@@ -170,7 +170,7 @@ numbers := []int{1, 2, 3}
 
 Slices can be sliced like `slice[low:high]`, where either `low` or `high` can be omitted.
 
-[contents](#contents)
+[Contents](#contents)
 
 ### Structs
 
@@ -189,7 +189,7 @@ func (r Rectangle) Area() float64 {
 
 Often (most of the time?) you'll want to specify pointer receivers (`func (r *Rectangle)`), particularly if your methods will change the underlying value of the object. If you use a pointer receiver for any of your methods, be sure and update all of your methods to take a pointer receiver, for consistency.
 
-[contents](#contents)
+[Contents](#contents)
 
 #### Constructing Structs
 
@@ -198,7 +198,7 @@ cash := new(Money) // zero value; the type of cash is *Money
 cashVal := *(new(Money)) // the type of cashVal here is Money. Is this bad style, though?
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 ### Interfaces
 
@@ -208,7 +208,7 @@ type Shape interface {
 }
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 ### Error Handling
 
@@ -242,13 +242,13 @@ assertError := func(t testing.TB, got error, want string) {
 }
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 ### Style
 
 - Names should use `camelCase` or `PascalCase`, rather than `snake_case`
 
-[contents](#contents)
+[Contents](#contents)
 
 ## Comprehensive Syntax and Style
 
@@ -260,7 +260,7 @@ assertError := func(t testing.TB, got error, want string) {
 <br>
 [Effective Go](https://go.dev/doc/effective_go)
 
-[contents](#contents)
+[Contents](#contents)
 
 # Basics of Testing
 
@@ -320,13 +320,13 @@ $ go test ./... # verbose
 $ go test -v ./... # recursive and verbose
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 ## Testable Examples
 
 For now, see [here](https://go.dev/blog/examples).
 
-[contents](#contents)
+[Contents](#contents)
 
 ## Table Driven Tests
 
@@ -365,7 +365,7 @@ With the above syntax, the output of the test will be quite friendly, like this:
         shapes_test.go:33: main.Rectangle{Width:12, Height:6} received 72.00 expected 72.10
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 ## Executing only short-running tests
 
@@ -381,7 +381,7 @@ if testing.Short() {
 }
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 # Essential Language Toolset Commands
 
@@ -390,7 +390,7 @@ $ go mod tidy # Clean up your Go mod file
 $ go fmt
 ```
 
-[contents](#contents)
+[Contents](#contents)
 
 # Tools
 
@@ -404,7 +404,7 @@ $ go fmt
 
 [errcheck](https://github.com/kisielk/errcheck) - automatically exercise your error checking coverage.
 
-[contents](#contents)
+[Contents](#contents)
 
 # Utilities
 
@@ -412,4 +412,4 @@ $ go fmt
 
 [Charm Log](https://github.com/charmbracelet/log) - logging, also from Charm
 
-[contents](#contents)
+[Contents](#contents)

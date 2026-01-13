@@ -18,13 +18,13 @@
 
 _What are a couple of the most important high-level things to be aware of that make this language what it is? What features and quirks define the language and must be kept in mind at (pretty much) all times? Note: this section is not for notes on unique syntax--that section is below. Delete this block once the reference for this language is "complete"_
 
-[contents](#contents)
+[Contents](#contents)
 
 # What do I need installed to write <language> code
 
 _A couple quick notes on what should be installed, i.e. compilers, interpreters, package managers, common workflow tools, etc... Include notes on specific language/compiler versions if appropriate. Delete this block once the reference for this language is "complete"_
 
-[contents](#contents)
+[Contents](#contents)
 
 # FOR INTERPRETED LANGUAGES ONLY I want to execute simple commands in the REPL
 
@@ -32,13 +32,13 @@ _A couple quick notes on what should be installed, i.e. compilers, interpreters,
 
 _Notes on writing and then running a standalone script or small process here. Include the simplest way to retrieve command line arguments. Delete this block once the reference for this language is "complete"_
 
-[contents](#contents)
+[Contents](#contents)
 
 # I'm starting a new software project with <language>
 
 _Notes on the structure and terminology of more complex, multi-file projects here. Talk about how code is organized in <language>, how files are named, common patterns for specific types of projects, and tools commonly used for scaffolding new projects. Keep it brief, and leave the details to [this page I haven't created yet]. Delete this block once the reference for this language is "complete"_
 
-[contents](#contents)
+[Contents](#contents)
 
 # Syntax and Style
 
@@ -47,34 +47,34 @@ _Notes on the structure and terminology of more complex, multi-file projects her
 _Examples of the most important syntax and style to know without having to go all the way to external resources.
 Also include the most notable syntax-related things to know about that make this language different than other languages. Delete this block once the reference for this language is "complete"_
 
-[contents](#contents)
+[Contents](#contents)
 
 ## Comprehensive Syntax and Style
 
 _Links to relevant example syntax and style guides, like learnxinyminutes.com, or official style guides. Delete this block once the reference for this language is "complete"_
 
-[contents](#contents)
+[Contents](#contents)
 
 # Basics of Testing
 
 _What are the basics of automated tests for this language? If testing isn't built into the language, what testing frameworks are most popular? What is the basic syntax for writing automated tests, and how are test functions and files organized?_
 
-[contents](#contents)
+[Contents](#contents)
 
 # Essential Language Toolset Commands
 
 _What commands with the languages compiler and/or included workflow command-line tools should be known, or at least be known of?_
 
-[contents](#contents)
+[Contents](#contents)
 
 # Tools
 
 _What are some well-known and widely-used third party tools and frameworks that it's important to be aware of, such as CLI or TUI frameworks, or web frameworks? Be sure to include what they're used for and maybe some well established pros, cons, and use cases._
 
-[contents](#contents)
+[Contents](#contents)
 
 # Utilities
 
 _What are some well-known and widely-used third party libraries that it's important to be aware of, such as logging, financial libraries, math libraries, or data structure utilities? Be sure to include what they're used for and maybe some well established pros, cons, and use cases._
 
-[contents](#contents)
+[Contents](#contents)
