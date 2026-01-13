@@ -262,6 +262,8 @@ assertError := func(t testing.TB, got error, want string) {
 [Effective Go](https://go.dev/doc/effective_go)
 <br>
 [Full Language Specification](https://go.dev/ref/spec)
+<br>
+[Standard Library Source Code (for reference to best practices, expected style, and idioms)](https://go.dev/src/)
 
 [Contents](#contents)
 
@@ -387,6 +389,8 @@ if testing.Short() {
 [Contents](#contents)
 
 # Useful Library Imports
+
+[Go Standard Library Documentation](https://pkg.go.dev/std)
 
 ```
 import (
