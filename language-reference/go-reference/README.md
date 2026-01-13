@@ -260,6 +260,8 @@ assertError := func(t testing.TB, got error, want string) {
 [Go Style Guide](https://google.github.io/styleguide/go/)
 <br>
 [Effective Go](https://go.dev/doc/effective_go)
+<br>
+[Full Language Specification](https://go.dev/ref/spec)
 
 [Contents](#contents)
 
