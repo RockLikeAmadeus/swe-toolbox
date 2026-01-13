@@ -1,3 +1,28 @@
+# Contents
+
+- [Contents](#contents)
+- [What makes Go unique?](#what-makes-go-unique)
+- [What do I need installed to write Go code](#what-do-i-need-installed-to-write-go-code)
+- [I just want to write a quick script with Go](#i-just-want-to-write-a-quick-script-with-go)
+- [I'm starting a new software project with Go](#im-starting-a-new-software-project-with-go)
+- [Syntax and Style](#syntax-and-style)
+  - [Essential Syntax and Style](#essential-syntax-and-style)
+    - [Collections](#collections)
+      - [Arrays](#arrays)
+      - [Slices](#slices)
+    - [Structs](#structs)
+      - [Constructing Structs](#constructing-structs)
+    - [Interfaces](#interfaces)
+    - [Error Handling](#error-handling)
+    - [Style](#style)
+  - [Comprehensive Syntax and Style](#comprehensive-syntax-and-style)
+- [Basics of Testing](#basics-of-testing)
+  - [Testable Examples](#testable-examples)
+  - [Table Driven Tests](#table-driven-tests)
+  - [Executing only short-running tests](#executing-only-short-running-tests)
+- [Essential Language Toolset Commands](#essential-language-toolset-commands)
+- [Tools](#tools)
+- [Utilities](#utilities)
 
 # What makes Go unique?
 
@@ -218,12 +243,12 @@ assertError := func(t testing.TB, got error, want string) {
 [Go by Example](https://gobyexample.com/)
 <br>
 [Go Style Guide](https://google.github.io/styleguide/go/)
+<br>
+[Effective Go](https://go.dev/doc/effective_go)
 
 [contents]
 
-
-
-## Basics of Testing
+# Basics of Testing
 
 Go unit tests can be organized in two ways. The most basic Go unit tests live in files alongside (at the same level of) the files that they test, and must have the same name as the file suffixed with `_test`.
 
@@ -281,11 +306,11 @@ $ go test ./... # verbose
 $ go test -v ./... # recursive and verbose
 ```
 
-### Testable Examples
+## Testable Examples
 
 For now, see [here](https://go.dev/blog/examples).
 
-### Table Driven Tests
+## Table Driven Tests
 
 If you want to test identical behavior with a large number of different inputs, you can make your test logic more compact and easier to extend with table-driven tests. In this example, we start by initializing a slice of struct instances, where the type is defined inline using _anonymous struct_ syntax.
 
@@ -322,7 +347,7 @@ With the above syntax, the output of the test will be quite friendly, like this:
         shapes_test.go:33: main.Rectangle{Width:12, Height:6} received 72.00 expected 72.10
 ```
 
-### Executing only short-running tests
+## Executing only short-running tests
 
 ```bash
 go test -short ./...
@@ -336,14 +361,14 @@ if testing.Short() {
 }
 ```
 
-## Essential Language Toolset Commands
+# Essential Language Toolset Commands
 
 ```bash
 $ go mod tidy # Clean up your Go mod file
 $ go fmt
 ```
 
-## Tools
+# Tools
 
 [Awesome Go](https://awesome-go.com/) - like blessed.rs, but for Go.
 
@@ -355,7 +380,7 @@ $ go fmt
 
 [errcheck](https://github.com/kisielk/errcheck) - automatically exercise your error checking coverage.
 
-## Utilities
+# Utilities
 
 [Funk](https://github.com/thoas/go-funk) - map, filter, contains, etc.
 

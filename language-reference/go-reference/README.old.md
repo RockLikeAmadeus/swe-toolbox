@@ -23,7 +23,7 @@ TODO: Write a quick tool that I can run against a directory containing markdown 
 
 ## Best Practices
 
-[Effective Go](https://go.dev/doc/effective_go)
+
 
 ## Surprising Features
 

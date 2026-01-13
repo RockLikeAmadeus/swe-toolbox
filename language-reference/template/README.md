@@ -1,3 +1,18 @@
+# Contents
+
+- [Contents](#contents)
+- [What makes  unique?](#what-makes--unique)
+- [What do I need installed to write  code](#what-do-i-need-installed-to-write--code)
+- [FOR INTERPRETED LANGUAGES ONLY I want to execute simple commands in the REPL](#for-interpreted-languages-only-i-want-to-execute-simple-commands-in-the-repl)
+- [I just want to write a quick script with ](#i-just-want-to-write-a-quick-script-with-)
+- [I'm starting a new software project with ](#im-starting-a-new-software-project-with-)
+- [Syntax and Style](#syntax-and-style)
+  - [Essential Syntax and Style](#essential-syntax-and-style)
+  - [Comprehensive Syntax and Style](#comprehensive-syntax-and-style)
+- [Basics of Testing](#basics-of-testing)
+- [Essential Language Toolset Commands](#essential-language-toolset-commands)
+- [Tools](#tools)
+- [Utilities](#utilities)
 
 # What makes <language> unique?
 
@@ -40,18 +55,20 @@ _Links to relevant example syntax and style guides, like learnxinyminutes.com, o
 
 [contents]
 
-## Basics of Testing
+
+
+# Basics of Testing
 
 _What are the basics of automated tests for this language? If testing isn't built into the language, what testing frameworks are most popular? What is the basic syntax for writing automated tests, and how are test functions and files organized?_
 
-## Essential Language Toolset Commands
+# Essential Language Toolset Commands
 
 _What commands with the languages compiler and/or included command-line tools should be known, or at least be known of?_
 
-## Tools
+# Tools
 
 _What are some well-known and widely-used third party tools and frameworks that it's important to be aware of, such as CLI or TUI frameworks, or web frameworks? Be sure to include what they're used for and maybe some well established pros, cons, and use cases._
 
-## Utilities
+# Utilities
 
 _What are some well-known and widely-used third party libraries that it's important to be aware of, such as logging, financial libraries, math libraries, or data structure utilities? Be sure to include what they're used for and maybe some well established pros, cons, and use cases._
