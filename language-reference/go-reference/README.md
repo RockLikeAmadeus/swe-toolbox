@@ -225,16 +225,138 @@ assertError := func(t testing.TB, got error, want string) {
 
 ## Basics of Testing
 
-_What are the basics of automated tests for this language? If testing isn't built into the language, what testing frameworks are most popular? What is the basic syntax for writing automated tests, and how are test functions and files organized?_
+Go unit tests can be organized in two ways. The most basic Go unit tests live in files alongside (at the same level of) the files that they test, and must have the same name as the file suffixed with `_test`.
+
+The other, probably better way to organize tests is to have your tests in a `_test` package that imports the package under test, so that it can truly exercises only the public interface of the package.
+
+In their most basic form, tests look like this:
+
+```go
+package main
+
+import "testing"
+
+func TestHello(t *testing.T) {
+	got := Hello("Chris")
+	want := "Hello, Chris"
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+}
+```
+
+You can also define subtests. Additionally, it's a good idea to define helper methods to make your code simpler when possible, which requires passing an instance of `testing.TB` and calling `t.Helper()`.
+
+```go
+func TestHello(t *testing.T) {
+	t.Run("saying hello to people", func(t *testing.T) {
+		got := Hello("Chris")
+		want := "Hello, Chris"
+		assertCorrectMessage(t, got, want)
+	})
+
+	t.Run("empty string defaults to 'world'", func(t *testing.T) {
+		got := Hello("")
+		want := "Hello, World"
+		assertCorrectMessage(t, got, want)
+	})
+
+}
+
+func assertCorrectMessage(t testing.TB, got, want string) {
+	t.Helper()
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+}
+
+```
+
+Run all tests with 
+```bash
+$ go test
+$ go test ./... # recursive
+$ go test ./... # verbose
+$ go test -v ./... # recursive and verbose
+```
+
+### Testable Examples
+
+For now, see [here](https://go.dev/blog/examples).
+
+### Table Driven Tests
+
+If you want to test identical behavior with a large number of different inputs, you can make your test logic more compact and easier to extend with table-driven tests. In this example, we start by initializing a slice of struct instances, where the type is defined inline using _anonymous struct_ syntax.
+
+```go
+func TestArea(t *testing.T) {
+
+	areaTests := []struct {
+		name    string
+		shape   Shape
+		hasArea float64
+	}{
+		{name: "Rectangle", shape: Rectangle{Width: 12, Height: 6}, hasArea: 72.0},
+		{name: "Circle", shape: Circle{Radius: 10}, hasArea: 314.1592653589793},
+		{name: "Triangle", shape: Triangle{Base: 12, Height: 6}, hasArea: 36.0},
+	}
+
+	for _, tt := range areaTests {
+		// using tt.name from the case to use it as the `t.Run` test name
+		t.Run(tt.name, func(t *testing.T) {
+			got := tt.shape.Area()
+			if got != tt.hasArea {
+				t.Errorf("%#v received %g expected %g", tt.shape, got, tt.hasArea)
+			}
+		})
+	}
+}
+```
+
+With the above syntax, the output of the test will be quite friendly, like this:
+
+```
+--- FAIL: TestArea (0.00s)
+    --- FAIL: TestArea/Rectangle (0.00s)
+        shapes_test.go:33: main.Rectangle{Width:12, Height:6} received 72.00 expected 72.10
+```
+
+### Executing only short-running tests
+
+```bash
+go test -short ./...
+```
+
+We can add the following to our _acceptance_ tests to see if the user wants to run our acceptance tests by inspecting the value of the flag
+
+```go
+if testing.Short() {
+	t.Skip()
+}
+```
 
 ## Essential Language Toolset Commands
 
-_What commands with the languages compiler and/or included command-line tools should be known, or at least be known of?_
+```bash
+$ go mod tidy # Clean up your Go mod file
+$ go fmt
+```
 
 ## Tools
 
-_What are some well-known and widely-used third party tools and frameworks that it's important to be aware of, such as CLI or TUI frameworks, or web frameworks? Be sure to include what they're used for and maybe some well established pros, cons, and use cases._
+[Awesome Go](https://awesome-go.com/) - like blessed.rs, but for Go.
+
+[Wails](https://wails.io/) - like Tauri, but for Go.
+
+[Bubble Tea](https://github.com/charmbracelet/bubbletea) - For TUIS; comes from [Charm](https://charm.sh/)
+
+[Cobra](https://github.com/spf13/cobra) - for CLIs, widely used for tools written in Go.
+
+[errcheck](https://github.com/kisielk/errcheck) - automatically exercise your error checking coverage.
 
 ## Utilities
 
-_What are some well-known and widely-used third party libraries that it's important to be aware of, such as logging, financial libraries, math libraries, or data structure utilities? Be sure to include what they're used for and maybe some well established pros, cons, and use cases._
+[Funk](https://github.com/thoas/go-funk) - map, filter, contains, etc.
+
+[Charm Log](https://github.com/charmbracelet/log) - logging, also from Charm
