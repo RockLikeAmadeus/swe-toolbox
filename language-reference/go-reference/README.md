@@ -96,13 +96,125 @@ To create a new Go module (project), navigate to the directory that you want to 
 
 ## Essential Syntax and Style
 
-_Examples of the most important syntax and style to know without having to go all the way to external resources.
-Also include the most notable syntax-related things to know about that make this language different than other languages. Delete this block once the reference for this language is "complete"_
+### Collections
+
+The foundational collections are arrays, slices, and maps. Iterate over arrays and slices with `range`
+
+```go
+for _, number := range numbers {
+	sum += number
+}
+```
+
+#### Arrays
+
+Arrays have a fixed capacity at declaration, and can be initialized in the following ways
+
+```go
+var myArray [5]int
+numbers := [5]int{1, 2, 3, 4, 5}
+moreNums := [...]int{1, 2, 3, 4, 5}
+```
+
+The type of an array, i.e. in function arguments, includes the arryay's size, and looks like this
+
+```go
+func Sum(numbers [5]int) int {
+	...
+}
+```
+
+
+#### Slices
+
+Slices look just like arrays, but don't encode the size in their types and are as such more flexible. They are implemented as references to an underlying array, and can be declared in a few different ways
+
+```go
+ // slice points to nil
+var slice []int
+ // allocates the memory with a starting capacity and zero-value elements
+mySlice := make([]int, 3)
+ // initialize the slize with real values
+numbers := []int{1, 2, 3}
+```
+
+Slices can be sliced like `slice[low:high]`, where either `low` or `high` can be omitted.
+
+### Structs
+
+```go
+type Rectangle struct {
+	Width  float64
+	Height float64
+}
+
+// A method is a function with a receiver. A receiver is _not_ an argument.
+func (r Rectangle) Area() float64 {
+	// By convention, name the receiver variable the first letter of the type
+	return r.Width * r.Height
+}
+```
+
+Often (most of the time?) you'll want to specify pointer receivers (`func (r *Rectangle)`), particularly if your methods will change the underlying value of the object. If you use a pointer receiver for any of your methods, be sure and update all of your methods to take a pointer receiver, for consistency.
+
+#### Constructing Structs
+
+```go
+cash := new(Money) // zero value; the type of cash is *Money
+cashVal := *(new(Money)) // the type of cashVal here is Money. Is this bad style, though?
+```
+
+### Interfaces
+
+```go
+type Shape interface {
+	Area() float64
+}
+```
+
+### Error Handling
+
+If it's possible for your function to fail, it is idiomatic to return an `err` for the caller to check and act on. The return type (or one of the return types) on your function should be the interface `error`, which you import from the `errors` package.
+
+```go
+func (w *Wallet) Withdraw(amount Bitcoin) error {
+
+	if amount > w.balance {
+		return errors.New("oh no")
+	}
+
+	w.balance -= amount
+	return nil
+}
+```
+
+Some unit tests will _expect_ an error. Errors can be converted to a string with `.Error()`. If we don't receive an error, we don't want to test properties of the error, so we call `t.Fatal()`.
+
+```go
+assertError := func(t testing.TB, got error, want string) {
+	t.Helper()
+
+	if got == nil {
+		t.Fatal("didn't get an error but wanted one")
+	}
+
+	if got.Error() != want {
+		t.Errorf("got %q, want %q", got, want)
+	}
+}
+```
+### Style
+
+- Names should use `camelCase` or `PascalCase`, rather than `snake_case`
 
 [contents]
 
 ## Comprehensive Syntax and Style
 
-_Links to relevant example syntax and style guides, like learnxinyminutes.com, or official style guides. Delete this block once the reference for this language is "complete"_
+[Learn Go in Y minutes](https://learnxinyminutes.com/go/)
+<br>
+[Go by Example](https://gobyexample.com/)
+<br>
+[Go Style Guide](https://google.github.io/styleguide/go/)
 
 [contents]
