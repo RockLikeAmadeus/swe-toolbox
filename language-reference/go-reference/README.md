@@ -120,6 +120,8 @@ To create a new Go module (project), navigate to the directory that you want to 
 
 More info [here](./code-organization.md)
 
+For specifics on creating a command-line (CLI) utility in particular, go [here](create-a-cli-utility.md).
+
 [Contents](#contents)
 
 # Syntax and Style
