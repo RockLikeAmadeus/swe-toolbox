@@ -102,7 +102,9 @@ func main() {
 }
 ```
 
-...and run `$ go run`. The `main()` function in Go is the entry point of executable applications.
+...and run `$ go run`.
+
+You create an executable in Go by creating a package name `main` that defines a function called `main()`.  The `main()` function in Go is the entry point of executable applications. The `main` package is typically defined in a file called `main.go`, but this is a convention rather than a requirement.
 
 _Notes on writing and then running a standalone script or small process here. Include the simplest way to retrieve command line arguments. Delete this block once the reference for this language is "complete"_
 
