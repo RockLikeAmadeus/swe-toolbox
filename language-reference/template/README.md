@@ -14,6 +14,7 @@
 - [Essential Language Toolset Commands](#essential-language-toolset-commands)
 - [Tools](#tools)
 - [Utilities](#utilities)
+- [How To](#how-to)
 
 # What makes <language> unique?
 
@@ -83,5 +84,12 @@ _What are some well-known and widely-used third party tools and frameworks that 
 # Utilities
 
 _What are some well-known and widely-used third party libraries that it's important to be aware of, such as logging, financial libraries, math libraries, or data structure utilities? Be sure to include what they're used for and maybe some well established pros, cons, and use cases._
+
+[Contents](#contents)
+
+
+# How To
+
+_Define an organized list, with subheadings as appropriate, of links to pages in this reference *OR* to a project or file that serves as an example, of patterns or processes for which it would be beneficial to have a reference for demonstration. There is no reason two or more links cannot point to the same example, particularly when multiple patterns are represented in a single example project or file._
 
 [Contents](#contents)

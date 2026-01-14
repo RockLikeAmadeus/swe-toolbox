@@ -24,6 +24,7 @@
 - [Essential Language Toolset Commands](#essential-language-toolset-commands)
 - [Tools](#tools)
 - [Utilities](#utilities)
+- [How To](#how-to)
 
 # What makes Go unique?
 
@@ -439,5 +440,11 @@ $ go fmt
 [Funk](https://github.com/thoas/go-funk) - map, filter, contains, etc.
 
 [Charm Log](https://github.com/charmbracelet/log) - logging, also from Charm
+
+[Contents](#contents)
+
+# How To
+
+_Define an organized list, with subheadings as appropriate, of links to pages in this reference *OR* to a project or file that serves as an example, of patterns or processes for which it would be beneficial to have a reference for demonstration. There is no reason two or more links cannot point to the same example, particularly when multiple patterns are represented in a single example project or file._
 
 [Contents](#contents)
