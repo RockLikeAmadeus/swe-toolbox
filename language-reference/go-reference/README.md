@@ -6,20 +6,20 @@
 - [I just want to write a quick script with Go](#i-just-want-to-write-a-quick-script-with-go)
 - [I'm starting a new software project with Go](#im-starting-a-new-software-project-with-go)
 - [Syntax and Style](#syntax-and-style)
-  - [Essential Syntax and Style](#essential-syntax-and-style)
-    - [Collections](#collections)
-      - [Arrays](#arrays)
-      - [Slices](#slices)
-    - [Structs](#structs)
-      - [Constructing Structs](#constructing-structs)
-    - [Interfaces](#interfaces)
-    - [Error Handling](#error-handling)
-    - [Style](#style)
-  - [Comprehensive Syntax and Style](#comprehensive-syntax-and-style)
+	- [Essential Syntax and Style](#essential-syntax-and-style)
+		- [Collections](#collections)
+			- [Arrays](#arrays)
+			- [Slices](#slices)
+		- [Structs](#structs)
+			- [Constructing Structs](#constructing-structs)
+		- [Interfaces](#interfaces)
+		- [Error Handling](#error-handling)
+		- [Style](#style)
+	- [Comprehensive Syntax and Style](#comprehensive-syntax-and-style)
 - [Basics of Testing](#basics-of-testing)
-  - [Testable Examples](#testable-examples)
-  - [Table Driven Tests](#table-driven-tests)
-  - [Executing only short-running tests](#executing-only-short-running-tests)
+	- [Testable Examples](#testable-examples)
+	- [Table Driven Tests](#table-driven-tests)
+	- [Executing only short-running tests](#executing-only-short-running-tests)
 - [Useful Library Imports](#useful-library-imports)
 - [Essential Language Toolset Commands](#essential-language-toolset-commands)
 - [Tools](#tools)
@@ -80,6 +80,8 @@ func outerFunc() {
 - Casting syntax is backwards; the value, not the type, goes in parenthesis: `int64(*myIntWrapper)`
   
 - The only iteration construct in Go is `for`, and there is special syntax for iterating over a range.
+
+- Many functions that operate on common types, like `append()` and `len()`, which would normally be methods in other languages, are built-in functions that operate without a receiver; that is, they are called by passing in the instance or value, rather than called by dereferencing the instance, i.e. `append(l, item)` rather than `l.append(item)`
 
 [Contents](#contents)
 
@@ -326,7 +328,7 @@ Run all tests with
 ```bash
 $ go test
 $ go test ./... # recursive
-$ go test ./... # verbose
+$ go test -v # verbose
 $ go test -v ./... # recursive and verbose
 ```
 
