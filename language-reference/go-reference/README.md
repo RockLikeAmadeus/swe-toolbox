@@ -69,7 +69,7 @@ func outerFunc() {
 }
 ```
 
-- Interfaces are implicitly implemented by structs. There is no `implements` keyword, or anything similar.
+- Interfaces are implicitly implemented by structs. There is no `implements` keyword, or anything similar. Also, Go interfaces only define behavior, not state, so they only define what a type should be able to do, not what data it should hold.
 
 - When you call a function or method, the arguments are always copied. Passing by reference, or attempting to avoid copies of large data structures, requires explicit handling of pointers. Struct pointers are automatically de-referenced so if the type is `*Account` (a pointer to an account), you can access it like `myAccount.Balance()`, which is really a shortcut for `(*myAccount).Balance()`.
 
