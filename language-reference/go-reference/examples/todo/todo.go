@@ -1,6 +1,6 @@
 // Demonstrated in this file:
 // Pass each element of a slice as an individual argument to a variadic function (REF01)
-// Remove an item at a specific index from a list (REF02)
+// Remove an item at a specific index from a slice (REF02)
 // Convert an object to JSON and write it to a file (REF03)
 // Read from a JSON file and parse the contents (REF04)
 // Determine if an error is a specific type of error (REF05)

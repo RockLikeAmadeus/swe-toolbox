@@ -25,7 +25,8 @@
 - [Tools](#tools)
 - [Utilities](#utilities)
 - [How To](#how-to)
-	- [Slices](#slices-1)
+	- [Data Structures](#data-structures)
+		- [Slices](#slices-1)
 
 # What makes Go unique?
 
@@ -452,8 +453,11 @@ $ go fmt
 
 _Define an organized list, with subheadings as appropriate, of links to pages in this reference *OR* to a project or file that serves as an example, of patterns or processes for which it would be beneficial to have a reference for demonstration. There is no reason two or more links cannot point to the same example, particularly when multiple patterns are represented in a single example project or file._
 
-## Slices
-[Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)
+## Data Structures
+
+### Slices
+- [Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)
+- [Remove an item at a specific index from a slice (REF02)](./examples/todo/todo.go)
 
 
 
@@ -461,7 +465,6 @@ _Define an organized list, with subheadings as appropriate, of links to pages in
 
 
 
-[Remove an item at a specific index from a list (REF02)](./examples/todo/todo.go)
 [Convert an object to JSON and write it to a file (REF03)](./examples/todo/todo.go)
 [Read from a JSON file and parse the contents (REF04)](./examples/todo/todo.go)
 [Determine if an error is a specific type of error (REF05)](./examples/todo/todo.go)
