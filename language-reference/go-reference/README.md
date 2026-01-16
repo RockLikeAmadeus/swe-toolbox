@@ -57,6 +57,7 @@
 		- [Writing to files](#writing-to-files)
 			- [Convert an object to JSON and write it to a file (REF03)](#convert-an-object-to-json-and-write-it-to-a-file-ref03-1)
 			- [Create a temporary file (REF01)](#create-a-temporary-file-ref01)
+			- [Generate a file that has fix content, then inject dynamic data at runtime](#generate-a-file-that-has-fix-content-then-inject-dynamic-data-at-runtime)
 	- [Error Handling](#error-handling-1)
 		- [Determine if an error is a specific type of error (REF05)](#determine-if-an-error-is-a-specific-type-of-error-ref05)
 		- [Handle an error condition in a command-line tool (REF01)](#handle-an-error-condition-in-a-command-line-tool-ref01-1)
@@ -558,6 +559,7 @@ $ go fmt
 
 #### [Convert an object to JSON and write it to a file (REF03)](./examples/todo/todo.go)
 #### [Create a temporary file (REF01)](./examples/todo/todo_test.go)
+#### [Generate a file that has fixed content, then inject dynamic data at runtime](./file-io.md#generate-a-file-that-has-fix-content-then-inject-dynamic-data-at-runtime)
 
 ## Error Handling
 
