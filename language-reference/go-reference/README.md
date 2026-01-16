@@ -18,6 +18,7 @@
 	- [Comprehensive Syntax and Style](#comprehensive-syntax-and-style)
 	- [Documenting  Code](#documenting--code)
 - [Basics of Testing](#basics-of-testing)
+	- [Subtests and Test Helpers](#subtests-and-test-helpers)
 	- [Testable Examples](#testable-examples)
 	- [Table Driven Tests](#table-driven-tests)
 	- [Testing Functions That Require Files](#testing-functions-that-require-files)
@@ -68,6 +69,7 @@
 		- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](#write-an-acceptance-test-for-piping-text-into-the-input-of-a-cli-tool-ref06-1)
 		- [Write tests for the output of a tool that prints to STDOUT or to some other location](#write-tests-for-the-output-of-a-tool-that-prints-to-stdout-or-to-some-other-location-1)
 		- [Write multiple test cases exercising the same function run under different conditions](#write-multiple-test-cases-exercising-the-same-function-run-under-different-conditions)
+		- [Create a function to encapsulate repeated behavior across different tests](#create-a-function-to-encapsulate-repeated-behavior-across-different-tests)
 	- [OS Access](#os-access)
 		- [Determine the operating system running my code (REF03)](#determine-the-operating-system-running-my-code-ref03)
 
@@ -358,7 +360,9 @@ func TestHello(t *testing.T) {
 }
 ```
 
-You can also define subtests. Additionally, it's a good idea to define helper methods to make your code simpler when possible, which requires passing an instance of `testing.TB` and calling `t.Helper()`.
+## Subtests and Test Helpers
+
+You can also define [subtests](https://pkg.go.dev/testing#hdr-Subtests_and_Sub_benchmarks). Additionally, it's a good idea to define [helper](https://pkg.go.dev/testing#B.Helper) methods to make your code simpler when possible, which requires passing an instance of `testing.TB` and calling `t.Helper()`.
 
 ```go
 func TestHello(t *testing.T) {
@@ -575,6 +579,7 @@ $ go fmt
 ### [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
 ### [Write tests for the output of a tool that prints to STDOUT or to some other location](./testing.md#write-tests-for-the-output-of-a-tool-that-prints-to-stdout-or-to-some-other-location)
 ### [Write multiple test cases exercising the same function run under different conditions](#table-driven-tests)
+### [Create a function to encapsulate repeated behavior across different tests](#subtests-and-test-helpers)
 
 ## OS Access
 
