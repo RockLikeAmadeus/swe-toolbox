@@ -57,7 +57,7 @@
 		- [Writing to files](#writing-to-files)
 			- [Convert an object to JSON and write it to a file (REF03)](#convert-an-object-to-json-and-write-it-to-a-file-ref03-1)
 			- [Create a temporary file (REF01)](#create-a-temporary-file-ref01)
-			- [Generate a file that has fix content, then inject dynamic data at runtime](#generate-a-file-that-has-fix-content-then-inject-dynamic-data-at-runtime)
+			- [Generate a file that has fixed content, then inject dynamic data at runtime](#generate-a-file-that-has-fixed-content-then-inject-dynamic-data-at-runtime)
 	- [Error Handling](#error-handling-1)
 		- [Determine if an error is a specific type of error (REF05)](#determine-if-an-error-is-a-specific-type-of-error-ref05)
 		- [Handle an error condition in a command-line tool (REF01)](#handle-an-error-condition-in-a-command-line-tool-ref01-1)
@@ -67,6 +67,7 @@
 		- [Create acceptance tests for a CLI tool (REF01)](#create-acceptance-tests-for-a-cli-tool-ref01-1)
 		- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](#write-an-acceptance-test-for-piping-text-into-the-input-of-a-cli-tool-ref06-1)
 		- [Write tests for the output of a tool that prints to STDOUT or to some other location](#write-tests-for-the-output-of-a-tool-that-prints-to-stdout-or-to-some-other-location-1)
+		- [Write multiple test cases exercising the same function run under different conditions](#write-multiple-test-cases-exercising-the-same-function-run-under-different-conditions)
 	- [OS Access](#os-access)
 		- [Determine the operating system running my code (REF03)](#determine-the-operating-system-running-my-code-ref03)
 
@@ -573,6 +574,7 @@ $ go fmt
 ### [Create acceptance tests for a CLI tool (REF01)](./examples/todo/cmd/todo/main_test.go)
 ### [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
 ### [Write tests for the output of a tool that prints to STDOUT or to some other location](./testing.md#write-tests-for-the-output-of-a-tool-that-prints-to-stdout-or-to-some-other-location)
+### [Write multiple test cases exercising the same function run under different conditions](#table-driven-tests)
 
 ## OS Access
 
