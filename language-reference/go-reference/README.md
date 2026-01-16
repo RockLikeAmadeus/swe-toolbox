@@ -243,7 +243,7 @@ Often (most of the time?) you'll want to specify pointer receivers (`func (r *Re
 
 ```go
 cash := new(Money) // zero value; the type of cash is *Money
-cashVal := *(new(Money)) // the type of cashVal here is Money. Is this bad style, though?
+cashVal := *(new(Money)) // the type of cashVal here is Money.
 ```
 
 [Contents](#contents)
