@@ -27,18 +27,43 @@
 - [How To](#how-to)
 	- [Types of Applications](#types-of-applications)
 		- [CLI Utilities](#cli-utilities)
+			- [Create a CLI Utility](#create-a-cli-utility)
+			- [Create acceptance tests for a CLI tool (REF01)](#create-acceptance-tests-for-a-cli-tool-ref01)
+			- [Handle an error condition in a command-line tool (REF01)](#handle-an-error-condition-in-a-command-line-tool-ref01)
+			- [Parse command-line flags (REF02)](#parse-command-line-flags-ref02)
+			- [Make your CLI tool print usage information when -h or an invalid flag is passed (REF03)](#make-your-cli-tool-print-usage-information-when--h-or-an-invalid-flag-is-passed-ref03)
+			- [Allow your CLI tool's users to pipe input from other tools (REF04)](#allow-your-cli-tools-users-to-pipe-input-from-other-tools-ref04)
+			- [Retrieve the current working directory for a CLI tool (REF04)](#retrieve-the-current-working-directory-for-a-cli-tool-ref04)
+			- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](#write-an-acceptance-test-for-piping-text-into-the-input-of-a-cli-tool-ref06)
 	- [Strings](#strings)
+		- [Define a type's custom string printing behavior (REF06)](#define-a-types-custom-string-printing-behavior-ref06)
 	- [Functions](#functions)
+		- [Pass each element of a slice as an individual argument to a variadic function (REF01)](#pass-each-element-of-a-slice-as-an-individual-argument-to-a-variadic-function-ref01)
 	- [Types](#types)
+		- [Define a type's custom string printing behavior (REF06)](#define-a-types-custom-string-printing-behavior-ref06-1)
 	- [Data Structures](#data-structures)
 		- [Slices](#slices-1)
+			- [Pass each element of a slice as an individual argument to a variadic function (REF01)](#pass-each-element-of-a-slice-as-an-individual-argument-to-a-variadic-function-ref01-1)
+			- [Remove an item at a specific index from a slice (REF02)](#remove-an-item-at-a-specific-index-from-a-slice-ref02)
 	- [Data Serialization](#data-serialization)
+		- [Convert an object to JSON and write it to a file (REF03)](#convert-an-object-to-json-and-write-it-to-a-file-ref03)
+		- [Read from a JSON file and parse the contents (REF04)](#read-from-a-json-file-and-parse-the-contents-ref04)
 	- [File I/O](#file-io)
 		- [Reading from files](#reading-from-files)
+			- [Read from a JSON file and parse the contents (REF04)](#read-from-a-json-file-and-parse-the-contents-ref04-1)
 		- [Writing to files](#writing-to-files)
+			- [Convert an object to JSON and write it to a file (REF03)](#convert-an-object-to-json-and-write-it-to-a-file-ref03-1)
+			- [Create a temporary file (REF01)](#create-a-temporary-file-ref01)
 	- [Error Handling](#error-handling-1)
+		- [Determine if an error is a specific type of error (REF05)](#determine-if-an-error-is-a-specific-type-of-error-ref05)
+		- [Handle an error condition in a command-line tool (REF01)](#handle-an-error-condition-in-a-command-line-tool-ref01-1)
 	- [Testing](#testing)
+		- [Specify setup or teardown logic to execute before and/or after your tests (REF02)](#specify-setup-or-teardown-logic-to-execute-before-andor-after-your-tests-ref02)
+		- [Organize your test cases into subtests (REF05)](#organize-your-test-cases-into-subtests-ref05)
+		- [Create acceptance tests for a CLI tool (REF01)](#create-acceptance-tests-for-a-cli-tool-ref01-1)
+		- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](#write-an-acceptance-test-for-piping-text-into-the-input-of-a-cli-tool-ref06-1)
 	- [OS Access](#os-access)
+		- [Determine the operating system running my code (REF03)](#determine-the-operating-system-running-my-code-ref03)
 
 # What makes Go unique?
 
@@ -465,65 +490,65 @@ $ go fmt
 
 ### CLI Utilities
 
-- [Create a CLI Utility](./create-a-cli-utility.md)
-- [Create acceptance tests for a CLI tool (REF01)](./examples/todo/cmd/todo/main_test.go)
-- [Handle an error condition in a command-line tool (REF01)](./examples/todo/cmd/todo/main.go)
-- [Parse command-line flags (REF02)](./examples/todo/cmd/todo/main.go)
-- [Make your CLI tool print usage information when -h or an invalid flag is passed (REF03)](./examples/todo/cmd/todo/main.go)
-- [Allow your CLI tool's users to pipe input from other tools (REF04)](./examples/todo/cmd/todo/main.go)
-- [Retrieve the current working directory for a CLI tool (REF04)](./examples/todo/cmd/todo/main_test.go)
-- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
+#### [Create a CLI Utility](./create-a-cli-utility.md)
+#### [Create acceptance tests for a CLI tool (REF01)](./examples/todo/cmd/todo/main_test.go)
+#### [Handle an error condition in a command-line tool (REF01)](./examples/todo/cmd/todo/main.go)
+#### [Parse command-line flags (REF02)](./examples/todo/cmd/todo/main.go)
+#### [Make your CLI tool print usage information when -h or an invalid flag is passed (REF03)](./examples/todo/cmd/todo/main.go)
+#### [Allow your CLI tool's users to pipe input from other tools (REF04)](./examples/todo/cmd/todo/main.go)
+#### [Retrieve the current working directory for a CLI tool (REF04)](./examples/todo/cmd/todo/main_test.go)
+#### [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
 
 ## Strings
 
-- [Define a type's custom string printing behavior (REF06)](./examples/todo/todo.go)
+### [Define a type's custom string printing behavior (REF06)](./examples/todo/todo.go)
 
 ## Functions
 
-- [Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)
+### [Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)
 
 ## Types
 
-- [Define a type's custom string printing behavior (REF06)](./examples/todo/todo.go)
+### [Define a type's custom string printing behavior (REF06)](./examples/todo/todo.go)
 
 ## Data Structures
 
 ### Slices
-- [Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)
-- [Remove an item at a specific index from a slice (REF02)](./examples/todo/todo.go)
+#### [Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)
+#### [Remove an item at a specific index from a slice (REF02)](./examples/todo/todo.go)
 
 
 ## Data Serialization
 
-- [Convert an object to JSON and write it to a file (REF03)](./examples/todo/todo.go)
-- [Read from a JSON file and parse the contents (REF04)](./examples/todo/todo.go)
+### [Convert an object to JSON and write it to a file (REF03)](./examples/todo/todo.go)
+### [Read from a JSON file and parse the contents (REF04)](./examples/todo/todo.go)
 
 ## File I/O
 
 ### Reading from files
 
-- [Read from a JSON file and parse the contents (REF04)](./examples/todo/todo.go)
+#### [Read from a JSON file and parse the contents (REF04)](./examples/todo/todo.go)
 
 ### Writing to files
 
-- [Convert an object to JSON and write it to a file (REF03)](./examples/todo/todo.go)
-- [Create a temporary file (REF01)](./examples/todo/todo_test.go)
+#### [Convert an object to JSON and write it to a file (REF03)](./examples/todo/todo.go)
+#### [Create a temporary file (REF01)](./examples/todo/todo_test.go)
 
 ## Error Handling
 
-- [Determine if an error is a specific type of error (REF05)](./examples/todo/todo.go)
-- [Handle an error condition in a command-line tool (REF01)](./examples/todo/cmd/todo/main.go)
+### [Determine if an error is a specific type of error (REF05)](./examples/todo/todo.go)
+### [Handle an error condition in a command-line tool (REF01)](./examples/todo/cmd/todo/main.go)
 
 ## Testing
 
-- [Specify setup or teardown logic to execute before and/or after your tests (REF02)](./examples/todo/cmd/todo/main_test.go)
-- [Organize your test cases into subtests (REF05)](./examples/todo/cmd/todo/main_test.go)
-- [Create acceptance tests for a CLI tool (REF01)](./examples/todo/cmd/todo/main_test.go)
-- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
+### [Specify setup or teardown logic to execute before and/or after your tests (REF02)](./examples/todo/cmd/todo/main_test.go)
+### [Organize your test cases into subtests (REF05)](./examples/todo/cmd/todo/main_test.go)
+### [Create acceptance tests for a CLI tool (REF01)](./examples/todo/cmd/todo/main_test.go)
+### [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
 
 ## OS Access
 
-- [Determine the operating system running my code (REF03)](./examples/todo/cmd/todo/main_test.go)
+### [Determine the operating system running my code (REF03)](./examples/todo/cmd/todo/main_test.go)
 
 
 
