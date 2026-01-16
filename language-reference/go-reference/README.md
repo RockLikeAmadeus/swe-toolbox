@@ -25,6 +25,7 @@
 - [Tools](#tools)
 - [Utilities](#utilities)
 - [How To](#how-to)
+	- [Slices](#slices-1)
 
 # What makes Go unique?
 
@@ -450,5 +451,31 @@ $ go fmt
 - [Create a CLI Utility](./create-a-cli-utility.md)
 
 _Define an organized list, with subheadings as appropriate, of links to pages in this reference *OR* to a project or file that serves as an example, of patterns or processes for which it would be beneficial to have a reference for demonstration. There is no reason two or more links cannot point to the same example, particularly when multiple patterns are represented in a single example project or file._
+
+## Slices
+[Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)
+
+
+
+
+
+
+
+[Remove an item at a specific index from a list (REF02)](./examples/todo/todo.go)
+[Convert an object to JSON and write it to a file (REF03)](./examples/todo/todo.go)
+[Read from a JSON file and parse the contents (REF04)](./examples/todo/todo.go)
+[Determine if an error is a specific type of error (REF05)](./examples/todo/todo.go)
+[Define a type's custom string printing behavior (REF06)](./examples/todo/todo.go)
+[Create a temporary file (REF01)](./examples/todo/todo_test.go)
+[Handle an error condition in a command-line tool (REF01)](./examples/todo/cmd/todo/main.go)
+[Parse command-line flags (REF02)](./examples/todo/cmd/todo/main.go)
+[Make your CLI tool print usage information when -h or an invalid flag is passed (REF03)](./examples/todo/cmd/todo/main.go)
+[Allow your CLI tool's users to pipe input from other tools (REF04)](./examples/todo/cmd/todo/main.go)
+[Create acceptance tests for a CLI tool (REF01)](./examples/todo/cmd/todo/main_test.go)
+[Specify setup or teardown logic to execute before and/or after your tests (REF02)](./examples/todo/cmd/todo/main_test.go)
+[Determine the operating system running my code (REF03)](./examples/todo/cmd/todo/main_test.go)
+[Retrieve the current working directory for a CLI tool (REF04)](./examples/todo/cmd/todo/main_test.go)
+[Organize your test cases into subtests (REF05)](./examples/todo/cmd/todo/main_test.go)
+[Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
 
 [Contents](#contents)
