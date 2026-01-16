@@ -9,6 +9,7 @@
 - [Syntax and Style](#syntax-and-style)
   - [Essential Syntax and Style](#essential-syntax-and-style)
   - [Comprehensive Syntax and Style](#comprehensive-syntax-and-style)
+  - [Documenting  Code](#documenting--code)
 - [Basics of Testing](#basics-of-testing)
 - [Useful Library Imports](#useful-library-imports)
 - [Essential Language Toolset Commands](#essential-language-toolset-commands)
@@ -54,6 +55,10 @@ Also include the most notable syntax-related things to know about that make this
 ## Comprehensive Syntax and Style
 
 _Links to relevant example syntax and style guides, like learnxinyminutes.com, or official style guides. Delete this block once the reference for this language is "complete"_
+
+## Documenting <Language> Code
+
+_What is the idiomatic way to document your code, especially any public API it might expose? What other details are relevant to documentation?_
 
 [Contents](#contents)
 

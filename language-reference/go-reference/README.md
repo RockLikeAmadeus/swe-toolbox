@@ -16,6 +16,7 @@
 		- [Error Handling](#error-handling)
 		- [Style](#style)
 	- [Comprehensive Syntax and Style](#comprehensive-syntax-and-style)
+	- [Documenting  Code](#documenting--code)
 - [Basics of Testing](#basics-of-testing)
 	- [Testable Examples](#testable-examples)
 	- [Table Driven Tests](#table-driven-tests)
@@ -310,6 +311,22 @@ assertError := func(t testing.TB, got error, want string) {
 [Full Language Specification](https://go.dev/ref/spec)
 <br>
 [Standard Library Source Code (for reference to best practices, expected style, and idioms)](https://go.dev/src/)
+
+## Documenting <Language> Code
+
+The convention is simple: to document a type, variable, constant, function, or even a package, write a regular comment directly preceding its declaration, with no intervening blank line. Godoc will then present that comment as text alongside the item it documents. For example, this is the documentation for the fmt package’s Fprint function:
+
+```go
+// Fprint formats using the default formats for its operands and writes to w.
+// Spaces are added between operands when neither is a string.
+// It returns the number of bytes written and any write error encountered.
+func Fprint(w io.Writer, a ...interface{}) (n int, err error) {
+```
+Notice this comment is a complete sentence that begins with the name of the element it describes.
+
+For more info including formatting concerns, as well as details for documenting packages, known issues, or deprecated functionality, go [here](https://go.dev/blog/godoc).
+
+Documentation pages can be generated with the [`godoc` command](https://pkg.go.dev/golang.org/x/tools/cmd/godoc).
 
 [Contents](#contents)
 
