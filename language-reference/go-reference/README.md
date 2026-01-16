@@ -20,6 +20,7 @@
 - [Basics of Testing](#basics-of-testing)
 	- [Testable Examples](#testable-examples)
 	- [Table Driven Tests](#table-driven-tests)
+	- [Testing Functions That Require Files](#testing-functions-that-require-files)
 	- [Executing only short-running tests](#executing-only-short-running-tests)
 - [Useful Library Imports](#useful-library-imports)
 - [Essential Language Toolset Commands](#essential-language-toolset-commands)
@@ -63,6 +64,7 @@
 		- [Organize your test cases into subtests (REF05)](#organize-your-test-cases-into-subtests-ref05)
 		- [Create acceptance tests for a CLI tool (REF01)](#create-acceptance-tests-for-a-cli-tool-ref01-1)
 		- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](#write-an-acceptance-test-for-piping-text-into-the-input-of-a-cli-tool-ref06-1)
+		- [\[\]](#)
 	- [OS Access](#os-access)
 		- [Determine the operating system running my code (REF03)](#determine-the-operating-system-running-my-code-ref03)
 
@@ -435,6 +437,10 @@ With the above syntax, the output of the test will be quite friendly, like this:
 
 [Contents](#contents)
 
+## Testing Functions That Require Files
+
+Obviously, where it makes sense, file reading and writing should use interfaces so that your tests can provide test doubles and don't require actual file system access. However, for acceptance tests where you may actually want to read from sample input files and/or verify that application output matches "golden files" for simpler testing workflows, the correct way place to store these files is in a subdirectory called `testdata` under the project's directory. Go's build tool specifically ignores the `testdata` directory so that these testing artifacts don't end up in as part of your build.
+
 ## Executing only short-running tests
 
 ```bash
@@ -562,6 +568,7 @@ $ go fmt
 ### [Organize your test cases into subtests (REF05)](./examples/todo/cmd/todo/main_test.go)
 ### [Create acceptance tests for a CLI tool (REF01)](./examples/todo/cmd/todo/main_test.go)
 ### [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
+### []
 
 ## OS Access
 
