@@ -37,6 +37,7 @@
 			- [Allow your CLI tool's users to pipe input from other tools (REF04)](#allow-your-cli-tools-users-to-pipe-input-from-other-tools-ref04)
 			- [Retrieve the current working directory for a CLI tool (REF04)](#retrieve-the-current-working-directory-for-a-cli-tool-ref04)
 			- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](#write-an-acceptance-test-for-piping-text-into-the-input-of-a-cli-tool-ref06)
+		- [Write tests for the output of a tool that prints to STDOUT or to some other location](#write-tests-for-the-output-of-a-tool-that-prints-to-stdout-or-to-some-other-location)
 	- [Strings](#strings)
 		- [Define a type's custom string printing behavior (REF06)](#define-a-types-custom-string-printing-behavior-ref06)
 	- [Functions](#functions)
@@ -64,7 +65,7 @@
 		- [Organize your test cases into subtests (REF05)](#organize-your-test-cases-into-subtests-ref05)
 		- [Create acceptance tests for a CLI tool (REF01)](#create-acceptance-tests-for-a-cli-tool-ref01-1)
 		- [Write an acceptance test for piping text into the input of a CLI tool (REF06)](#write-an-acceptance-test-for-piping-text-into-the-input-of-a-cli-tool-ref06-1)
-		- [\[\]](#)
+		- [Write tests for the output of a tool that prints to STDOUT or to some other location](#write-tests-for-the-output-of-a-tool-that-prints-to-stdout-or-to-some-other-location-1)
 	- [OS Access](#os-access)
 		- [Determine the operating system running my code (REF03)](#determine-the-operating-system-running-my-code-ref03)
 
@@ -521,6 +522,7 @@ $ go fmt
 #### [Allow your CLI tool's users to pipe input from other tools (REF04)](./examples/todo/cmd/todo/main.go)
 #### [Retrieve the current working directory for a CLI tool (REF04)](./examples/todo/cmd/todo/main_test.go)
 #### [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
+### [Write tests for the output of a tool that prints to STDOUT or to some other location](./testing.md#write-tests-for-the-output-of-a-tool-that-prints-to-stdout-or-to-some-other-location)
 
 ## Strings
 
@@ -568,7 +570,7 @@ $ go fmt
 ### [Organize your test cases into subtests (REF05)](./examples/todo/cmd/todo/main_test.go)
 ### [Create acceptance tests for a CLI tool (REF01)](./examples/todo/cmd/todo/main_test.go)
 ### [Write an acceptance test for piping text into the input of a CLI tool (REF06)](./examples/todo/cmd/todo/main_test.go)
-### []
+### [Write tests for the output of a tool that prints to STDOUT or to some other location](./testing.md#write-tests-for-the-output-of-a-tool-that-prints-to-stdout-or-to-some-other-location)
 
 ## OS Access
 
