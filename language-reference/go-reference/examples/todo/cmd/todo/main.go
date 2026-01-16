@@ -35,7 +35,11 @@ func main() {
 		flag.PrintDefaults()
 	}
 
-	// REF02
+	// REF02 - Note: when the list of command line args becomes lengthy, it's
+	// common practice to package some or all of these argument in a custom
+	// type, such as a struct called `config`. Your `main()` function will parse
+	// the args into a new instance of the type, and you can pass the instance
+	// to your `run()` function, assuming you are using this pattern.
 	//task := flag.String("task", "", "Task to be included in the ToDo list")
 	add := flag.Bool("add", false, "Add task to the ToDo list")
 	list := flag.Bool("list", false, "List all tasks")
