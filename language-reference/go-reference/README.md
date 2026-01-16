@@ -362,7 +362,7 @@ func TestHello(t *testing.T) {
 
 ## Subtests and Test Helpers
 
-You can also define [subtests](https://pkg.go.dev/testing#hdr-Subtests_and_Sub_benchmarks). Additionally, it's a good idea to define [helper](https://pkg.go.dev/testing#B.Helper) methods to make your code simpler when possible, which requires passing an instance of `testing.TB` and calling `t.Helper()`.
+You can also define [subtests](https://pkg.go.dev/testing#hdr-Subtests_and_Sub_benchmarks). Additionally, it's a good idea to define [helper](https://pkg.go.dev/testing#B.Helper) methods to make your code simpler when possible (for things like setup and teardown, or other use cases, see below), which requires passing an instance of `testing.TB` and calling `t.Helper()`.
 
 ```go
 func TestHello(t *testing.T) {
