@@ -8,12 +8,13 @@ C is the lowest-level language you can write before assembly, and knowing it wil
 Of course, C doesn't have fancy string functionality, and if your application relies heavily on string parsing and manipulation you should use a different language. Strings in C have the type `char *`, to be read as "char pointer".
 
 A few more things:
+- Never ignore compiler warnings.
 - Variables need to be initialized explicitly or they can contain nonsense data.
 - Functions must be defined before they're used--or, more commonly, a function _prototype_ must be declared before the function is used.
 - You should always use `void` between parens to indicate a function has no parameters, in the function definition and _especially_ in the prototype.
 - _Everything_ in C is pass by value, that is, a copy is put into the parameter. Even pointers are copies of pointers.
 - Arrays and pointers are pretty much the same thing.
-- Explicit casting is sometimes necessary, but rarely. If you find yourself doing it, ask if you really need to. See Chapter 15 of [Beej's Guide](https://beej.us/guide/bgc/pdf/bgc_usl_c_1.pdf)
+- Explicit casting is sometimes necessary, but rarely. If you find yourself doing it, ask if you really need to. See Chapter 15 of [Beej's Guide](https://beej.us/guide/bgc/html/split/types-iii-conversions.html#types-iii-conversions)
 
 
 [contents]
@@ -33,6 +34,8 @@ _Notes on writing and then running a standalone script or small process here. In
 # I'm starting a new software project with C
 
 _Notes on the structure and terminology of more complex, multi-file projects here. Talk about how code is organized in <language>, how files are named, common patterns for specific types of projects, and tools commonly used for scaffolding new projects. Keep it brief, and leave the details to [this page I haven't created yet]. Delete this block once the reference for this language is "complete"_
+
+Refer to [Beej's Guide](https://beej.us/guide/bgc/html/split/multifile-projects.html#multifile-projects) for multi-file projects. But you should probably utilize the `make` utility in most cases.
 
 [contents]
 
