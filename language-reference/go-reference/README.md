@@ -47,6 +47,8 @@
 	- [Types](#types)
 		- [Define a type's custom string printing behavior (REF06)](#define-a-types-custom-string-printing-behavior-ref06-1)
 	- [Data Structures](#data-structures)
+		- [Floats](#floats)
+			- [Compare two floating point numbers](#compare-two-floating-point-numbers)
 		- [Slices](#slices-1)
 			- [Pass each element of a slice as an individual argument to a variadic function (REF01)](#pass-each-element-of-a-slice-as-an-individual-argument-to-a-variadic-function-ref01-1)
 			- [Remove an item at a specific index from a slice (REF02)](#remove-an-item-at-a-specific-index-from-a-slice-ref02)
@@ -549,6 +551,9 @@ $ go fmt
 ### [Define a type's custom string printing behavior (REF06)](./examples/todo/todo.go)
 
 ## Data Structures
+
+### Floats
+#### [Compare two floating point numbers](./uncategorized-idioms-etc.md#comparing-floats)
 
 ### Slices
 #### [Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)

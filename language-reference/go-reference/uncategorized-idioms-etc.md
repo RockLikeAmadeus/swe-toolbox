@@ -24,3 +24,6 @@ case "avg"
 
 res := opFunc(someSlice)
 ```
+
+# Comparing Floats
+Because floats are inherently imprecise, comparison should usually be more sophisticated than using `==`. Typically this is done by introducing some tolerance for the comparison. For reference, see the source code for the tests of the standard library's `math` package.
