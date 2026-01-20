@@ -495,6 +495,8 @@ import (
 ```bash
 $ go mod tidy # Clean up your Go mod file
 $ go fmt
+$ go build # Note: if multiple packages are specified, does not generate output,
+# which is useful for checking for compilation errors without creating binaries
 ```
 
 [Contents](#contents)
