@@ -1,0 +1,3 @@
+Go provides the [log](https://pkg.go.dev/log) package for basic log writing capability. By default it logs to `STDERR`, but you can configure it to log to a file instead. In addition to the message, the logger automatically adds the date and time to each entry, and you can configure it to add a unique prefix string to each entry to improve searchability.
+
+One way you might use this is to have your command-line tool include a flag to specify the log file name (so cron jobs or other utilities running your tool can specify where they want log messages to go), but have the default behavior (when the flag isn't specified) be to send output to STDOUT, so command-line users can see the output in the terminal.
