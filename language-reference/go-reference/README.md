@@ -43,6 +43,7 @@
 		- [Define a type's custom string printing behavior (REF06)](#define-a-types-custom-string-printing-behavior-ref06)
 	- [Functions](#functions)
 		- [Pass each element of a slice as an individual argument to a variadic function (REF01)](#pass-each-element-of-a-slice-as-an-individual-argument-to-a-variadic-function-ref01)
+		- [Define a function variable that can be called polymorphically](#define-a-function-variable-that-can-be-called-polymorphically)
 	- [Types](#types)
 		- [Define a type's custom string printing behavior (REF06)](#define-a-types-custom-string-printing-behavior-ref06-1)
 	- [Data Structures](#data-structures)
@@ -62,6 +63,10 @@
 	- [Error Handling](#error-handling-1)
 		- [Determine if an error is a specific type of error (REF05)](#determine-if-an-error-is-a-specific-type-of-error-ref05)
 		- [Handle an error condition in a command-line tool (REF01)](#handle-an-error-condition-in-a-command-line-tool-ref01-1)
+		- [Define a custom error type](#define-a-custom-error-type)
+		- [Return an instance of type `error` including the inner error](#return-an-instance-of-type-error-including-the-inner-error)
+	- [Logging](#logging)
+		- [Logging](#logging-1)
 	- [Testing](#testing)
 		- [Specify setup or teardown logic to execute before and/or after your tests (REF02)](#specify-setup-or-teardown-logic-to-execute-before-andor-after-your-tests-ref02)
 		- [Organize your test cases into subtests (REF05)](#organize-your-test-cases-into-subtests-ref05)
@@ -537,6 +542,7 @@ $ go fmt
 ## Functions
 
 ### [Pass each element of a slice as an individual argument to a variadic function (REF01)](./examples/todo/todo.go)
+### [Define a function variable that can be called polymorphically](./uncategorized-idioms-etc.md#polymorphic-function-use)
 
 ## Types
 
@@ -570,6 +576,11 @@ $ go fmt
 
 ### [Determine if an error is a specific type of error (REF05)](./examples/todo/todo.go)
 ### [Handle an error condition in a command-line tool (REF01)](./examples/todo/cmd/todo/main.go)
+### [Define a custom error type](./error-handling.md#defining-custom-error-types)
+### [Return an instance of type `error` including the inner error](./error-handling.md#returning-an-instance-of-type-error-including-the-inner-error)
+
+## Logging
+### [Logging](./logging.md)
 
 ## Testing
 
