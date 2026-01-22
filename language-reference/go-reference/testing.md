@@ -25,3 +25,7 @@ if err := run(inputFile, &mockStdOut); err != nil {
 
 output := strings.TrimSpace(mockStdOut.String())
 ```
+
+# Test Doubles
+
+For examples of how this is done straight from the Go standard library, see [the source of the `exec_test.go` file](https://go.dev/src/os/exec/exec_test.go) from the `os` package.

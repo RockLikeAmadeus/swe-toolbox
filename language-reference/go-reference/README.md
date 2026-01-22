@@ -131,6 +131,27 @@ func outerFunc() {
 
 - Go lets you create simple new types as wrappers of other types, as in `type Money int`, akin to C's `typedef`. You can create instances of this wrapper type with the syntax `Money(225)`. The type is still represented as an integer, but you can declare methods on these types, which makes this feature surprisingly useful. For instance, you can implement the `Stringer` interface from `fmt` to define how your type is printed when used with the `%s` format string.
 
+- Go doesn't have formal constructors like other languages, but the conventional equivalent is to define a function `newMyType` that returns an instance of that type, like
+
+```go
+func newCar(make, model string) car {
+	return car{
+		make: make,
+		model: model,
+	}
+}
+```
+
+- Go's inheritance is a little different, too. You embed the parent type into the child type, like this:
+
+```go
+type cat struct {
+	animal
+}
+```
+
+In this case, the `cat` type doesn't add any new fields to `animal` (though you can), but you still might add new methods, or overwrite existing ones.
+
 - Casting syntax is backwards; the value, not the type, goes in parenthesis: `int64(*myIntWrapper)`
   
 - The only iteration construct in Go is `for`, and there is special syntax for iterating over a range.
