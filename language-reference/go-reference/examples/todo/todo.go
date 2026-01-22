@@ -87,7 +87,7 @@ func (l *List) Save(filename string) error {
 func (l *List) Get(filename string) error {
 	file, err := os.ReadFile(filename)
 	if err != nil {
-		if errors.Is(err, os.ErrNotExist) { // REF05
+		if errors.Is(err, os.ErrNotExist) { // REF05 - Note: will also return true if the error is nested in err
 			return nil
 		}
 		return err
