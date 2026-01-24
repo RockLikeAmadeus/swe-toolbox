@@ -22,12 +22,23 @@ First create the directory and initialize the go module for the project, then ru
 $ go get -u github.com/spf13/cobra@latest
 ```
 
+## Cobra CLI
+
 If you want to use the boilerplate code generation that Cobra offers, you also want to run:
 
 ```
-$ go get -u github.com/spf13/cobra-cli@latest
+$ go install github.com/spf13/cobra-cli@latest
 $ cobra-cli init
 $ go run main.go
 ```
 
-To avoid having to specify author and license information every time you run a cobra CLI command, you can add a .cobra.yaml file to your home directory (try doing this with cobra command)
+If the cobra-cli command is not working, you may need to add the line `export PATH="/home/alec/go/bin:$PATH"` to the end of your .bashrc file in your `home` directory.
+
+To avoid having to specify author and license information every time you run a cobra-cli  command, you can add a .cobra.yaml file to your home directory (run command `$ cobra-cli` to see where the default location is). The following contents are likely fine:
+
+```yaml
+author: Alec Hampton
+license: Apache
+```
+
+For more info, see [the cobra README](https://github.com/spf13/cobra/tree/main) and [the cobra-cli README](https://github.com/spf13/cobra-cli/blob/main/README.md)
