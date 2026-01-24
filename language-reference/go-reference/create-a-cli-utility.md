@@ -32,6 +32,8 @@ $ cobra-cli init
 $ go run main.go
 ```
 
+You can also run this command in a subdirectory, if you want to take advantage of having your application logic and your CLI interface as separate packages. For instance, generate the Go Module at your module's root, but run the `$ cobra-cli commit` command inside of a new `cmd` directory.
+
 If the cobra-cli command is not working, you may need to add the line `export PATH="/home/alec/go/bin:$PATH"` to the end of your .bashrc file in your `home` directory.
 
 To avoid having to specify author and license information every time you run a cobra-cli  command, you can add a .cobra.yaml file to your home directory (run command `$ cobra-cli` to see where the default location is). The following contents are likely fine:
