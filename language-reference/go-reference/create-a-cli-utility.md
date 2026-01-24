@@ -32,7 +32,7 @@ $ cobra-cli init
 $ go run main.go
 ```
 
-You can also run this command in a subdirectory, if you want to take advantage of having your application logic and your CLI interface as separate packages. For instance, generate the Go Module at your module's root, but run the `$ cobra-cli init` command inside of a new `cmd` directory (this naming could conflict with the `cmd` folder that the `init` command generates, meaning your commands will be defined in `app/cmd/cmd`, but this may be fine).
+You can also run this command in a subdirectory, if you want to take advantage of having your application logic and your CLI interface as separate packages. For instance, generate the Go Module at your module's root, but run the `$ cobra-cli init` command inside of a new `cmd` directory (this naming could conflict with the `cmd` folder that the `init` command generates, meaning your commands will be defined in `app/cmd/cmd`, but this is probably alright).
 
 If the cobra-cli command is not working, you may need to add the line `export PATH="/home/alec/go/bin:$PATH"` to the end of your .bashrc file in your `home` directory.
 
