@@ -1,3 +1,7 @@
+# Quick Start
+
+TBD
+
 # Setting up the project
 
 - Make a new folder for the utility (module)
@@ -46,3 +50,7 @@ license: Apache
 For more info, see [the cobra README](https://github.com/spf13/cobra/tree/main) and [the cobra-cli README](https://github.com/spf13/cobra-cli/blob/main/README.md)
 
 ## Code Structure
+
+ The Cobra CLI creates a simple `main.go` file that only imports the `cmd` package and executes the application. The core functionality resides in (or, at least, is called by) the `cmd` package, in which lies the `root.go` file which defines `Execute()` and the general structure of the program.
+
+Commands and subcommands are implemented by instancing the main type defined by Cobra: `cobra.Command`. These commands can be compiled in a parent-child relationship to form a tree structure of subcommands. In the pre-generated root command, which is executed when your CLI is run without any commands or subcommands, the `Run` property is commented out, since typical CLI behavior is for the root command to just offer usage info, but you can uncomment it if you want the root command to actually do something.
