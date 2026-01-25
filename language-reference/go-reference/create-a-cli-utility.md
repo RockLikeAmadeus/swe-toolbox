@@ -53,4 +53,30 @@ For more info, see [the cobra README](https://github.com/spf13/cobra/tree/main) 
 
  The Cobra CLI creates a simple `main.go` file that only imports the `cmd` package and executes the application. The core functionality resides in (or, at least, is called by) the `cmd` package, in which lies the `root.go` file which defines `Execute()` and the general structure of the program.
 
-Commands and subcommands are implemented by instancing the main type defined by Cobra: `cobra.Command`. These commands can be compiled in a parent-child relationship to form a tree structure of subcommands. In the pre-generated root command, which is executed when your CLI is run without any commands or subcommands, the `Run` property is commented out, since typical CLI behavior is for the root command to just offer usage info, but you can uncomment it if you want the root command to actually do something.
+Commands and subcommands are implemented by instancing the main type defined by Cobra: `cobra.Command`. These commands can be compiled in a parent-child relationship to form a tree structure of subcommands.
+
+In the pre-generated root command, which is executed when your CLI is run without any commands or subcommands, the `Run` property is commented out, since typical CLI behavior is for the root command to just offer usage info, but you can uncomment it if you want the root command to actually do something.
+
+You can also add the `Version` property to the `rootCmd` to have Cobra automatically include the `-v` and `--version` flags.
+
+```go
+var rootCmd = &cobra.Command{
+	Use:   "pScan",
+	Short: "Fast TCP port scanner",
+	Long: `pScan - short for Port Scanner - executes TCP port scan
+on a list of hosts.
+
+pScan allows you to add, list, and delete hosts from the list.
+
+pScan executes a port scan on specified TCP ports. You can customize
+the target ports using a command line flag.`,
+	Version: "0.1.0",
+}
+```
+
+Finally, in the `root.go` file you can implement the functions `init()` and `initConfi()` (the latter is probably only generated if you included Viper when generating the project). You use the function's body to set some config settings as well as persistent and local flags. You can also call `rootCmd.SetVersionTemplate` here to change the way the version prints, such as printing a short description of the application with the version:
+
+```go
+    versionTemplate := `{{printf "%s: %s - version %s\n" .Name .Short .Version}}`
+	rootCmd.SetVersionTemplate(versionTemplate)
+```
