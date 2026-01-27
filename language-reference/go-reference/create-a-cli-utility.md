@@ -20,6 +20,8 @@ It's also a common pattern to have the `main()` function simply parse command li
 
 # Using Cobra
 
+For more comprehensive info, see the [Cobra docs](https://github.com/spf13/cobra)
+
 First create the directory and initialize the go module for the project, then run:
 
 ```
@@ -27,6 +29,8 @@ $ go get -u github.com/spf13/cobra@latest
 ```
 
 ## Cobra CLI
+
+For more comprehensive info, see the [Cobra CLI docs](https://github.com/spf13/cobra-cli)
 
 If you want to use the boilerplate code generation that Cobra offers, you also want to run:
 
