@@ -78,7 +78,7 @@ the target ports using a command line flag.`,
 }
 ```
 
-Finally, in the `root.go` file you can implement the functions `init()` and `initConfi()` (the latter is probably only generated if you included Viper when generating the project). You use the function's body to set some config settings as well as persistent and local flags. You can also call `rootCmd.SetVersionTemplate` here to change the way the version prints, such as printing a short description of the application with the version:
+Finally, in the `root.go` file you can implement the functions `init()` and `initConfi()` (the latter is probably only generated if you included Viper when generating the project). You use the function's body to set some config settings as well as persistent and local flags. _Defining a flag as a persistent flag makes it available to the command and all subcommands under that command._ You can also call `rootCmd.SetVersionTemplate` here to change the way the version prints, such as printing a short description of the application with the version:
 
 ```go
     versionTemplate := `{{printf "%s: %s - version %s\n" .Name .Short .Version}}`
