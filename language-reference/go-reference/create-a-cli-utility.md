@@ -84,3 +84,39 @@ Finally, in the `root.go` file you can implement the functions `init()` and `ini
     versionTemplate := `{{printf "%s: %s - version %s\n" .Name .Short .Version}}`
 	rootCmd.SetVersionTemplate(versionTemplate)
 ```
+
+## Generating Command Completion and Documentation with Cobra
+
+### Command Completion
+
+Cobra can automatically generate command completion. Use the Cobra CLI to add a new command to your application called `completion`, then edit the new command:
+
+```go
+var completionCmd = &cobra.Command{
+	Use:   "completion",
+	Short: "Generate bash completion for your command",
+	Long: `To load your completions run
+	$ source <(./myApp completion)
+	
+	To load completions automatically on login, add this line to your .bashrc file:
+	$ ~/.bashrc
+	source <(myApp completion)`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		return completionAction(os.Stdout)
+	},
+}
+
+...
+
+func completionAction(out io.Writer) error {
+	return rootCmd.GenBashCompletion(out)
+}
+```
+
+Then you can enable command completion by running the `source` command as suggested in the example specified above:
+
+```
+$ source <(./myApp completion)
+```
+
+Now, you can type the name of your application and press `TAB` at any time to see suggestions.
