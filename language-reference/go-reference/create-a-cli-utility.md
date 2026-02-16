@@ -95,12 +95,13 @@ Cobra can automatically generate command completion. Use the Cobra CLI to add a 
 var completionCmd = &cobra.Command{
 	Use:   "completion",
 	Short: "Generate bash completion for your command",
-	Long: `To load your completions run
-	$ source <(./myApp completion)
-	
-	To load completions automatically on login, add this line to your .bashrc file:
-	$ ~/.bashrc
-	source <(myApp completion)`,
+	Long: `To load your completions run ` + "`$ source <(pScan completion)`\n" +
+
+		`To load completions automatically on login, add this line to your .bashrc file:` + "\n" +
+		"```\n" +
+		"$ ~/.bashrc" + "\n" +
+		"source <(pScan completion)" + "\n" +
+		"```\n\n",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return completionAction(os.Stdout)
 	},
@@ -119,4 +120,46 @@ Then you can enable command completion by running the `source` command as sugges
 $ source <(./myApp completion)
 ```
 
-Now, you can type the name of your application and press `TAB` at any time to see suggestions.
+Now, you can type the name of your application and press `TAB` at any time to see suggestions. **Note: the example above only works for bash shells. On Windows, use Git Bash or WSL. Alternatively, you can use Cobra to generate command completion for Powershell in addition to Bash.**
+
+### Documentation Generation
+
+You can also generate Linux man pages, REST pages, or YAML documentation using `cobra/doc`. Use the Cobra CLI to add a new command to your application called `docs`, then edit the new command:
+
+```go
+// docsCmd represents the docs command
+var docsCmd = &cobra.Command{
+	Use:   "docs",
+	Short: "Generate documentation for a command",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		dir, err := cmd.Flags().GetString("dir")
+		if err != nil {
+			return err
+		}
+
+		if dir == "" {
+			if tmp, err := os.CreateTemp("", "pScan"); err != nil {
+				dir = tmp.Name()
+				return err
+			}
+		}
+
+		return docsAction(os.Stdout, dir)
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(docsCmd)
+
+	docsCmd.Flags().StringP("dir", "d", "", "Destination directory for docs")
+}
+
+func docsAction(out io.Writer, dir string) error {
+	if err := doc.GenMarkdownTree(rootCmd, dir); err != nil {
+		return err
+	}
+
+	_, err := fmt.Fprintf(out, "Documentation successfully created in %s\n", dir)
+	return err
+}
+```
