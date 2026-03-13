@@ -1,0 +1,1 @@
+Project >> Project Settings >> Input Map >> Add new actions and set input bindings for each

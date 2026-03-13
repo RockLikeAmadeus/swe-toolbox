@@ -41,6 +41,16 @@ function AboutPage() {
 }
 ```
 
+React components can also be defined as classes that inherit from `React.Component` and implement `render()`, which has some advantages in certain cases.
+
+```javascript
+class App extends React.Component {
+  render() {
+    return <div></div>;
+  }
+}
+```
+
 ## Styling
 
 CSS classes are specified withe `className` (rather than just `class` as in HTML):
@@ -48,6 +58,8 @@ CSS classes are specified withe `className` (rather than just `class` as in HTML
 ```js
 <img className="avatar" />
 ```
+
+Styles are _not_ automatically scoped to a component; normal CSS rules are applied, meaning all CSS files are applied globally to all components on the page.
 
 ## Displaying Data
 
@@ -115,6 +127,8 @@ _Important: Do not call the event handler function: you only need to pass it dow
 
 ## Managing Component State
 
+React does not automatically re-render the DOM based on changes to the underlying data. To trigger this, you need to be using _state_ and calling a properties _set_ function.
+
 First:
 
 ```js
@@ -139,6 +153,15 @@ Any names are valid, but the convention is `something` and `setSomething`.
 
 If a component is rendered multiple times, each instance gets its own state.
 
+If your state update depends on the previous state's data, it's safer to use this format:
+
+```javascript
+function handleClick() {
+  setCount((previousCount) => { return previousCount + 1});
+}
+
+```
+
 ## Hooks
 
 Hooks are functions that start with `use` like `useState()`. There are various built-in hooks and you can always write your own.
@@ -148,6 +171,25 @@ Hooks can only be called at the top level of components, or from other hooks (i.
 ## Sharing Data Between Components
 
 ### Props
+
+##### Parent -> Child
+
+Parent components share data with their child components via Props. In the parent component:
+
+```jsx
+<ChildComponent myData={"some data"}>
+```
+
+In the child component
+
+```jsx
+const ChildComponent = props => {
+  console.log(props.myData);
+  return <div></div>
+}
+```
+
+##### Child -> Parent
 
 You can "lift the state up" to parent components.
 
@@ -172,6 +214,7 @@ export default function MyApp() {
   );
 }
 ```
+
 
 ## Common Terms: JSX, Redux, Hooks, etc.
 

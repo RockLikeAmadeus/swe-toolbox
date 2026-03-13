@@ -1,0 +1,1 @@
+- [Replace Conditionals With Polymorphism](https://wiki.c2.com/?ReplaceConditionalWithPolymorphism)

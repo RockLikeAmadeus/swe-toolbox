@@ -1,0 +1,1 @@
+GDUnit dedicated tab is on the left side of the editor, next to the Scene and Import tabs.
