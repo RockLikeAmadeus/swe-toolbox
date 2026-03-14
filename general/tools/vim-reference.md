@@ -1,9 +1,13 @@
 # Modes
 
 Normal Mode (`Esc`)
+
 Insert Mode (`i`, `a`, `o`)
+
 Replace Mode (`r`, `R`)
+
 Visual Mode (`v`, `V`, `Ctrl+v`)
+
 Command Mode (`:`)
 
 # Critical Combinations
@@ -66,3 +70,8 @@ to (e)nd of current word
 ($)hoot to end of line
 
 (0)th character of the line (technically not a motion I think)
+
+
+
+
+Come back to Chapter 3 of the VIM tutor - between this point and the end of the tutor there are a few more commands that I want to add to this reference before I start using the Vim extension for text editing in VS Code for real, like (c)hange and (o)pen, etc.
