@@ -10,7 +10,7 @@ Visual Mode (`v`, `V`, `Ctrl+v`)
 
 Command Mode (`:`)
 
-# Critical Combinations
+# Useful Combinations
 
 ## Exiting Vim
 
@@ -19,6 +19,10 @@ Discard changes and exit: `:q!`
 Save changes: `:w`
 
 Save changes and exit: `:wq`
+
+## Move a line to a different location
+
+(dd)elete line --> navigate to intended location --> (p)ut line under current line
 
 # Normal Mode
 
