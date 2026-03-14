@@ -12,8 +12,18 @@ Command Mode (`:`)
 
 Discard changes and exit: `:q!`
 
-# Cursor Movement
+# Normal Mode
+
+## Cursor Movement
 
 Left: `h`
--> `l`
-^ `k`
+
+Right:  `l`
+
+Up: `k`
+
+Down: `j`
+
+## Commands (might not be the right term)
+
+Delete character under cursor: `x`
