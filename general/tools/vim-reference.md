@@ -22,7 +22,7 @@ Save changes and exit: `:wq`
 
 ## Move a line to a different location
 
-(`dd`)elete line --> navigate to intended location --> (`p`)ut line under current line
+(`dd`)elete line --> navigate to intended location --> (`p`)ut/(`p`)aste line under current line.
 
 # Normal Mode
 
@@ -70,6 +70,8 @@ For many of these motions, typing them _twice_ (as in `dd`) will operate on the 
 (`dd`)elete the whole line (can use `2dd` to delete the next two lines)
 
 (`c`)hange
+
+(`a`)ppend (or (`A`)ppend to end of line)
 
 (`y`)ank or cop(`y`)
 
