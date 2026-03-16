@@ -22,7 +22,7 @@ Save changes and exit: `:wq`
 
 ## Move a line to a different location
 
-(dd)elete line --> navigate to intended location --> (p)ut line under current line
+(`dd`)elete line --> navigate to intended location --> (`p`)ut line under current line
 
 # Normal Mode
 
@@ -30,13 +30,17 @@ Some of these are operators, some are motions (which just enable cursor navigati
 
 ***Single Character***
 
-(a)ppend word -- (A)ppend line -- (i)nsert -- (r)eplace character -- enter (R)eplace mode -- For(w)ord -- (b)ackword -- (x)-out -- (u)ndo -- (U)ndo line change
+(`a`)ppend word -- (`A`)ppend line -- (`i`)nsert -- (`r`)eplace character -- enter (`R`)eplace mode -- For(`w`)ord -- (`b`)ackword -- (`x`)-out -- (`u`)ndo -- (`U`)ndo line change
 
 ***Multi-Character (Operator Followed by Motion)***
 
-(d)elete (w)ord -- (d)elete to (e)nd of word -- (d)elete re($)t of line -- (d)elete the next (3) (w)ords --
+(`d`)elete (`w`)ord -- (`d`)elete to (`e`)nd of word -- (`d`)elete re(`$`)t of line -- (`d`)elete the next (`3`) (`w`)ords --
 
-## Cursor Movement
+(`c`)hange (`i`)nside (`(`)parenthesis
+
+## Motions (Cursor Movement)
+
+_Motions can be preceded with a **Count** (number) to be repeated that many times:_
 
 Left: `h`
 
@@ -46,36 +50,37 @@ Up: `k`
 
 Down: `j`
 
+to start of next (`w`)ord
 
-# Operators
+to (`e`)nd of current word
 
-(d)elete
+(`b`)ack one word
 
-(dd)elete the whole line (can use `2dd` to delete the next two lines)
+(`$`)hoot to end of line
 
-(u)ndo
-
-(U)ndo line change
-
-(CTRL+R)edo
+(`0`)th character of the line 
 
 
+# Operators (Verbs)
 
-# Motions
+For many of these motions, typing them _twice_ (as in `dd`) will operate on the entire current line. _Capitalizing_ the operator often performs an action to the _end of the line_.
 
-_Motions can be preceded with a **Count** (number) to be repeated that many times:_
+(`d`)elete
 
-to start of next (w)ord
+(`dd`)elete the whole line (can use `2dd` to delete the next two lines)
 
-to (e)nd of current word
+(`c`)hange
 
-(b)ack one word
+(`y`)ank or cop(`y`)
 
-($)hoot to end of line
+(`u`)ndo
 
-(0)th character of the line (technically not a motion I think)
+(`U`)ndo line change
 
+(`CTRL+R`)edo
 
+(`o`)pen a new line below the cursor
 
+--
 
 Come back to Chapter 3 of the VIM tutor - between this point and the end of the tutor there are a few more commands that I want to add to this reference before I start using the Vim extension for text editing in VS Code for real, like (c)hange and (o)pen, etc.
