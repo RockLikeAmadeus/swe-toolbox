@@ -2,8 +2,7 @@
 
 - [Contents](#contents)
 - [What makes Rust unique?](#what-makes-rust-unique)
-- [What do I need installed to write  code](#what-do-i-need-installed-to-write--code)
-- [FOR INTERPRETED LANGUAGES ONLY I want to execute simple commands in the REPL](#for-interpreted-languages-only-i-want-to-execute-simple-commands-in-the-repl)
+- [What do I need installed to write Rust code](#what-do-i-need-installed-to-write-rust-code)
 - [I just want to write a quick script with ](#i-just-want-to-write-a-quick-script-with-)
 - [I'm starting a new software project with ](#im-starting-a-new-software-project-with-)
 - [Syntax and Style](#syntax-and-style)
@@ -19,19 +18,31 @@
 
 # What makes Rust unique?
 
+Note: rewrite this later, this is just random notes to be re-organized.
+
+- variables are mutable by default, use `mut` to declare them mutable.
+- Rust has special syntax to return a value from a function without using the return keyword or a semicolon.
+- Like some other languages, has two types of strings: `str` (string literals, entered in the actual source code), and dynamic `String`s that store location, length, and capacity.
+- Methods are static (called "associated functions") unless the first parameter is `&self`.
+  - In method implementations (inside the `impl` body), `Self` refers to the struct type itself, while `self` refers to the _instance_ of the structure.
+
 _What are a couple of the most important high-level things to be aware of that make this language what it is? What features and quirks define the language and must be kept in mind at (pretty much) all times? Note: this section is not for notes on unique syntax--that section is below. Delete this block once the reference for this language is "complete"_
 
 [Contents](#contents)
 
-# What do I need installed to write <language> code
+# What do I need installed to write Rust code
 
-The best approach for installing Rust and it's various tools are to install [the RustUp _toolchain_](https://rustup.rs/).
+The best approach for installing Rust and it's various tools are to install [the RustUp _toolchain_](https://rustup.rs/). RustUp is more-or-less analogous to NVM for Node.
 
-_A couple quick notes on what should be installed, i.e. compilers, interpreters, package managers, common workflow tools, etc... Include notes on specific language/compiler versions if appropriate. Delete this block once the reference for this language is "complete"_
+Use `$ rustup` with no args for an overview of usage.
+
+Use `$ rustup show` for Rust version info.
+
+Use `$ rustup update` to get latest Rust toolset.
+
+Use `$ rustup doc` to read the Rust docs offline
 
 [Contents](#contents)
-
-# FOR INTERPRETED LANGUAGES ONLY I want to execute simple commands in the REPL
 
 # I just want to write a quick script with <language>
 
@@ -41,6 +52,22 @@ _Notes on writing and then running a standalone script or small process here. In
 
 # I'm starting a new software project with <language>
 
+To create a new project in the current dir:
+
+`$ cargo init`
+
+To create a new project in a new dir:
+
+`$ cargo new my_app`
+
+Note: use `snake_case` for your project name. This can always be changed in `cargo.toml`.
+
+Additional note: these commands create executable projects by default. Use `$ cargo new --lib` to bootstrap a library project, which may be easier to start with since it will include test scaffolding.
+
+Additional Note: these commands _do_ generate a git repository automatically, unless one already exists. Change this by adding the `--vcs none` flag
+
+To run your project, execute `$ cargo run`.
+
 _Notes on the structure and terminology of more complex, multi-file projects here. Talk about how code is organized in <language>, how files are named, common patterns for specific types of projects, and tools commonly used for scaffolding new projects. Keep it brief, and leave the details to [this page I haven't created yet]. Delete this block once the reference for this language is "complete"_
 
 [Contents](#contents)
@@ -48,6 +75,8 @@ _Notes on the structure and terminology of more complex, multi-file projects her
 # Syntax and Style
 
 ## Essential Syntax and Style
+
+`snake_case` is used most often for naming variables in Rust.
 
 _Examples of the most important syntax and style to know without having to go all the way to external resources.
 Also include the most notable syntax-related things to know about that make this language different than other languages. Delete this block once the reference for this language is "complete"_
