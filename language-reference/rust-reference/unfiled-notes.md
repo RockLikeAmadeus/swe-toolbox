@@ -1,0 +1,13 @@
+- Rust is an expression based language. This is an important thing to understand to grok certain things about how the language works.
+  - Rust code is built up of expressions and statements.
+    - Statements end with a semicolon, and expressions do not.
+    - Expressions _evaluate to a value._ Statements, on the other hand, always evaluate to `()`, the empty tuple, called _unit_.
+    - Most (maybe all?) block-type syntax defines expressions.
+      - That includes if statements, loops, functions, and even standalone `{ }` instances in the middle of your code.
+        - An expression that contains multiple statements inside the expression block evaluates to _the value of the last expression in the block. That's why functions can "return" a value by just specifying the return value as the last line without a semicolon and without the `return` keyword. _Because it's specifying the value that the function "expression" will evaluate to_. 
+
+- When you're building a type in your library that is meant to be exposed to consumers of your library, it's good practice to implement the built-in Rust trait `Default`
+- `(0..1000).for_each(|_| { ....` is the same as `for _ in 0..1000`
+- Rust ownership is a completely new _model_ for thinking about memory (rather than thinking about memory as just an array of bytes).
+    - Stack is made up of frames which are made up of variables mapped to values (or pointers).
+    - Heap is made up of boxes.
