@@ -1,0 +1,7 @@
+{
+	"nodes":[
+		{"id":"c017c71e16d406fe","type":"file","file":"languages/rust/rust concepts/Rust is Expression-Based.md","x":-650,"y":-720,"width":620,"height":200,"color":"3"},
+		{"id":"f23578f0ea6f0723","x":-540,"y":-400,"width":400,"height":400,"color":"3","type":"file","file":"languages/rust/rust concepts/Ownership.canvas"}
+	],
+	"edges":[]
+}

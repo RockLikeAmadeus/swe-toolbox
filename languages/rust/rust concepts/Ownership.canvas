@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"b560d7a61a38dc18","type":"text","text":"Rust ownership is a completely new _model_ for thinking about memory (rather than thinking about memory as just an array of bytes).","x":-220,"y":-300,"width":440,"height":120,"color":"3"},
+		{"id":"c55eb2ef4f26db06","type":"text","text":"The Heap","x":260,"y":-75,"width":140,"height":55,"color":"3"},
+		{"id":"42a5f555219d22c0","type":"text","text":"Boxes","x":275,"y":130,"width":110,"height":60,"color":"3"},
+		{"id":"695ece2a2bd85a59","type":"text","text":"Frames, organized as a stack (LIFO) of *functions*","x":-421,"y":130,"width":201,"height":80,"color":"3"},
+		{"id":"ea39ac89dfa8488e","type":"text","text":"The Stack","x":-393,"y":-70,"width":145,"height":50,"color":"3"},
+		{"id":"3f13eb81aca67c3a","type":"text","text":"Variables mapped to values (or pointers)","x":-463,"y":360,"width":285,"height":60,"color":"3"},
+		{"id":"5af751fae4becbfb","type":"file","file":"Rust stack example.png","x":-660,"y":85,"width":98,"height":170,"color":"2"},
+		{"id":"e6d7f775654298eb","type":"text","text":"Moves","x":565,"y":-550,"width":250,"height":60,"color":"3"},
+		{"id":"064a3fccca009804","type":"text","text":"Variables cannot be used after being moved!","x":690,"y":-330,"width":250,"height":60,"color":"3"},
+		{"id":"7ce2fdc15d4f0a69","x":385,"y":-330,"width":250,"height":60,"color":"3","type":"text","text":"Changes the owner!"},
+		{"id":"077af5579c9439be","x":1160,"y":-550,"width":250,"height":60,"color":"3","type":"text","text":"Borrows"},
+		{"id":"49ec8e5196c93b11","x":1160,"y":-440,"width":250,"height":80,"color":"3","type":"text","text":"Creates a non-owning pointer called a reference"},
+		{"id":"bca1dbdb6db9923e","x":1160,"y":-300,"width":250,"height":60,"color":"3","type":"text","text":"Doesn't change the owner!"},
+		{"id":"74e0570a5137b77e","x":-220,"y":-740,"width":400,"height":250,"color":"3","type":"text","text":"Each piece of data on the heap has ONE VARIABLE which is its OWNER.\n\nHeap data is deallocated ONLY ONCE: when its OWNER goes out of scope.\n\nOnce ownership of data MOVES, the variable that was the previous owner is invalidated and can no longer be used!"}
+	],
+	"edges":[
+		{"id":"20ecdd0fc99bfe67","fromNode":"b560d7a61a38dc18","fromSide":"bottom","toNode":"ea39ac89dfa8488e","toSide":"top"},
+		{"id":"5580911dacf36e2c","fromNode":"b560d7a61a38dc18","fromSide":"bottom","toNode":"c55eb2ef4f26db06","toSide":"top"},
+		{"id":"a32d7b406b0c0d81","fromNode":"ea39ac89dfa8488e","fromSide":"bottom","toNode":"695ece2a2bd85a59","toSide":"top","label":"is made up of"},
+		{"id":"08800e8058c98c62","fromNode":"c55eb2ef4f26db06","fromSide":"bottom","toNode":"42a5f555219d22c0","toSide":"top","label":"is made up of"},
+		{"id":"7961630a2eb2ec04","fromNode":"695ece2a2bd85a59","fromSide":"bottom","toNode":"3f13eb81aca67c3a","toSide":"top","label":"is made up of"},
+		{"id":"cad15d59d7949768","fromNode":"3f13eb81aca67c3a","fromSide":"left","toNode":"5af751fae4becbfb","toSide":"right"},
+		{"id":"40406573f2804579","fromNode":"695ece2a2bd85a59","fromSide":"left","toNode":"5af751fae4becbfb","toSide":"right"},
+		{"id":"010118d22a34c78c","fromNode":"ea39ac89dfa8488e","fromSide":"left","toNode":"5af751fae4becbfb","toSide":"right"},
+		{"id":"3e924f1b63a0ebb9","fromNode":"e6d7f775654298eb","fromSide":"bottom","toNode":"064a3fccca009804","toSide":"top"},
+		{"id":"523d157c83c8dd95","fromNode":"e6d7f775654298eb","fromSide":"bottom","toNode":"7ce2fdc15d4f0a69","toSide":"top"},
+		{"id":"8122355b4ce621fc","fromNode":"077af5579c9439be","fromSide":"bottom","toNode":"49ec8e5196c93b11","toSide":"top"},
+		{"id":"f331323aad85152e","fromNode":"49ec8e5196c93b11","fromSide":"bottom","toNode":"bca1dbdb6db9923e","toSide":"top"}
+	]
+}
