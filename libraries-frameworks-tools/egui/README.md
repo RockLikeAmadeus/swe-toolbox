@@ -1,8 +1,8 @@
 # [egui](https://docs.rs/egui/latest/egui/) is an immediate mode library.
 
-## [eframe]() is the framework for building standalone apps/tools.
+## [eframe]() is the official framework for building standalone apps/tools with egui.
 
-### Use [this template](https://github.com/emilk/eframe_template) for creating standalone apps/tools.
+### Use [this template](https://github.com/emilk/eframe_template) for creating an app with eframe. 
 
 Just click "Use this template" at the top right to create a new repo with this template as the starting point.
 
