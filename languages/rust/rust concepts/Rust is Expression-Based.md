@@ -1,0 +1,7 @@
+- Rust is an expression based language. This is an important thing to understand to grok certain things about how the language works.
+  - Rust code is built up of expressions and statements.
+    - Statements end with a semicolon, and expressions do not.
+    - Expressions _evaluate to a value._ Statements, on the other hand, always evaluate to `()`, the empty tuple, called _unit_.
+    - Most (maybe all?) block-type syntax defines expressions.
+      - That includes if statements, loops, functions, and even standalone `{ }` instances in the middle of your code.
+        - An expression that contains multiple statements inside the expression block evaluates to _the value of the last expression in the block. That's why functions can "return" a value by just specifying the return value as the last line without a semicolon and without the `return` keyword. _Because it's specifying the value that the function "expression" will evaluate to_. 

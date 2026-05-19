@@ -73,7 +73,7 @@ For many of these motions, typing them _twice_ (as in `dd`) will operate on the 
 
 (`a`)ppend (or (`A`)ppend to end of line)
 
-(`y`)ank or cop(`y`)
+(`y`)ank or cop(`y`) (`yy` to yank the current line)
 
 (`u`)ndo
 
@@ -81,7 +81,7 @@ For many of these motions, typing them _twice_ (as in `dd`) will operate on the 
 
 (`CTRL+R`)edo
 
-(`o`)pen a new line below the cursor
+(`o`)pen a new line below the cursor (capital `O` opens _above_ the cursor)
 
 --
 

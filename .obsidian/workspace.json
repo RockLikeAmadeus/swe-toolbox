@@ -1,41 +1,161 @@
 {
   "main": {
-    "id": "0eed24f06ba749da",
+    "id": "150f9de2d9354c6f",
     "type": "split",
     "children": [
       {
-        "id": "97f94054ed35b199",
-        "type": "tabs",
+        "id": "795c5c76bae56328",
+        "type": "split",
+        "dimension": 28.474729241877256,
         "children": [
           {
-            "id": "b4150c29666f34f9",
+            "id": "f3a5708ea7c84350",
+            "type": "tabs",
+            "dimension": 59.9609375,
+            "children": [
+              {
+                "id": "a0ae911f7fcc2f9a",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "languages/rust/rust concepts/Rust.canvas",
+                    "viewState": {
+                      "x": -401.4723581970347,
+                      "y": -246.88191309361486,
+                      "zoom": -1.4
+                    }
+                  },
+                  "pinned": true,
+                  "icon": "lucide-layout-dashboard",
+                  "title": "Rust"
+                }
+              }
+            ]
+          },
+          {
+            "id": "3473a2a98feba5e2",
+            "type": "tabs",
+            "dimension": 40.0390625,
+            "children": [
+              {
+                "id": "1474173575f6332b",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "languages/rust/rust reference/unfiled-notes.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "pinned": true,
+                  "icon": "lucide-file",
+                  "title": "unfiled-notes"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
+      },
+      {
+        "id": "014677d00da144ae",
+        "type": "tabs",
+        "dimension": 71.52527075812274,
+        "children": [
+          {
+            "id": "c39499e8d58cc667",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai-use-for-programming/prompt-engineering.md",
+                "file": "languages/rust/rust reference/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "prompt-engineering"
+              "title": "README"
+            }
+          },
+          {
+            "id": "710a36fabe919393",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "languages/rust/rust reference/rust-workspaces.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "rust-workspaces"
+            }
+          },
+          {
+            "id": "e1de0529a342ef01",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "languages/rust/rust concepts/Rust is Expression-Based.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Rust is Expression-Based"
+            }
+          },
+          {
+            "id": "ce281617f696cced",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "languages/rust/rust concepts/Ownership.canvas",
+                "viewState": {
+                  "x": 499.8362704745242,
+                  "y": -183.70581982034008,
+                  "zoom": -1.4
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-layout-dashboard",
+              "title": "Ownership"
+            }
+          },
+          {
+            "id": "e40ca46c9bc00b5d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Rust stack example.png"
+              },
+              "icon": "lucide-image",
+              "title": "Rust stack example"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "4945f61add9c8210",
+    "id": "987849954b5762d5",
     "type": "split",
     "children": [
       {
-        "id": "ed914fd4b2926b7a",
+        "id": "65d490e86eac86aa",
         "type": "tabs",
         "children": [
           {
-            "id": "2aad7e1f79183a79",
+            "id": "b6cdaaeb1f0e0df3",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +168,7 @@
             }
           },
           {
-            "id": "728a4f0e83442c9b",
+            "id": "cfe10196625626ab",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +185,7 @@
             }
           },
           {
-            "id": "5a1d99452d111ac4",
+            "id": "9661263ffe5e4372",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,20 +201,20 @@
     "width": 300
   },
   "right": {
-    "id": "9d215719987253f2",
+    "id": "fa92fbe5a06e7b33",
     "type": "split",
     "children": [
       {
-        "id": "d0c1dc1e0ab743b2",
+        "id": "fcb086ec3a151be4",
         "type": "tabs",
         "children": [
           {
-            "id": "27e436ee884f44a0",
+            "id": "16a300a3fa14d21e",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ai-use-for-programming/prompt-engineering.md",
+                "file": "languages/rust/rust concepts/Ownership.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +224,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for prompt-engineering"
+              "title": "Backlinks for Ownership"
             }
           },
           {
-            "id": "b98897ee8bf100ca",
+            "id": "bbc519bbf631dccb",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ai-use-for-programming/prompt-engineering.md",
+                "file": "languages/rust/rust concepts/Ownership.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from prompt-engineering"
+              "title": "Outgoing links from Ownership"
             }
           },
           {
-            "id": "e7bee9619b81933e",
+            "id": "33b8ee7d369e9868",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,7 +257,7 @@
             }
           },
           {
-            "id": "34e301a6ac92bf54",
+            "id": "9c435fe85ddb5a77",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -151,18 +271,18 @@
             }
           },
           {
-            "id": "68d5f705f1746401",
+            "id": "77af210b80187f7c",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-use-for-programming/prompt-engineering.md",
+                "file": "languages/rust/rust concepts/Ownership.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of prompt-engineering"
+              "title": "Outline of Ownership"
             }
           }
         ]
@@ -183,13 +303,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "b4150c29666f34f9",
+  "active": "ce281617f696cced",
   "lastOpenFiles": [
-    "ai-use-for-programming/tools.canvas",
-    "ai-use-for-programming/prompt-engineering.md",
-    "ai-use-for-programming/tool-specific tips.md",
-    "ai-use-for-programming/tools.md",
-    "ai-use-for-programming/Untitled",
-    "ai-use-for-programming/Uses.md"
+    "Rust stack example.png",
+    "languages/rust/rust concepts/Ownership.canvas",
+    "languages/rust/rust reference/unfiled-notes.md",
+    "languages/rust/rust concepts/Rust.canvas",
+    "languages/rust/rust concepts/Rust is Expression-Based.md",
+    "languages/rust/rust reference/rust-workspaces.md",
+    "languages/rust/rust reference/README.md",
+    "_unorganized.md",
+    "languages/rust/rust concepts",
+    "languages/rust/rust reference",
+    "languages/rust",
+    "languages",
+    "README.md"
   ]
 }
