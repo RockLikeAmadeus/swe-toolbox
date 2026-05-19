@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"b32f940a3e2fbdbb","type":"link","url":"https://en.wikipedia.org/wiki/Claude_(language_model)","x":-660,"y":-1100,"width":400,"height":400},
+		{"id":"57b95edb51158e7b","x":-640,"y":-180,"width":400,"height":400,"type":"link","url":"https://docs.aws.amazon.com/codewhisperer/"},
+		{"id":"2a3e7e15c9f4384f","type":"link","url":"https://cursor.com/get-started?utm_source=google_paid&utm_campaign=[Search]%20[NB]%20[EN]%20[US_CA_NZ_IE_GB_AU]%20[Desktop]%20[Phrase]%20[VBB]%20[Sally%27s]%20Competitors%20-%20Broad-Match-Exp&utm_term=claude%20code&utm_medium=paid&utm_content=798404274844&cc_platform=google&cc_campaignid=23757992775&cc_adgroupid=194862281239&cc_adid=798404274844&cc_keyword=claude%20code&cc_matchtype=e&cc_device=c&cc_network=g&cc_placement=&cc_location=9220540&cc_adposition=&gad_source=1&gad_campaignid=23757992775&gbraid=0AAAABAkdGgTPc3iC-RfeJaag2YtR9EcoJ&gclid=CjwKCAjwqubPBhBOEiwAzgZX2nPejmYWDC_dx8HoxLw7lCvLEkxLMVzQgjVPhgMdqzrZKlsYfLPToxoCqy8QAvD_BwE","x":-660,"y":-640,"width":400,"height":400},
+		{"id":"46c3c023c37a4462","type":"link","url":"https://github.com/features/copilot?utm_source=google&utm_medium=sem&utm_campaign=copilot-brand&ef_id=_k_CjwKCAjwqubPBhBOEiwAzgZX2n2XFOQFmjUl6mukSHi02fenecIY9ZU8WOFXBuXaeuA7rytPK7F8MxoCclIQAvD_BwE_k_&OCID=AIDcmmh2h80ugd_SEM__k_CjwKCAjwqubPBhBOEiwAzgZX2n2XFOQFmjUl6mukSHi02fenecIY9ZU8WOFXBuXaeuA7rytPK7F8MxoCclIQAvD_BwE_k_&gad_source=1&gad_campaignid=23238727906&gbraid=0AAAAADcJh_sb-nhfrt0qDtlQkBKqOQ0-c&gclid=CjwKCAjwqubPBhBOEiwAzgZX2n2XFOQFmjUl6mukSHi02fenecIY9ZU8WOFXBuXaeuA7rytPK7F8MxoCclIQAvD_BwE","x":-1100,"y":-640,"width":400,"height":400},
+		{"id":"92a3444edcdae738","type":"link","url":"https://en.wikipedia.org/wiki/ChatGPT","x":-220,"y":-640,"width":400,"height":400}
+	],
+	"edges":[]
+}
