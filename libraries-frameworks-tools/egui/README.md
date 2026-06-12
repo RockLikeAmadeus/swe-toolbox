@@ -1,4 +1,4 @@
-# [egui](https://docs.rs/egui/latest/egui/) is an immediate mode library.
+# [egui](https://docs.rs/egui/latest/egui/) is an immediate GUI mode library.
 
 ## [eframe]() is the official framework for building standalone apps/tools with egui.
 
