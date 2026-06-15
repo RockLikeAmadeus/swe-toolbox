@@ -6,6 +6,8 @@
 
 Just click "Use this template" at the top right to create a new repo with this template as the starting point.
 
+Clone the repo, then `$ cargo update`, `$ cargo run`, and then update according to the README.md.
+
 ## Use [bevy_egui](https://docs.rs/bevy_egui/latest/bevy_egui/) to utilize egui within Bevy for debug display and controls.
 
 # See what's possible using these [demos](https://www.egui.rs/).
