@@ -1,0 +1,8 @@
+- Generating boilerplate code (or unit/integration tests?)
+- Analyze your code for security issue, bugs, etc.
+- Analyzing code to suggest optimizations for brevity, readability, or efficiency
+- Feed it a functional requirement and have it suggest a design/architecture/structure
+- Improve (or generate?) your documentation
+- Learn new programming languages or frameworks
+- IDE integration
+- Handle repetitive tasks like data entry
