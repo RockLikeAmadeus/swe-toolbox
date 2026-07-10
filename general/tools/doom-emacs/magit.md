@@ -1,0 +1,1 @@
+https://magit.vc/screenshots/

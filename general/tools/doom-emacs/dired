@@ -1,0 +1,41 @@
+# Cheat Sheet
+
+## Opening Dired
+
+* SPC f d — Find directory with Dired.
+* SPC . — Find or create file (navigating to a folder opens Dired).
+* C-x d — Standard Emacs shortcut to open Dired.
+* q — Quit / exit Dired buffer. [1, 2, 4, 5]
+
+## Navigation
+
+* j / k — Move down and up through items (Vim motion).
+* RET — Open selected file or step into a directory.
+* - / ^ — Go up one level to the parent directory.
+* ( — Toggle simple view (hides file sizes, permissions, and owners).
+* O — Toggle sorting order between file name and modification date. [1, 2, 5, 6, 7]
+
+## Marking Files (Batch Actions)
+
+* m — Mark file or folder.
+* u — Unmark current file or folder.
+* U — Clear all marks in the buffer.
+* t — Invert the current selections.
+* * / — Select all directories.
+* % m — Mark files matching a specific regular expression. [1, 2, 8]
+
+## File Operations
+
+* + — Create a new directory.
+* SPC f f - Create a new file
+* C — Copy marked files (copies to the other window if split).
+* R — Move or rename marked files.
+* d — Flag a file for deletion (adds a D marker).
+* x — Execute deletion for all flagged files.
+* M — Change file permissions (chmod). [1, 2, 9]
+
+## Inline Mass Renaming (Writable Dired)
+
+* C-c C-e / i — Convert Dired into an editable buffer. Use standard text editing commands to change file names or paths instantly.
+* C-c C-c or :w — Commit changes to the file system.
+* C-c ESC — Cancel edits without changes. [1, 2, 4, 10]
