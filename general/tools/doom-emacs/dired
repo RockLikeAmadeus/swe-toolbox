@@ -28,6 +28,7 @@
 
 * + — Create a new directory.
 * SPC f f - Create a new file
+* C - copy file under cursor (use M-RET to submit exact input rather than submit first match)
 * C — Copy marked files (copies to the other window if split).
 * R — Move or rename marked files.
 * d — Flag a file for deletion (adds a D marker).
