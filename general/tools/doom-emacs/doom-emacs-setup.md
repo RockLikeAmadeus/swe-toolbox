@@ -1,5 +1,7 @@
 On Linux (or WSL):
 
+==Note: on the second line here, if you're on COSMIC and want the frosted glass effect to work for emacs, replace `emacs` with `emacs-pgtk`==
+
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git emacs ripgrep fd-find cmake libtool-bin libvterm-dev
