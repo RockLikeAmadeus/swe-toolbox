@@ -1,0 +1,52 @@
+#+title:  Org Overview
+
+Use ~M-x org-info~ to view the org-mode documentation.
+- ~g k~ previous page
+- ~g j~ next page (=info-next=)
+- ~u~ go up one level in the heirarchy (=info-up=)
+
+Should probably have global (as in, not just in org-mode) bindings to the commands:
+- =org-store-link=
+- =org-capture=
+- =org-agenda=
+
+* Basic Org Mode Documents
+
+Headings (=*=) lists (=-=, =+=) and all that.
+
+Can hide contents by default within an entry using a /drawer/ (=org-insert-drawer=)
+
+:HIDEME:
+This text can be collapsed and hidden.
+:END:
+
+You can also specify blocks like this:
+
+#+BEGIN_MYBLOCK
+Some text that is in a block.
+#+END_MYBLOCK
+
+** Tables
+
+To Do...
+
+* Task Management
+
+Any heading becomes a TODO by starting with =TODO=. Use =org-todo= (~SPC m t~) to rotate the state of the task. (This might be actually configured to use "fast access keys", see the manual)
+
+** Capture
+
+First of all, you need to set the =org-directory= and =org-agenda-files=. My convention will be to have a =2b= (second brain) directory on every machine, the path to which to be stored in environment variable =$SECONDBRAIN=. This directory will have a =pkm= (knowledge-base) folder and a =urh= (you are here), and the org-directory will be set to =$SECONDBRAIN/urh=
+
+#+BEGIN_EXAMPLE elisp
+(setq org-directory (expand-file-name (getenv "SECONDBRAIN")))
+(setq org-agenda-files
+      (list (expand-file-name "urh/" (getenv "SECONDBRAIN"))
+            (expand-file-name "urh/inbox.org" (getenv "SECONDBRAIN"))))
+#+END_EXAMPLE
+
+
+
+** Tasks
+
+*** TODO This is a task

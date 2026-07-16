@@ -1,3 +1,5 @@
+'M-x org-info'
+
 # General
 
 - `TAB` - Toggle folding for the current heading subtree

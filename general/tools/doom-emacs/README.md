@@ -9,6 +9,7 @@
 
 - `h` `j` `k` `l` `RET` - Navigate through directories
 - `O` - Toggle sorting order (file name <-> modification date)
+- To use the exact text rather than the closest match when creating a file or directory (or other mini-buffer actions), use `M-RET`.
 
 ## File Operations
 
