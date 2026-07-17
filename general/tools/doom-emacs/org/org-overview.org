@@ -34,7 +34,7 @@ To Do...
 
 Any heading becomes a TODO by starting with =TODO=. Use =org-todo= (~SPC m t~) to rotate the state of the task. (This might be actually configured to use "fast access keys", see the manual)
 
-** Capture
+** Agenda & Capture
 
 First of all, you need to set the =org-directory= and =org-agenda-files=. My convention will be to have a =2b= (second brain) directory on every machine, the path to which to be stored in environment variable =$SECONDBRAIN=. This directory will have a =pkm= (knowledge-base) folder and a =urh= (you are here), and the org-directory will be set to =$SECONDBRAIN/urh=
 
@@ -49,4 +49,20 @@ First of all, you need to set the =org-directory= and =org-agenda-files=. My con
 
 ** Tasks
 
+=SPC m t= to make a heading into a task, followed by the command for the status. Press =SPC== instead to cancel making into a task.
+
+=SPC m p= to set the priority on a task (up, down, or =p= for set).
+=SPC m p p SPC= to remove prioritiy.
+
+The org-fancy-priorities package lets you define different string for priority, but only affects the display in emacs, not the underlying text ("HIGH" will still map to priority "A").
+
 *** TODO This is a task
+***
+
+
+*** Time Tracking
+
+With the cursor on a task (or any heading) in an org file, =org-clock-in= to start the timer.
+In the agenda, you must execute =org-agenda-clock-in= (=I=) (or =O= for out.)
+
+You can view a report of the time spent on tasks in the agenda view (=SPC o a a= and then pressing =R=), and by default this is broken down by file (all time clocked on tasks living in one file will aggregate to that file, so to organize by charge code, have a separate file per charge code). Obviously this is configurable. Also by default it will show the total time for the range of days shown in the agenda, so you can customize this in your config, or just view time for the current day by entering =org-agenda-day-view=.
