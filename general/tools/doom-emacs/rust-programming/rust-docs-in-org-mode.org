@@ -1,0 +1,11 @@
+#+title: Rust Docs In Org Mode
+
+* https://github.com/emacs-rustic/rustic#rust-docs-in-org-mode
+
+Before going through these steps, you may need to run:
+
+~$ sudo apt update && sudo apt install -p pandoc fd-find coreutils~
+
+and also
+
+~$ sudo ln -sf /usr/bin/fdfind /usr/local/bin/fd~
