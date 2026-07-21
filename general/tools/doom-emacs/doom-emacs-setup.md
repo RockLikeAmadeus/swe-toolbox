@@ -30,3 +30,9 @@ Finally:
 ```
 emacs &
 ```
+
+# Set up emacs to run as server and client (linux)
+
+Add the emacs daemon to the startup hook (the process differs by desktop environment, but ultimately you just want to run `emacs --daemon`)
+
+Whenever running emacs, be sure and run emacsclient (or `emacsclient -c -a 'emacs'`) when the daemon is running.
