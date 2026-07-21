@@ -1,4 +1,10 @@
-- AI-Powered Developer
+# Resources for Comparing Models:
+
+https://artificialanalysis.ai/
+https://deepswe.datacurve.ai/
+
+
+# AI-Powered Developer
 
 -  [x] Part 1: The Foundation
     - [x] 1 Understanding LLMs
